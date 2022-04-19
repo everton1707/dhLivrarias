@@ -1,0 +1,71 @@
+/*   Basic CSS   */
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.btn {
+    color: white;
+    bottom: 0;
+    border: solid #e8505d;
+    background-color: #e8505d;
+    transition-property: background-color color;
+    transition-duration: .5s;
+
+}
+
+.btn:hover {
+    background-color: white;
+    color: #e8505d;
+}
+
+.subtitle{
+    margin-top: 15px;
+}
+
+/*   CARD CSS   */
+.carousel-inner img {
+    height: 350px;
+    border-radius: 10px;
+}
+.card{
+    margin-right: 10px;
+}
+
+.card img{
+    max-height: 300px;
+
+}
+.card-group {
+    border: none;
+    margin-bottom: 15px;
+}
+
+.card-body {
+    padding: 0.5rem;
+
+}
+.card-text{
+    color: gray;
+    font-size: 15px;
+}
+
+
+.price {
+    color: #af0000;
+    font-size: 25px;
+}
+
+.card .list-group {
+    list-style: none;
+    bottom: 0;
+}
+.card .list-group li{
+    margin-top: 5px;
+}
+
+.categories{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    border: none;
+}
+
