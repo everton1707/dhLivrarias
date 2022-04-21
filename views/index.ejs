@@ -1,11 +1,34 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include("./partials/header") %>
+        
+        <section class="banner">
+          <div class="container">
+              <h3 class="banner__titulo"> Fale Conosco</h3>
+          </div>
+
+      </section>
+
+      <section class="contato">
+
+          <div class="container">
+              
+              <form class="contato__form" method="post">
+                 <div class="contato__campo">
+                      <input class="contato__input" name="name" placeholder="Nome">
+                 </div>
+                  <div class="contato__campo">
+                      <input class="contato__input" name="email" placeholder="E-mail">
+                      <input class="contato__input" name="phone" placeholder="Contato">
+                  </div>
+                  <div class="contato__campo">
+                      <textarea class="contato__textarea" name="message" placeholder="Digite sua mensagem aqui."></textarea>
+                  </div>
+                  <div class="contato__campo">
+                      <button type="submit" class="Enviar">Enviar</button>
+                      
+                  </div>
+              </form>
+          </div>
+      </section>
+  
+  
+      <%- include("./partials/footer") %>
