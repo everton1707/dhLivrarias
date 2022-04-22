@@ -1,0 +1,55 @@
+<%- include("./partials/header")%>
+<body>
+  <div class="container painel">
+    <div class="menuUsuario">
+      <ul class="nav flex-column">
+        <li class="nav-item ">
+          <a href=""><img src="/images/user.jpg" alt=""></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Minha Conta</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Minhas Compras</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Minhas Vendas</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><b>Configurações</b></a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="historico" style="margin-left: 20px;">
+      <h2>Suas Compras</h2>
+      <div >
+        <ul class="list-group">
+                <% for (let i = 0; i<5; i++){ %> 
+                  <li>
+                    
+                  <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/images/Livro1.png" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <% } %> 
+              </ul>
+                
+                
+              </div>
+        </div>
+
+
+      </div>
+<%- include("./partials/footer")%>
