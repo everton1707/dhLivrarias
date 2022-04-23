@@ -145,6 +145,8 @@ a{
 
 .cabecalho__pesquisa .cabecalho__categoria .cabecalho__icone{
   margin-right: 20px;
+  position: relative;
+  top:25%;
 }
 
 .cabecalho__pesquisa .cabecalho__busca{
