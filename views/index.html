@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@700&family=Roboto&family=Ropa+Sans&display=swap" rel="stylesheet">
+    <title>CheckoutDH</title>
+</head>
+<body>
+    
+    <header class="cabecalho">
+        <div class="container">
+            <div class="cabecalho__logo">
+                <a href="#" class="cabecalho__link">
+                    <img src="imagens/Logo_DH- PNG.png" alt="logo" class="cabecalho__imagem" width="188" height="27">
+                </a>
+            </div>
+            <div class="cabecalho__pesquisa">
+                <a href="" class="cabecalho__categoria">
+                    <i class="fa fa-th-large cabecalho__icone" aria-hidden="true"></i> Categorias
+                </a>
+                <div class="cabecalho__busca">
+                    <input type="text" class="cabecalho__campo" placeholder="O que você procura?">
+                    <button class="cabecalho__botao" type="submit">
+                        <i class="fa fa-search cabecalho__icone" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <nav class="cabecalho__navegacao">
+                <ul class="cabecalho__menu">
+                    <li class="cabecalho__item">
+                        <a href="http://" class="cabecalho__link">
+                            <i class="fa fa-user-o cabecalho__icone" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="cabecalho__item">
+                        <a href="http://" class="cabecalho__link">
+                            <i class="fa fa-shopping-cart cabecalho__icone" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="cabecalho__item">
+                        <a href="http://" class="cabecalho__link">
+                            <i class="fa fa-heart-o cabecalho__icone" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+            <section>
+                <!--artigo um -> informações pessoais! -->
+                <article class="container-box">
+                    <div class="container-inicio">
+                        <h2> <p class="um">1</p>Informações pessoais</h2> <a href="">Editar</a>
+                    </div><!--container-inicio-->
+                    <div class="input">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome"/>
+                    </div><!--input-->
+                    <div class="input">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail"/>
+                    </div><!--input-->
+                    <div class="input">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefoe"/>
+                    </div><!--input-->
+                    <div class="input">
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="Digite seu cpf"/>
+                    </div><!--input-->
+                </article><!--container-box-->
+
+                <!--artigo 2 - endereço de entrega !-->
+
+                <article class="container-box">
+                    <div class="container-inicio">
+                        <h2> <p class="dois">2</p>Endereço de entrega</h2> <a href="">Editar</a>
+                    </div><!--container-inicio-->
+                    <div class="input">
+                        <label for="Rua">Rua</label>
+                        <input type="text" id="rua" name="rua" placeholder="Digite seu Endereço"/>
+                    </div><!--input-->
+                    <div class="input">
+                        <label for="estado">Estado</label>
+                        <input type="text" id="estado" name="estado" placeholder="Digite seu estado"/>
+                    </div><!--input-->
+                    <div class="input">
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" name="cep" placeholder="Digite seu cep"/>
+                    </div><!--input-->
+                </article><!--container-box-->
+            </section>
+       
+            <section>
+                        <!--artigo 3 - formas de envio! -->
+
+                <article class="container-box">
+                    <div class="container-inicio">
+                        <h2> <p class="tres">3</p>Formas de envio</h2> <a href="">Ver detalhes</a>
+                    </div><!--container-inicio-->
+                    <div class="container-meio">
+                        <h3>Entrega Grátis</h3>
+                        <p>Previsto para 30/03/2022 <br> até 31/03/2022</p>
+                    </div><!--container-meio-->
+                    <div class="container">
+                        <p>Ver outras formas de envio</p>
+                    </div><!--containerout-->
+                    </article><!--container-box-->
+
+                    <!--Forma de pagamento-->
+
+                <article class="container-box">
+                    <div class="container-inicio">
+                        <h2> <p class="quatro">4</p>Formas de pagamento</h2>
+                    </div><!--container-inicio-->
+                    <div class="container-desconto">
+                        <div class="img">
+                            <img src="imagens/cupom.png" alt="cupom"/>
+                        </div> <!--img-->
+                        <div class="cupom">
+                        <h3>Possui cupom de desconto?</h3>
+                        <a href="">valide seu cupom de desconto aqui</a>
+                    </div><!--cupom-->
+                    </div><!--container-desconto-->
+                    <div class="mensagem">
+                        <p>Selecione uma forma de pagamento para finalizar seu pedido:</p>
+                        <div class="pagamentos">
+                            <div class="conteudo">
+                                <img src="imagens/pix.png" alt="pix"/>
+                                <h4>Pix</h4>
+                                <p class="p1">À vista 7% de Desconto!!!</p>
+                            </div><!--conteudo-->
+                        </div><!--pagamentos-->
+                        <div class="pagamentos">
+                            <div class="conteudo">
+                                <img src="imagens/boleto.png" alt="boleto"/>
+                                <h4>Boleto</h4>
+                                <p>À vista 7% de Desconto!!!</p>
+                            </div><!--conteudo-->
+                        </div><!--pagamentos-->
+                        <div class="pagamentos">
+                            <div class="conteudo">
+                                <img src="imagens/cartao.png" alt="cartao"/>
+                                <h4>Cartão</h4>
+                                <p class="p2"> Até 10x sem juros!!!</p>
+                            </div><!--conteudo-->
+                        </div><!--pagamentos-->
+                    </div><!--mensagem-->
+                </article><!--container-box-->
+            </section>
+
+            <!--finalização de pedido-->
+
+            <section>
+                <div class="container-box">
+                    <h2>Resumo do pedido</h2>
+                    <div class="container-inicio">
+                        <div class="resumo">
+                            <img src="imagens/livro.jpg" alt="livro"/>
+                           <div class="texto">
+                            <p>Livro python</p>
+                            <p>R$ 24.99</p>
+                        </div><!--text0-->
+                        <a href="">voltar ao carrinho</a>
+                        </div><!--resumo-->
+                    </div><!--container-inicio-->
+                    <div class="textarea">
+                        <p>Observações</p>
+                        <textarea class="obs" placeholder="Digite alguma observação sobre seu pedido"></textarea>
+                    </div><!--textarea-->
+                    <div class="final">
+                        <p>Subtotal</p>
+                        <p>24.99</p>
+                    <div >
+                        <p>Frete(entrega gratis)</p>
+                        <p>Grátis</p>
+                    </div>
+                    <div>
+                        <p>Total do pedido</p>
+                        <p>R$ 24.99</p>
+                    </div>
+                    </div><!--final-->
+                </div><!--container-box-->
+                <div class="container-fim">
+                    <button>Finalizar Pedido</button>
+                </div><!--container-fim-->
+            </section>
+    </main>
+    <div></div>
+    <footer class="rodape">
+        <div class="container">
+            <section class="rodape__info">
+                <div class="rodape__endereco"> 
+                    <img src="imagens/Logo_DH- PNG.png" alt="" class="rodape__logo" width="188" height="27">
+                    <p>Av. Brasil, N 355, Centro <br>
+                    São Paulo - SP</p>
+
+                    <ul class="rodape__midias">
+                        <li class="rodape__itens">
+                            <a href="">
+                                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                            </a>
+                        </li> 
+                        <li class="rodape__itens">
+                            <a href="">
+                                <i class="fa fa-youtube" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="rodape__itens">
+                            <a href="">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </li>   
+                        <li class="rodape__itens">
+                            <a href="">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="rodape__atendimento">
+                    <h3>Precisa de ajuda?</h3>
+                    <a href="">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        (92) 98235-2295
+                    </a>
+                    <p>Horário de atendimento <br>
+                    Segunda - Sexta: 08h00 às 17h00 <br>
+                    Sábado: 09h00 às 13h00</p>
+                </div>
+
+                <div class="rodape__categorias">
+                    <h3>Categorias</h3>
+                    <ul class="rodape__lista">
+                        <li>
+                            <a href="">Ação</a>
+                        </li>
+                        <li>
+                            <a href="">Comédia</a>
+                        </li>
+                        <li>
+                            <a href="">Mangás</a>
+                        </li>
+                        <li>
+                            <a href="">Drama</a>
+                        </li>
+                        <li>
+                            <a href="">Horror</a>
+                        </li>
+                    </ul>
+                     
+                </div>
+
+                <div class="rodape__institucional">
+                    <h3>Institucional</h3>
+                    <ul class="rodape__lista">
+                        <li>
+                            <a href="">Política de Privacidade</a>
+                        </li>
+                        <li>
+                            <a href="">Trabalhe Conosco</a>
+                        </li>
+                        <li>
+                            <a href="">Pesquisa de Satisfação</a>
+                        </li>
+                        <li>
+                            <a href="">Depoimentos de Clientes</a>
+                        </li>
+                    </ul>
+                     
+                </div>
+
+            </section>
+
+            <section class="rodape__copyright">
+                <div>
+                    <p>Copyright © 2022 <a href="">DH Livrarias.</a> All rights reserved </p>
+                </div>
+
+                <div class="rodape__icones">
+                    <ul class="rodape__cartao">
+                        <li>
+                            <img src="./img/cartão.png" alt="" class="src">
+                        </li>
+                        
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+    </footer>
+    
+</body>
+</html>
