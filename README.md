@@ -10,7 +10,7 @@ Criação de um sistema ecommerce O projeto consiste em realizar um sistema de c
 - Uma classe.Carrinho de Compras de um cliente possui vários livros.
 - Um livro (exemplar) pode ser comprado por vários clientes.
 - Um cliente pode comprar várias compras.
-- Um cliente pode comprar vários livros na loja. Uma classe.Carrinho de Compras de um cliente possui vários livros.
+- Um cliente pode comprar vários livros na loja.
 
 
  ## Tecnologias
