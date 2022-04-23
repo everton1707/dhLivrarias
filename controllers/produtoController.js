@@ -5,6 +5,9 @@ const produtoController = {
     user:(req, res)=>{
         //let prato = listaPratos.find(prato => prato.id == req.params.id);
         res.render('painelUsuario');
+    },
+    faleConosco:(req, res)=>{
+        res.render('faleConosco');
     }
  }
 
