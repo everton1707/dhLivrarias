@@ -5,5 +5,7 @@ const produtoController = require('../controllers/produtoController');
 /* GET home page. */
 router.get('/', produtoController.index);
 router.get('/user', produtoController.user);
+router.get('/finalizacao', produtoController.finalizacao);
+router.get('/checkout', produtoController.checkout);
 
 module.exports = router;
