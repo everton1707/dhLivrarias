@@ -4,7 +4,8 @@ const produtoController = require('../controllers/produtoController');
 
 /* GET home page. */
 router.get('/', produtoController.index);
-router.get('/user', produtoController.user);
+
 router.get('/faleConosco', produtoController.faleConosco);
+
 
 module.exports = router;

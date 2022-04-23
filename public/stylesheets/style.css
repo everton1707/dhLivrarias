@@ -311,7 +311,7 @@ button:hover{
 
 
 .rodape .rodape__atendimento h3{
-  color: #fff;
+  color: #353434;
   text-align: center;
 }
 
@@ -335,7 +335,7 @@ button:hover{
 }
 
 .rodape .rodape__categorias{
-  color: #fff;
+  color: #353434;
   text-align: center;
 }
 
@@ -354,7 +354,7 @@ button:hover{
 }
 
 .rodape .rodape__institucional{
-  color: #fff;
+  color: #353434;
   text-align: center;
 }
 
@@ -389,5 +389,73 @@ button:hover{
 
 .rodape .rodape__cartao{
   margin: 20px;
+}
+
+/*ALINE*/
+body{
+	/*caso  a imagem não funcione colocamos uma cor */
+
+	background-image: url("../imagem/livros-sobre-investimentos.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	width: 100%; 
+}
+.form{
+	overflow: hidden;
+	background:#f3dfe2;
+	width: 50%;
+	height: 90%;
+	margin:50px auto ;
+	text-align: center;
+	border: 2px solid rgb(20, 20, 20);
+	border-radius: 10px;
+}
+h1{
+	background: rgb(235, 11, 11);
+}
+input,select{
+	border-radius: 10px;
+	height: 30px;
+	border: none;
+	margin: 5px;
+}
+input[type="radio"]{
+	height: 12px;
+}
+input[type="submit"]{
+	cursor: pointer;
+	border-radius: 5px;
+	border: none;
+	width: 80px;
+	height: 35px;
+}
+input[type="button"]{
+	cursor: pointer;
+	border-radius: 5px;
+	border: none;
+	width: 80px;
+	height: 35px;
+}
+input[type="submit"]:hover{
+	background: rgb(177, 169, 169);
+	color: rgb(190, 182, 182);
+}
+input[type="button"]:hover{
+	background: rgb(161, 156, 156);
+	color: rgb(165, 154, 154);
+}
+@media (max-width: 680px) {
+	.form { 
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 80%;
+	height: auto;
+	margin-top: 0  ;
+	}
+	input, label{ 
+	margin: 5px;
+	}   
 }
 
