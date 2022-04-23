@@ -1,0 +1,24 @@
+<%- include("./partials/header")%>
+
+  <div class="form">
+    <form method="post" action="index.php"><br>
+      <h1></h1><br>
+      <h2>Login</h2><br><br>
+      <label>Login:</label>
+        <input type="text" name="nome" size="50"  placeholder="Informe o seu Login" class="form-input">
+        <p>
+
+        </p>
+        <label>Senha:</label>
+        <input type="password" name="senha" size="50" placeholder="Confirme a sua Senha" class="form-input">
+        <p>
+
+        </p>
+        <input type="submit" value="Logar"> &nbsp; &nbsp;
+        <input type="button" value="Voltar"><br><br>
+        <div>
+          Não é Cadastrado? <a href="index.html">Crie uma Conta</a>
+      </div>
+      </form>
+    </div>
+    <%- include("./partials/footer")%>
