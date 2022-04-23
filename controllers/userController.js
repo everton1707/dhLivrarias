@@ -8,6 +8,12 @@ const produtoController = {
     },
     cadastro:(req, res)=>{
         res.render('CadastroCliente');
+    },
+    finalizacao:(req, res)=>{
+        res.render('finalizacao');
+    }, 
+     checkout:(req, res)=>{
+        res.render('checkout');
     }
     
  }
