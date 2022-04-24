@@ -1,10 +1,20 @@
 /*   Basic CSS   */
 *{
-  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+body{
+    margin: 0;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
 a{
   color: none;
 }
+
 .btn {
   color: white;
   bottom: 0;
@@ -12,7 +22,6 @@ a{
   background-color: #e8505d;
   transition-property: background-color color;
   transition-duration: .5s;
-
 }
 
 .btn:hover {
@@ -24,8 +33,9 @@ a{
   margin-top: 15px;
 }
 
-/*   CARD CSS   */
+/*   Everton HOME - CARD CSS   */
 .carousel-inner img {
+  padding:  10px;
   height: 350px;
   border-radius: 10px;
 }
@@ -105,6 +115,8 @@ a{
 .list-group{
   list-style: none;
 }
+
+/*header*/
 
 .cabecalho{
   padding: 20px 15px;
@@ -191,6 +203,7 @@ a{
   cursor: pointer;
 }
 
+/* Mari fale-conosco*/
 .banner{
   background-color: #af0000;
   color: #fff;
@@ -261,7 +274,6 @@ button:hover{
 
 
 /* footer*/
-
 
 .rodape{
   margin-top: 30px;
@@ -388,7 +400,9 @@ button:hover{
   margin: 20px;
 }
 
-/*ALINE*/
+
+/*ALINE castro cliente*/
+
 .cadastro{
 	/*caso  a imagem não funcione colocamos uma cor */
 
@@ -398,7 +412,7 @@ button:hover{
 	background-size: 100% 100%;
 	width: 100%; 
 }
-.form{
+.cadastro .cadastro_dados {
 	overflow: hidden;
 	background:#f3dfe2;
 	width: 50%;
@@ -408,40 +422,74 @@ button:hover{
 	border: 2px solid rgb(20, 20, 20);
 	border-radius: 10px;
 }
-h1{
-	background: rgb(235, 11, 11);
-}
-input,select{
+
+.cadastro .cadastro_nome, input,select{
 	border-radius: 10px;
 	height: 30px;
 	border: none;
 	margin: 5px;
 }
-input[type="radio"]{
+
+.cadastro .cadastro_genero[type="radio"]{
 	height: 12px;
 }
-input[type="submit"]{
+
+.cadastro .cadastro_genero[type="submit"]{
 	cursor: pointer;
 	border-radius: 5px;
 	border: none;
 	width: 80px;
 	height: 35px;
 }
-input[type="button"]{
+
+.cadastro .cadastro_genero[type="button"]{
 	cursor: pointer;
 	border-radius: 5px;
 	border: none;
 	width: 80px;
 	height: 35px;
 }
-input[type="submit"]:hover{
+
+.cadastro .cadastro_senha[type="submit"]:hover{
 	background: rgb(177, 169, 169);
 	color: rgb(190, 182, 182);
 }
-input[type="button"]:hover{
+
+.cadastro .cadastro_senha[type="button"]:hover{
 	background: rgb(161, 156, 156);
 	color: rgb(165, 154, 154);
+
 }
+
+/*ALINE login*/
+.login{
+	/*caso  a imagem não funcione colocamos uma cor */
+
+	background-image: url("../imagem/livros-sobre-investimentos.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	width: 100%; 
+}
+.login .login_corpo{
+	overflow: hidden;
+	background:#f3dfe2;
+	width: 50%;
+	height: 90%;
+	margin:50px auto ;
+	text-align: center;
+	border: 2px solid rgb(20, 20, 20);
+	border-radius: 10px;
+}
+
+.login .login_email, .login_senha{
+margin: 0 10px;
+border: 0px solid;
+box-sizing: border-box;
+border-radius: 8px;
+padding: 15px 30px;
+}
+
 @media (max-width: 680px) {
 	.form { 
 	display: flex;
@@ -456,27 +504,29 @@ input[type="button"]:hover{
 	}   
 }
 
-/* outro css*/
-section{
-  padding: 0 10px;
+/* Matheus checkout*/
+
+.checkout-corpo{
+  padding:  10px;
 }
 
-main{
-      
+.checkout-corpo{   
   color:  rgba(61, 54, 54, 0.7);
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-section .container-box{
+
+.checkout .dados-box .dados-inicio{
   background-color:rgba(61, 54, 54, 0.04);
   padding: 10px;
   width: 400px;
   border: 1px solid rgba(61, 54, 54, 0.2);
   margin: 30px 0;
 }
-.container{
+
+.envio{
   border: 1px solid rgba(61, 54, 54, 0.2);
   text-align: center;
   padding: 10px;
@@ -484,14 +534,14 @@ section .container-box{
   color: rgba(61, 54, 54, 0.7);;
 }
 
-section .container-box .container-inicio{
+.checkout .dados-box .dados-inicio{
   color: rgba(61, 54, 54, 0.7);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.container-inicio .um , .dois, .tres,.quatro{
+.dados-inicio .um , .dois, .tres, .quatro{
   display: inline;
   border: 1px solid #ccc;
   border-radius: 50%;
@@ -499,7 +549,8 @@ section .container-box .container-inicio{
   margin: 0px 10px 0px 0px;
   font-size: 24px;
 }
-.container-meio{
+
+.dados-meio{
   margin: 10px 0;
   padding: 10px;
   color: rgba(61, 54, 54, 0.7);
@@ -508,49 +559,50 @@ section .container-box .container-inicio{
   border-color: rgba(61, 54, 54, 0.2);
   border-bottom: 4px solid rgba(61, 54, 54, 0.5);
 }
-.container{
-  border: 1px solid rgba(61, 54, 54, 0.2);
-  cursor: pointer;
-}
 
-.input label{
+.dados-botao label{
   display: block;
   margin: 7.2px 0;
   font-size: 18px;
 }
-input[type=text], input[type=email],input[type=tel]{
+
+.dados-botao[type=text],.dados-botao[type=email], .dados-botao[type=tel]{
   width: 100%;
   display: inline-block;
   height: 30px;
   outline: none;
 }
  
-.container-desconto img{
+.dados-desconto img{
   width: 30px;
   height: 30px;
   margin-right: 10px;
 
 }
-.container-desconto{
+
+.dados-desconto{
   display: flex;
   margin: 10px 0;
   align-items: center;
   margin: 20px 0;
 
 }
-.container-box .mensagem{
+.dados-box .mensagem{
   margin: 10px 0;
   border-top: 1px solid rgba(61, 54, 54, 0.2);
 }
-.mensagem > p{
+
+.dados-box .dados-inicio .mensagem > p{
   margin: 5px 0;
   font-size: 17px;
 }
-.container-box .pagamentos > .conteudo > p{
+
+.dados-box .pagamentos > .conteudo > p{
   font-size: 17px;
   justify-content: space-between;
 }
-.container-box .pagamentos{
+
+.dados-box .pagamentos{
   border: 1px solid rgba(61, 54, 54, 0.2);
   background-color: white;
   padding: 10px;
@@ -564,21 +616,25 @@ input[type=text], input[type=email],input[type=tel]{
   height: 20px;
   margin: 0px 12px;
 }
+
 .conteudo{
   display: flex;
   align-items: center;  
 }
+
 .conteudo .p1{
   margin-left: 42px;
 }
+
 .conteudo p{
   margin-left: 17px;
 }
+
 .conteudo .p2{
   margin-left: 15px;
 }
 
-.container-inicio .resumo img{
+.dados-inicio .resumo-pedido .resumo img{
   width: 100px;
   height: 100px;
   margin: 10px 10px;
@@ -588,31 +644,37 @@ input[type=text], input[type=email],input[type=tel]{
   align-items: center;
 }
 
-.container-inicio p{
+.dados-inicio p{
   margin: 5px 10px;
 }
+
 .resumo a{
   flex-direction: column;
 }
+
 textarea{
   width: 100%;
   height: 80px;
   outline: 0;
   
 }
+
 .final p{
  display: flex;
  display: inline;
  margin: 10px;
 
 }
+
 .final{
   text-align: right;
 }
-.container-box .container-inicio .container-fim{
+
+.dados-box .dados-inicio .dados-fim{
   text-align: right;
 }
-.container-fim button{
+
+.dados-fim button{
   width: 100%;
   padding: 10px;
   font-size: 20px;
@@ -621,28 +683,34 @@ textarea{
  ;
 }
 
-/*PAGINA FINALIZAÇÃO*/
-section .container-finalizacao{
+/*Matheus PAGINA FINALIZAÇÃO*/
+
+.pagina-finalizacao .dados-finalizacao{
   width: 80%;
   margin: 0 auto;
   padding: 30px 0;
 }
-section .container-finalizacao h2{
+
+.pagina-finalizacao .dados-finalizacao h2{
   color: #e8505d;
   margin-bottom: 15px;
 }
-section .container-finalizacao > p{
+
+.pagina-finalizacao .dados-finalizacao > p{
   margin: 8px 0;
 }
-.container-finalizacao  > .finalizacao{
+
+.dados-finalizacao  > .finalizacao{
   border-top: 2px solid rgb(128, 124, 124);
   background-color:rgba(61, 54, 54, 0.04);
   padding: 10px 15px;
   margin: 10px 0;
 }
+
 .finalizacao p, a{
   margin: 5px;
 }
+
 .finalizacao > a{
   width: 200px;
   height: 50px;
@@ -655,6 +723,7 @@ section .container-finalizacao > p{
   border: 3px solid  #e8505d;
   border-radius: 10px;
 }
+
 .finalizacao a:hover{
   animation: pulsate 1s ease-in-out;
  
@@ -665,14 +734,14 @@ section .container-finalizacao > p{
       0 0 25px  #e8505d;    
   }
 }
-.container-finalizacao .container-resumo{
+.dados-finalizacao .dados-resumo{
  border-top: 1px solid black;
  border-bottom: 1px solid black;
 
 }
-.container-finalizacao .container-resumo p{
+.dados-finalizacao .dados-resumo p{
   margin: 10px 0;
 }
-.container-finalizacao .fim{
+.dados-finalizacao .fim{
   margin-top: 30px ;
 }

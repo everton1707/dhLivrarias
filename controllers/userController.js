@@ -14,7 +14,7 @@ const produtoController = {
     }, 
      checkout:(req, res)=>{
         res.render('checkout');
-    }
+    },
     
  }
 
