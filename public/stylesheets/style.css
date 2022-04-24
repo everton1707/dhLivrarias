@@ -6,9 +6,9 @@
 }
 
 body{
-    margin: 0;
-    box-sizing:border-box;
-    font-family: 'Roboto', sans-serif;
+  margin: 0;
+  box-sizing:border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 a{
@@ -135,7 +135,6 @@ a{
   margin: 0 auto;
 }
 
-
 .cabecalho__pesquisa{
   display: flex;
   flex-grow: 1;
@@ -167,7 +166,8 @@ a{
 }
 .cabecalho__pesquisa .cabecalho__busca .cabecalho__botao{
   background-color: transparent;
-  border: 0;   
+  border: 0; 
+  padding: 0;  
 }
 
 .cabecalho__pesquisa .cabecalho__busca .cabecalho__botao .cabecalho__icone{
@@ -186,6 +186,7 @@ a{
 .cabecalho__navegacao .cabecalho__menu{
   display: flex;
   padding: 0;
+  margin: 0;
 }
 
 .cabecalho__navegacao .cabecalho__menu .cabecalho__item{
@@ -277,7 +278,6 @@ button:hover{
 
 .rodape{
   margin-top: 30px;
-  border-top: #9b9696 solid 2px;
   padding-top: 30px;
   background-color: rgba(105, 105, 105, 0.25)
 }
@@ -462,15 +462,16 @@ button:hover{
 }
 
 /*ALINE login*/
-.login{
-	/*caso  a imagem não funcione colocamos uma cor */
 
+	/*caso  a imagem não funcione colocamos uma cor */
+.login{
 	background-image: url("../imagem/livros-sobre-investimentos.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
 	width: 100%; 
 }
+
 .login .login_corpo{
 	overflow: hidden;
 	background:#f3dfe2;
@@ -506,8 +507,8 @@ padding: 15px 30px;
 
 /* Matheus checkout*/
 
-.checkout-corpo{
-  padding:  10px;
+.checkout{
+  padding: 0 10px;
 }
 
 .checkout-corpo{   
@@ -518,7 +519,7 @@ padding: 15px 30px;
   justify-content: center;
 }
 
-.checkout .dados-box .dados-inicio{
+.checkout .dados-box{
   background-color:rgba(61, 54, 54, 0.04);
   padding: 10px;
   width: 400px;
@@ -531,12 +532,11 @@ padding: 15px 30px;
   text-align: center;
   padding: 10px;
   font-size: 20px;
-  color: rgba(61, 54, 54, 0.7);;
+  color: rgba(61, 54, 54, 0.7);
 }
 
 .checkout .dados-box .dados-inicio{
   color: rgba(61, 54, 54, 0.7);
-  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -560,7 +560,12 @@ padding: 15px 30px;
   border-bottom: 4px solid rgba(61, 54, 54, 0.5);
 }
 
-.dados-botao label{
+.envio{
+  border: 1px solid rgba(61, 54, 54, 0.2);
+    cursor: pointer;
+}
+
+.dados-botao{
   display: block;
   margin: 7.2px 0;
   font-size: 18px;
@@ -577,7 +582,6 @@ padding: 15px 30px;
   width: 30px;
   height: 30px;
   margin-right: 10px;
-
 }
 
 .dados-desconto{
@@ -585,14 +589,14 @@ padding: 15px 30px;
   margin: 10px 0;
   align-items: center;
   margin: 20px 0;
-
 }
+
 .dados-box .mensagem{
   margin: 10px 0;
   border-top: 1px solid rgba(61, 54, 54, 0.2);
 }
 
-.dados-box .dados-inicio .mensagem > p{
+.mensagem > p{
   margin: 5px 0;
   font-size: 17px;
 }
@@ -639,8 +643,8 @@ padding: 15px 30px;
   height: 100px;
   margin: 10px 10px;
 }
+
 .resumo{
-  display: flex;
   align-items: center;
 }
 
@@ -656,14 +660,12 @@ textarea{
   width: 100%;
   height: 80px;
   outline: 0;
-  
 }
 
 .final p{
  display: flex;
  display: inline;
  margin: 10px;
-
 }
 
 .final{
@@ -680,7 +682,6 @@ textarea{
   font-size: 20px;
   cursor: pointer;
   color: rgba(61, 54, 54, 0.5);
- ;
 }
 
 /*Matheus PAGINA FINALIZAÇÃO*/
