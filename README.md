@@ -4,14 +4,19 @@ Grupo_04
 
 ## OBJETIVO
 
-DH LIVRARIAS é um projeto de e-commerce, de compra de livros realizados por clientes e cadastro de livros realizados por funcionários. O sistema deve permitir que o usuário cadastre e escolha entre o perfil do cliente ou funcionário. O funcionário consegue listar livros, usuários e compras. Cada cliente pode comprar de acordo com o estoque.
+DH LIVRARIAS é um projeto de e-commerce, onde foram definidos conceitos como MVC, controle de definições, criptografia de criptografias, envio de e-mails, upload de imagens, validações back e front end, animações , outros dentre.
 
-### Fluxo do usuário
+## Funcionalidades
 
-- Uma classe.Carrinho de Compras de um cliente possui vários livros.
-- Um livro (exemplar) pode ser comprado por vários clientes.
-- Um cliente pode comprar várias compras.
-- Um cliente pode comprar vários livros na loja.
+- [X] Cadastro de usuários.
+- [X] Criação de anúncios.
+- [X] Realização de pedidos.
+- [X] Carrinho de compras.
+- [X] Buscar produtos.
+- [X] Upload de imagems com Multer.
+- [X] Páginas dinâmicas com Nunjucks.
+- [X] Banco de dados PostgreSQL.
+- [X] Sistema de login e recuperação de senha.
 
 
  ## Tecnologias
@@ -22,5 +27,8 @@ DH LIVRARIAS é um projeto de e-commerce, de compra de livros realizados por cli
 - [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [MySQL](https://www.mysql.com/)
 - [Sequelize ORM](https://sequelize.org/master/)
+
+
+
 
 
