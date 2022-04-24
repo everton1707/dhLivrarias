@@ -4,7 +4,7 @@ Grupo_04
 
 ## OBJETIVO
 
-DH LIVRARIAS é um projeto de e-commerce, onde foram definidos conceitos como MVC, controle de definições, criptografia de criptografias, envio de e-mails, upload de imagens, validações back e front end, animações , outros dentre.
+DH LIVRARIAS é um projeto de e-commerce, onde foram definidos conceitos como MVC, controle de definições, criptografia de criptografias, envio de e-mails, upload de imagens, validações back e front end, animações, dentre outros.
 
 ## Funcionalidades
 
@@ -26,8 +26,3 @@ DH LIVRARIAS é um projeto de e-commerce, onde foram definidos conceitos como MV
 - [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [MySQL](https://www.mysql.com/)
 - [Sequelize ORM](https://sequelize.org/master/)
-
-
-
-
-
