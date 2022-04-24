@@ -9,7 +9,6 @@ DH LIVRARIAS é um projeto de e-commerce, onde foram definidos conceitos como MV
 ## Funcionalidades
 
 - [X] Cadastro de usuários.
-- [X] Criação de anúncios.
 - [X] Realização de pedidos.
 - [X] Carrinho de compras.
 - [X] Buscar produtos.
