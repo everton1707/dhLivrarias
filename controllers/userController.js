@@ -15,6 +15,12 @@ const produtoController = {
      checkout:(req, res)=>{
         res.render('checkout');
     },
+    carrinho:(req, res)=>{
+        res.render('carrinho');
+    }, 
+     produto:(req, res)=>{
+        res.render('produto');
+    },
  }
 
 
