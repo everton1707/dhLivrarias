@@ -7,4 +7,9 @@ router.get('/login',userController.login);
 router.get('/cadastro',userController.cadastro);
 router.get('/finalizacao', userController.finalizacao);
 router.get('/checkout', userController.checkout);
+router.get('/carrinho', userController.carrinho);
+router.get('/produto', userController.produto);
+
+
+
 module.exports = router;

@@ -4,7 +4,8 @@ const produtoController = {
     },
     faleConosco:(req, res)=>{
         res.render('faleConosco');
-    }
+    },
+
  }
  
 

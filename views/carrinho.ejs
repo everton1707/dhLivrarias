@@ -1,35 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("./partials/header") %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;500&display=swap" rel="stylesheet">
-    <title>Carrinho de Compras</title>
-</head>
+    <main class="pagina-carrinho">
 
-<body>
-
-    <header>
-        <p></p>
-    </header>
-
-    <main>
-        <h2>Meu Carrinho</h2>
+        <h2 class="meu-carrinho">Meu Carrinho</h2>
         <div class="selected-products">
             <ul class="list">
-                <li class="products">
+                <li class="products-carrinho">
                     <div class="product-image">
-                        <a href="#"><img src="../img/Produtc/the-lord-of-the-rings.png" alt="The Lord Of the rings"></a>
+                        <a href="#"><img src="/images/the-lord-of-the-rings.png" 
+                            alt="The Lord Of the rings"></a>
                     </div>
+
                     <div class="title-author">
-                        <a href="#"><h3>The Lord of The Rings</h3></a>
-                        <a href="#"><p>J.R.R Tolkien</p></a>
+                        <a href="#">
+                            <h3>The Lord of The Rings</h3>
+                        </a>
+                        <a href="#">
+                            <p>J.R.R Tolkien</p>
+                        </a>
                     </div>
+
                     <div class="quant">
                         <div class="subtitle">Quantitade</div>
                         <div class="quant-select">
@@ -41,6 +31,46 @@
                                 <button class="add">+</button>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="value-unit">
+                        <div class="subtitle">Valor Unitário</div>
+                        <div class="value-unit-unit">R$ 49,90</div>
+                    </div>
+                    <div class="value-total-unit">
+                        <div class="subtitle">Valor Total</div>
+                        <div class="value-total-unit-produtc">R$ 49,90</div>
+                    </div>
+                </li>
+                <hr>
+
+                <li class="products-carrinho">
+                    <div class="product-image">
+                        <a href="#"><img src="/images/harry-potter-prisioneiro-de-azkaban.png"
+                                alt="Harry Potter e o Prisioneiro de Azkaban"></a>
+                    </div>
+
+                    <div class="title-author">
+                        <a href="#">
+                            <h3>Harry Potter e o Prisioneiro de Azkaban</h3>
+                        </a>
+                        <a href="#">
+                            <p>J.K Rowling</p>
+                        </a>
+                    </div>
+
+                    <div class="quant">
+                        <div class="subtitle">Quantitade</div>
+                        <div class="quant-select">
+                            <div>
+                                <button class="add">-</button>
+                            </div>
+                            <div class="quant-selct-unit">1</div>
+                            <div>
+                                <button class="add">+</button>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="value-unit">
                         <div class="subtitle">Valor Unitário</div>
@@ -54,14 +84,20 @@
                 <hr>
 
 
-                <li class="products">
+
+                <li class="products-carrinho">
                     <div class="product-image">
-                        <a href="#"><img src="../img/Produtc/harry-potter-prisioneiro-de-azkaban.png" alt="Harry Potter e o Prisioneiro de Azkaban"></a>
+                        <a href="#"><img src="/images/berserk-deluxe-vol-4.png" alt="Berserk Vol 4"></a>
                     </div>
                     <div class="title-author">
-                        <a href="#"><h3>Harry Potter e o Prisioneiro de Azkaban</h3></a>
-                        <a href="#"><p>J.K Rowling</p></a>
+                        <a href="#">
+                            <h3>Berserk Vol. 4 - Deluxe Edition</h3>
+                        </a>
+                        <a href="#">
+                            <p>Kentaro Miura</p>
+                        </a>
                     </div>
+
                     <div class="quant">
                         <div class="subtitle">Quantitade</div>
                         <div class="quant-select">
@@ -73,39 +109,7 @@
                                 <button class="add">+</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="value-unit">
-                        <div class="subtitle">Valor Unitário</div>
-                        <div class="value-unit-unit">R$ 49,90</div>
-                    </div>
-                    <div class="value-total-unit">
-                        <div class="subtitle">Valor Total</div>
-                        <div class="value-total-unit-produtc">R$ 49,90</div>
-                    </div>
-                </li>
-                <hr>
 
-
-
-                <li class="products">
-                    <div class="product-image">
-                        <a href="#"><img src="../img/Produtc/berserk-deluxe-vol-4.png" alt="Berserk Vol 4"></a>
-                    </div>
-                    <div class="title-author">
-                        <a href="#"><h3>Berserk Vol. 4 - Deluxe Edition</h3></a>
-                        <a href="#"><p>Kentaro Miura</p></a>
-                    </div>
-                    <div class="quant">
-                        <div class="subtitle">Quantitade</div>
-                        <div class="quant-select">
-                            <div>
-                                <button class="add">-</button>
-                            </div>
-                            <div class="quant-selct-unit">1</div>
-                            <div>
-                                <button class="add">+</button>
-                            </div>
-                        </div>
                     </div>
                     <div class="value-unit">
                         <div class="subtitle">Valor Unitário</div>
@@ -127,13 +131,14 @@
             <h4>Calcular Frete</h4>
             <hr>
             <p>Cep:</p>
-            <form action="">
+            <form class="frete" action="">
                 <input type="text" name="cep1" id="cep1" placeholder="69010">
                 <p>–</p>
                 <input type="text" name="cep2" id="cep2" placeholder="160">
                 <button type="submit">Calcular</button>
             </form>
         </div>
+
         <div class="value-total">
             <h4>Resumo do pedido</h4>
             <hr>
@@ -143,17 +148,15 @@
             </div>
         </div>
     </section>
-    
+
 
     <section class="finalization">
         <hr>
         <div class="buttons-finlization">
-            <button class="keep-shopping">&lt;   Continue Comprando</button>
+            <button class="keep-shopping"> Continue Comprando</button>
             <button class="finalize-purchase">Finalizar Compra</button>
         </div>
     </section>
 
 
-</body>
-
-</html>
+    <%- include("./partials/footer") %>
