@@ -673,8 +673,8 @@ textarea{
   font-weight: 300;
 }
 
-.products-carrinho> img {
-  width: 130px;
+.products-carrinho .product-img img {
+  width: 200px;
 }
 
 .pagina-carrinho {
@@ -713,7 +713,6 @@ textarea{
   flex-direction: column;
   justify-content: center;
   margin-left: -40px;
-  gap: 20px;
   flex-wrap: wrap;
   max-width: 200px;
 }
@@ -806,12 +805,11 @@ textarea{
 
 .resume {
   display: flex;
-  width: 60%;
-  margin: 80px auto;
-  justify-content: space-between;
+  justify-content: space-around;
   color: #959595;
   font-size: 18px;
   font-weight: 300;
+  width: 100%;
 }
 
 .resume h4 {
@@ -850,13 +848,15 @@ textarea{
 }
 
 .frete>input[name="cep1"]{
-  width:70px;
+  width:100px;
   text-align: center;
+  padding: 0;
 }
 
 .frete>input[name="cep2"]{
-  width:50px;
+  width:70px;
   text-align: center;
+  padding: 0;
 }
 
 ::placeholder{
@@ -960,6 +960,10 @@ button.finalize-purchase:hover{
   margin-right: auto;
 }
 
+.meu-carrinho .products-carrinho .product-img >img{
+  max-width: 230px;
+}
+
 .products .product-img img{
   margin: 20px;
   border: 1px solid rgba(128, 128, 128, 0.323);
@@ -1019,7 +1023,6 @@ button.finalize-purchase:hover{
   color: #616161;
   font-size: 14px;
   margin: 0;
-  width: 100%;
 }
 
 .author-review{
