@@ -67,7 +67,10 @@ a{
 .price { 
   font-size: 25px;
 }
-
+.historico-card{
+  display: flex;
+  justify-content: space-between;
+}
 .card .list-group {
   list-style: none;
   bottom: 0;
