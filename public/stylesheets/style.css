@@ -248,7 +248,7 @@ a{
 .contato .contato__form .contato__campo .contato__textarea{
   width: 100%;
   margin: 0 10px;
-  background: #C4C4C4;
+  background-color: #C4C4C4;
   border: 0px solid;
   box-sizing: border-box;
   border-radius: 8px;
@@ -259,7 +259,7 @@ button{
   background-color: #af0000;
   color: #fff;
   cursor: pointer;
-  transition: color, background, width 0 5s;
+  transition: color, background-color, width 0 5s;
   width: 120px;  
 }
 
@@ -278,131 +278,6 @@ button:hover{
 }
 
 
-/* footer*/
-
-.rodape{
-  margin-top: 30px;
-  padding-top: 30px;
-  background-color: rgba(105, 105, 105, 0.25)
-}
-
-.rodape .rodape__info{
-  display: flex;
-  justify-content: space-between;
-}
-
-.rodape__info .rodape__endereco{
-  color: #353434;
-  text-align: center;
-}
-
-.rodape__info .rodape__endereco p{
-  margin-top: 20px;
-}
-
-.rodape__info .rodape__endereco .rodape__midias{
-  display: flex;
-  margin-top: 10px;
-  padding: 8px;
-  text-align: center;
-  font-size: 25px;
-}
-
-.rodape__info .rodape__endereco .rodape__midias .rodape__itens{
-  list-style: none;
-  margin: 0 15px;
-}
-
-.rodape__info .rodape__endereco .rodape__midias .rodape__itens a{
-  color: #353434 ;
-}
-
-.rodape .rodape__atendimento{
-  padding: 0;
-  text-align: center;
-}
-
-
-.rodape .rodape__atendimento h3{
-  color: #353434;
-  text-align: center;
-}
-
-.rodape .rodape__atendimento a i{
-  color: green;
-  font-size: 25px;
-  margin-top: 10px;
-}
-
-.rodape .rodape__atendimento a{
-  color: #af0000;
-  text-decoration: none;
-  align-items: center;
-  margin-top: 5px;
-}
-
-.rodape .rodape__atendimento p{
-  color: #353434;
-  padding: 0;
-  margin: 10px;
-}
-
-.rodape .rodape__categorias{
-  color: #353434;
-  text-align: center;
-}
-
-.rodape .rodape__categorias .rodape__lista{
- padding: 0;
- margin: 10px;
-}
-
-.rodape .rodape__categorias ul{
-  list-style: none;
-}
-
-.rodape .rodape__categorias li a{
-  color: #353434;
-  text-decoration: none;
-}
-
-.rodape .rodape__institucional{
-  color: #353434;
-  text-align: center;
-}
-
-.rodape .rodape__institucional .rodape__lista{
-  padding: 0;
-  margin: 10px;
-}
-
-.rodape .rodape__institucional ul{
-  list-style: none;
-}
-
-.rodape .rodape__institucional li a{
-  color: #353434;
-  text-decoration: none;
-}
-
-.rodape .rodape__copyright{
-  color: #353434;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.rodape .rodape__copyright a{
-  color: #af0000;
-}
-
-.rodape .rodape__cartao li{
-  list-style:  none;
-}
-
-.rodape .rodape__cartao{
-  margin: 20px;
-}
 
 
 /*ALINE castro cliente*/
@@ -743,12 +618,12 @@ textarea{
 }
 
 .botao-rastreamento{
-  width: 100px;
+  width: auto;
   height: 50px;
   display: inline-block;
   color: white;
   text-decoration:none;
-  padding: 110px;
+  padding: 10px;
   background-color:  #e8505d;
   text-align: center;
   border: 3px solid  #e8505d;
@@ -776,8 +651,6 @@ textarea{
 .dados-finalizacao .fim{
   margin-top: 30px ;
 }
-
-
 
 /* DIRLAN carrinho*/
 
@@ -871,7 +744,7 @@ textarea{
   font-size: 20px;
 }
 
-button.add{
+.add{
   width: 28px;
   border: none;
   font-size: 18px;
@@ -880,7 +753,7 @@ button.add{
   border-radius: 5px;
 }
 
-button.add:hover{
+.add:hover{
   cursor: pointer;
   background-color: black;
 }
@@ -955,28 +828,26 @@ button.add:hover{
   gap: 10px;
 }
 
-.frete input{
-  border: solid 1px;
-  border-color: rgba(128, 128, 128, 0.331);
-  border-radius: 5px;
+.frete>input{
+  
   height: 40px;
   font-size: 18px;
   font-weight: 300;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.frete input[name="cep1"]{
+.frete>input[name="cep1"]{
   width:70px;
   text-align: center;
 }
 
-.frete input[name="cep2"]{
+.frete>input[name="cep2"]{
   width:50px;
   text-align: center;
 }
 
 ::placeholder{
-  color: rgba(128, 128, 128, 0.222);
+  color: rgba(128, 128, 128, 0.8);
 }
 
 button[type="submit"]{
@@ -984,9 +855,9 @@ button[type="submit"]{
   border: none;
   margin-left: 20px;
   background-color: #5e5e5e;
-  height: 40px;
+
   border-radius: 5px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
 button[type="submit"]:hover{
@@ -1030,7 +901,7 @@ button[type="submit"]:hover{
   margin: 60px 0;
 }
 
-button.keep-shopping{
+.keep-shopping{
   width:280px;
   height: 60px;
   border-radius:27px;
@@ -1039,12 +910,12 @@ button.keep-shopping{
   cursor: pointer;
 }
 
-button.keep-shopping:hover{
+.keep-shopping:hover{
   background-color:rgba(128, 128, 128, 0.529);
   color:white;
 }
 
-button.finalize-purchase{
+.finalize-purchase{
   width:280px;
   height: 60px;
   border-radius:27px;
@@ -1062,7 +933,7 @@ button.finalize-purchase:hover{
 
 /*DIRLAN PRODUTO*/
 
-.carrinho{
+.pagina-carrinho{
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -1080,14 +951,11 @@ button.finalize-purchase:hover{
   margin: 20px;
   border: 1px solid rgba(128, 128, 128, 0.323);
   border-radius: 27px;
-  padding: 40px 60px;
-}
 
-.product-img img{
-  margin-left: auto;
-  margin-right: auto;
+
+
   height: auto;
-  width: auto; 
+  width: 230px; 
 }
 
 .product-discription{
@@ -1182,9 +1050,10 @@ button.finalize-purchase:hover{
   align-items: center;
 }
 
-button.comprar {
+ .comprar {
   background-color: #00C008;
-  width: 180px;
+  width: auto;
+  max-width: 180px;
   height:40px;
   border-radius: 27px;
   border: none;
@@ -1192,24 +1061,31 @@ button.comprar {
   margin: 15px 30px 15px 20px;
 }
 
-button.comprar:hover{
+ .comprar:hover{
   background-color: #02da09;
   cursor: pointer;
+  width: auto;
 }
 
-button.carrinho {
+ .carrinho {
   background-color: #E8505D;
-  width: 180px;
+  width: auto;
   height:40px;
   border-radius: 27px;
   border: none;
   color: white;
   margin: 15px 30px 15px 20px;
+  transition-property: background-color color;
+  transition-duration: .5s;
 }
 
-button.carrinho:hover{
-  background-color: #ff5c69;
+
+
+.carrinho:hover{
+  background-color: white;
+  color: #e8505d;
   cursor: pointer;
+  width: auto;
 }
 
 .category{
@@ -1343,4 +1219,131 @@ button.carrinho:hover{
 
 .price-showcase p{
   font-size: 12px;
+}
+
+
+/* footer*/
+
+.rodape{
+  margin-top: 30px;
+  padding-top: 30px;
+  background-color: rgba(105, 105, 105, 0.25)
+}
+
+.rodape .rodape__info{
+  display: flex;
+  justify-content: space-between;
+}
+
+.rodape__info .rodape__endereco{
+  color: #353434;
+  text-align: center;
+}
+
+.rodape__info .rodape__endereco p{
+  margin-top: 20px;
+}
+
+.rodape__info .rodape__endereco .rodape__midias{
+  display: flex;
+  margin-top: 10px;
+  padding: 8px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.rodape__info .rodape__endereco .rodape__midias .rodape__itens{
+  list-style: none;
+  margin: 0 15px;
+}
+
+.rodape__info .rodape__endereco .rodape__midias .rodape__itens a{
+  color: #353434 ;
+}
+
+.rodape .rodape__atendimento{
+  padding: 0;
+  text-align: center;
+}
+
+
+.rodape .rodape__atendimento h3{
+  color: #353434;
+  text-align: center;
+}
+
+.rodape .rodape__atendimento a i{
+  color: green;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.rodape .rodape__atendimento a{
+  color: #af0000;
+  text-decoration: none;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.rodape .rodape__atendimento p{
+  color: #353434;
+  padding: 0;
+  margin: 10px;
+}
+
+.rodape .rodape__categorias{
+  color: #353434;
+  text-align: center;
+}
+
+.rodape .rodape__categorias .rodape__lista{
+ padding: 0;
+ margin: 10px;
+}
+
+.rodape .rodape__categorias ul{
+  list-style: none;
+}
+
+.rodape .rodape__categorias li a{
+  color: #353434;
+  text-decoration: none;
+}
+
+.rodape .rodape__institucional{
+  color: #353434;
+  text-align: center;
+}
+
+.rodape .rodape__institucional .rodape__lista{
+  padding: 0;
+  margin: 10px;
+}
+
+.rodape .rodape__institucional ul{
+  list-style: none;
+}
+
+.rodape .rodape__institucional li a{
+  color: #353434;
+  text-decoration: none;
+}
+
+.rodape .rodape__copyright{
+  color: #353434;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rodape .rodape__copyright a{
+  color: #af0000;
+}
+
+.rodape .rodape__cartao li{
+  list-style:  none;
+}
+
+.rodape .rodape__cartao{
+  margin: 20px;
 }
