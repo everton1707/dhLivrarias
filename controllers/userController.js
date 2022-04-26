@@ -7,7 +7,7 @@ const produtoController = {
         res.render('login');
     },
     cadastro:(req, res)=>{
-        res.render('CadastroCliente');
+        res.render('cadastroboot');
     },
     finalizacao:(req, res)=>{
         res.render('finalizacao');
