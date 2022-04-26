@@ -953,10 +953,7 @@ button.finalize-purchase:hover{
 .product-img img{
   margin: 20px;
   border: 1px solid rgba(128, 128, 128, 0.323);
-  border-radius: 27px;
-
-
-
+  border-radius: 20px;
   height: auto;
   width: 230px; 
 }
