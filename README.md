@@ -1,9 +1,3 @@
-<h1 align="center">
-  <img src="captura de tela/Logo_DH- PNG.png" alt="DH LIVRARIAS" >
-</h1>
-
-<p>
-
 # PROJETO INTEGRADOR - DIGITAL HOUSE
 
 Grupo_04
