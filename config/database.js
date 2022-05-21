@@ -1,5 +1,5 @@
 const config = {
-    userName:'',
+    userName:'root',
     password:'',
     database:'nodejs',
     dialect:'mysql'
