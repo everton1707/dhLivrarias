@@ -296,7 +296,7 @@ button:hover{
 .cadastro{
 	/*caso  a imagem não funcione colocamos uma cor */
 
-	background-image: url("../imagem/livros-sobre-investimentos.jpg");
+
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
