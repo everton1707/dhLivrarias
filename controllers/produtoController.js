@@ -1,3 +1,5 @@
+const db = require("../models")
+
 const produtoController = {
     index:(req, res)=>{
         res.render('home');

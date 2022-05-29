@@ -2,11 +2,16 @@ const { DataTypes } = require("sequelize/types");
 const { sequelize } = require(".");
 
 module.exports = (sequelize, DataTypes)=>{
-    const Usuario = sequelize.define('Usuario',{
+    const Categoria = sequelize.define('Categoria',{
+        
+        nome: DataTypes.string,
+        descricao: DataTypes.string,
+        
+
         /* -- campos da tabela do banco de dados -- */ 
     },{
-        tableName: 'usuarios',
+        tableName: 'categoria',
         timestamp: false
     })
-        return Usuario;
+        return Categoria;
 }

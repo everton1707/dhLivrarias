@@ -4,11 +4,13 @@ const { sequelize } = require(".");
 const ProdutoModel = (sequelize, DataTypes)=>{
     const Produto = sequelize.define('Produto',{
         nome: DataTypes.STRING,
-        descricao: DataTypes.STRING,
+        descricao: DataTypes.string,
+        avaliacao: DataTypes.float,
         preco: DataTypes.float,
+        categoria_idcategoria: DataTypes.integer
         /*campos do banco de dados*/
     },{
-        tableName: 'produtos',
+        tableName: 'produto',
         timestamp: false
     })
 

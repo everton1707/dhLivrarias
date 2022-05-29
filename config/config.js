@@ -1,11 +1,11 @@
 const config = {
     userName:'root',
     password:'',
-    database:'nodejs',
+    database:'dhlivrarias',
     dialect:'mysql'
 }
 
 
 
 
-module.exports = config
+module.exports = config;
