@@ -1384,3 +1384,12 @@ button.finalize-purchase:hover{
 .rodape .rodape__cartao{
   margin: 20px;
 }
+/* css checkbox*/
+.form-check-input:checked{
+  background-color: #e8505d;
+  border-color: #e8505d;
+  transition-property: border;
+ /* transition-duration: .5s;
+  border-color: #e8505d;*/
+}
+

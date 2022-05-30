@@ -1,5 +1,14 @@
-const db = require("../models")
+const db = require("../models");
+const { validationResult } = require("express-validator");
+const sequelize = db.sequelize;
 
+
+const acesso = {
+    email: 'dh@gmail.com',
+    senha: '12345',
+    nome: 'Everton'
+}
+let categoria = [];
 const produtoController = {
     index:(req, res)=>{
         res.render('home');
@@ -31,6 +40,32 @@ const produtoController = {
     },
     criarCategoria:(req, res)=>{
         res.render('criarCategoria');
+    },
+    salvarCategoria:function (req, res){
+        const errors = validationResult(req);
+        /*db.categoria.create({
+            nome: nome,
+            descricao: descricao
+        }).then(()=>{
+            res.redirect('/criarCategoria');
+        }).catch(()=>{
+            console.log(errors);
+        })*/
+
+        if (!errors.isEmpty()){
+            console.log(errors);
+            return res.render('criarCategoria', {errors});
+        }else{
+            const body = {
+                nome: req.body.nome,
+                descricao: req.body.descricao
+            }
+            categoria.push(body);
+            console.log(categoria);
+            res.render('login');
+        }
+
+    
     }
 
  }
