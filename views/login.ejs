@@ -1,8 +1,8 @@
 <%- include("./partials/header")%>
 
-  <div class="login ">
+  <div class="container">
     <div class="login_corpo">
-      <form method="post" action="index.php"><br>
+      <!--<form method="post" action="index.php"><br>
         <h1></h1><br>
 
         <h2 class="login_titulo">Login</h2><br><br>
@@ -21,10 +21,31 @@
         <div class="login_botao">
         <input type="submit" value="Logar"> &nbsp; &nbsp;
         <input type="button" value="Voltar"><br><br>
-      </div> <!-- login-botao-->
+      </div> <!-- login-botao
         <div class="login_cadastro">
           Não é Cadastrado? <a href="/user/cadastro">Crie uma Conta</a>
         </div>
+      </form>-->
+
+      <form class="formulario">
+        <div  class="input">
+          
+          <label for="exampleInputEmail1" class="form-label">E-mail </label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+        </div>
+
+        <div class="input">
+          <label for="exampleInputPassword1" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <div class="form-check input">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Lembre de mim</label>
+        </div>
+
+        <button type="submit" class="btn">Logar</button>
       </form>
     </div>
   </div>

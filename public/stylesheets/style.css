@@ -12,6 +12,10 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+.form-check .form-check-input{
+  padding: 5px;
+}
+
 a{
   color: none;
 }
@@ -365,18 +369,33 @@ button:hover{
 	width: 100%; 
 }
 
-.login .login_corpo{
+.container .login_corpo .formulario{
+  padding: 10px;
+}
+
+.container .login_corpo .formulario .input{
+  padding-top: 10px;
+  width: 80%;
+  margin: auto;
+  
+}
+
+.container .login_corpo .formulario .form-control{
+  margin: 0px;
+}
+
+.container .login_corpo{
 	overflow: hidden;
 	background-color:white;
 	width: 50%;
 	height: 90%;
 	margin:50px auto ;
-	text-align: center;
+	text-align: left;
 	border: 2px solid rgb(20, 20, 20);
 	border-radius: 10px;
 }
 
-.login .login_email, .login_senha{
+.container .login_email, .login_senha{
   margin: 0 10px;
   border: 0px solid;
   box-sizing: border-box;

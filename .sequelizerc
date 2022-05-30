@@ -5,3 +5,11 @@ module.exports ={
     'config': path.resolve('config',"database.js"),
     'models': path.resolve('models')
 }
+
+
+/* sequilize migration*/
+/*codigos  bash
+$ sequelize migration:produtos --name
+
+
+sequelize migrate:produtos*/
