@@ -350,9 +350,25 @@ button:hover{
 }
 
 .cadastro-logar {
+  display: flex;
   align-items: center;
-  
 }
+
+.cadastro-logar button{
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  border-radius: 8px;
+  padding: 10px 30px;
+  max-width: 280px;
+
+}
+
+.cadastro-logar button:hover{
+  background-color: #fff;
+  color: #E8505D;
+}
+
 
 
 /*ALINE login */
@@ -960,12 +976,12 @@ textarea{
   margin: 0 auto;
 }
 
-.finalization hr{
+/*.finalization hr{
   border-width: 0; 
   height: 1px;
   border-top-width: 0.3px;
   border-color: rgba(128, 128, 128, 0.175);
-}
+}*/
 
 .buttons-finalization {
   display: flex;
@@ -998,29 +1014,24 @@ textarea{
   cursor: pointer;
 }
 
-button.finalize-purchase:hover{
+/*.button .finalize-purchase:hover{
   background-color: #02da09;
-}
+}*/
 
 
 /*DIRLAN PRODUTO*/
 
-.pagina-carrinho{
+/*.pagina-carrinho{
   width: 80%;
   margin-left: auto;
   margin-right: auto;
 
-}
+}*/
 
 .products{
   display: flex;
   justify-content: center;  
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.meu-carrinho .products-carrinho .product-img >img{
-  max-width: 230px;
+  margin: auto;
 }
 
 .products .product-img img{
@@ -1078,7 +1089,7 @@ button.finalize-purchase:hover{
   font-size: 12px;
 }
 
-.resume{
+.resume-descri{
   color: #616161;
   font-size: 14px;
   margin: 0;
@@ -1141,7 +1152,7 @@ button.finalize-purchase:hover{
   width: auto;
 }
 
- .carrinho {
+ .carrinho-btn {
   background-color: #E8505D;
   width: auto;
   height:40px;
@@ -1153,7 +1164,7 @@ button.finalize-purchase:hover{
   transition-duration: .5s;
 }
 
-.carrinho:hover{
+.carrinho-btn :hover{
   background-color: white;
   color: #e8505d;
   cursor: pointer;
@@ -1422,3 +1433,12 @@ button.finalize-purchase:hover{
 .rodape .rodape__cartao{
   margin: 20px;
 }
+/* css checkbox*/
+.form-check-input:checked{
+  background-color: #e8505d;
+  border-color: #e8505d;
+  transition-property: border;
+ /* transition-duration: .5s;
+  border-color: #e8505d;*/
+}
+
