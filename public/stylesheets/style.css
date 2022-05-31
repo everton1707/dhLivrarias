@@ -400,7 +400,6 @@ caso  imagem não funcione colocamos uma cor
   margin: auto; 
 }
 
-
 .container .login_corpo .input .form-control{
   width: 100%;
   margin: 0 10px;
@@ -413,6 +412,7 @@ caso  imagem não funcione colocamos uma cor
 
 .container .login_corpo .formulario .form-control{
   margin: 0px;
+
 }
 
 .container .login_corpo{
@@ -423,6 +423,7 @@ caso  imagem não funcione colocamos uma cor
 	margin:50px auto ;
 	text-align: left;
 	border-radius: 10px;
+
 }
 
 .container .login_email, .login_senha{
@@ -431,11 +432,13 @@ caso  imagem não funcione colocamos uma cor
   box-sizing: border-box;
   border-radius: 8px;
   padding: 15px 30px;
+
 }
 
 .login_botao  input[type=submit], input[type=button]{
   margin-bottom: 10px;
   display: inline-block;
+
 }
 
 
@@ -457,6 +460,7 @@ caso  imagem não funcione colocamos uma cor
 
 .checkout-box{
   padding: 0 10px;
+
 }
 
 .checkout-corpo{   
@@ -521,11 +525,15 @@ caso  imagem não funcione colocamos uma cor
   margin: 8px 0;
   font-size: 18px;
 }
+
 .checkout-botao > input[type=text], input[type=tel]{
   width: 100%;
+
 }
+
 .checkout-botao > input[type=email]{
   width: 100%;
+
 }
  
 .dados-desconto img{
@@ -617,19 +625,24 @@ textarea{
  display: flex;
  display: inline;
  margin: 10px;
+
 }
 
 .final{
   text-align: right;
+
 }
 
 .dados-box .dados-inicio .dados-fim{
   text-align: right;
+
 }
+
 .dados-fim{
   text-align: center;
   
 }
+
 .dados-fim > button:hover{
   background-color: #fff;
   color: #E8505D;
@@ -707,15 +720,18 @@ textarea{
  border-bottom: 1px solid black;
 
 }
+
 .dados-finalizacao .dados-resumo p{
   margin: 10px 0;
 }
+
 .dados-finalizacao .fim{
   margin-top: 30px ;
 }
 
-/* DIRLAN carrinho*/
 
+
+/* DIRLAN carrinho*/
 
 .meu-carrinho{
   color: #959595;
@@ -723,7 +739,7 @@ textarea{
 }
 
 .products-carrinho .product-img img {
-  width: 200px;
+  width: 100px;
 }
 
 .pagina-carrinho {
@@ -745,7 +761,6 @@ textarea{
 .products-carrinho {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   padding: 10px;
 }
 
@@ -763,7 +778,7 @@ textarea{
   justify-content: center;
   margin-left: -40px;
   flex-wrap: wrap;
-  max-width: 200px;
+
 }
 
 .title-author h3 {
@@ -799,13 +814,14 @@ textarea{
   flex-direction: column;
   gap: 20px;
   align-items: center;
+
 }
 
 .quant-selct-unit {
   font-size: 20px;
 }
 
-.add{
+.quant-selct-unit .adicionar{
   width: 28px;
   border: none;
   font-size: 18px;
@@ -814,7 +830,7 @@ textarea{
   border-radius: 5px;
 }
 
-.add:hover{
+.adicionar :hover{
   cursor: pointer;
   background-color: black;
 }
@@ -822,9 +838,8 @@ textarea{
 .value-unit {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
+  align-items: center;
 }
 
 .subtitle {
@@ -841,9 +856,8 @@ textarea{
 .value-total-unit {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
+  align-items: center;
 }
 
 .value-total-unit-produtc{
@@ -862,6 +876,18 @@ textarea{
 }
 
 .resume h4 {
+  color: #959595;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.resume h1 {
+  color: #959595;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.resume .show-value-total h1 {
   color: #959595;
   font-size: 22px;
   font-weight: 300;
@@ -912,7 +938,7 @@ textarea{
   color: rgba(128, 128, 128, 0.8);
 }
 
-.add button[type="submit"]{
+.adicionar button[type="submit"]{
   color: white;
   border: none;
   margin-left: 20px;
@@ -922,7 +948,7 @@ textarea{
 
 }
 
-.add button[type="submit"]:hover{
+.adicionar button[type="submit"]:hover{
   background-color: black;
   cursor: pointer;
 }
@@ -950,14 +976,14 @@ textarea{
   margin: 0 auto;
 }
 
-.finalization hr{
+/*.finalization hr{
   border-width: 0; 
   height: 1px;
   border-top-width: 0.3px;
   border-color: rgba(128, 128, 128, 0.175);
-}
+}*/
 
-.buttons-finlization {
+.buttons-finalization {
   display: flex;
   justify-content: space-between;
   margin: 60px 0;
@@ -988,29 +1014,24 @@ textarea{
   cursor: pointer;
 }
 
-button.finalize-purchase:hover{
+/*.button .finalize-purchase:hover{
   background-color: #02da09;
-}
+}*/
 
 
 /*DIRLAN PRODUTO*/
 
-.pagina-carrinho{
+/*.pagina-carrinho{
   width: 80%;
   margin-left: auto;
   margin-right: auto;
 
-}
+}*/
 
 .products{
   display: flex;
   justify-content: center;  
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.meu-carrinho .products-carrinho .product-img >img{
-  max-width: 230px;
+  margin: auto;
 }
 
 .products .product-img img{
@@ -1068,7 +1089,7 @@ button.finalize-purchase:hover{
   font-size: 12px;
 }
 
-.resume{
+.resume-descri{
   color: #616161;
   font-size: 14px;
   margin: 0;
@@ -1131,7 +1152,7 @@ button.finalize-purchase:hover{
   width: auto;
 }
 
- .carrinho {
+ .carrinho-btn {
   background-color: #E8505D;
   width: auto;
   height:40px;
@@ -1143,9 +1164,7 @@ button.finalize-purchase:hover{
   transition-duration: .5s;
 }
 
-
-
-.carrinho:hover{
+.carrinho-btn :hover{
   background-color: white;
   color: #e8505d;
   cursor: pointer;
