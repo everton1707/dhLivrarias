@@ -62,10 +62,22 @@ const produtoController = {
             }
             categoria.push(body);
             console.log(categoria);
-            res.render('login');
+            res.render('faleConosco');
         }
 
     
+    },
+    logar: (req, res,next)=>{
+        const body = {
+            email: req.body.email,
+            senha: req.body.senha
+        }
+
+        if(acesso.email == body.email && acesso.senha == body.senha){
+            next();
+        }else{
+            res.render('login')
+        }
     }
 
  }
