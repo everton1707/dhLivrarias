@@ -1,20 +1,18 @@
-const { DataTypes } = require("sequelize/types");
+/*const { DataTypes } = require("sequelize/types");
 const { sequelize } = require(".");
 
-const ProdutoModel = (sequelize, DataTypes)=>{
+const ProdutoModel = (sequelize, DataType)=>{
     const Produto = sequelize.define('Produto',{
-        nome: DataTypes.STRING,
-        descricao: DataTypes.string,
-        avaliacao: DataTypes.float,
-        preco: DataTypes.float,
-        categoria_idcategoria: DataTypes.integer
-        /*campos do banco de dados*/
+        nome: DataType.STRING,
+        descricao: DataType.STRING,
+        avaliacao: DataType.FLOAT,
+        preco: DataType.FLOAT,
+        categoria_idcategoria: DataType.INT
+        /*campos do banco de dados
     },{
         tableName: 'produto',
         timestamp: false
     })
-
-    return Produto;
 }
 
-module.exports = ProdutoModel;
+module.exports = ProdutoModel;*/

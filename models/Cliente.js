@@ -1,18 +1,18 @@
-const { DataTypes } = require("sequelize/types");
+/*const { DataTypes } = require("sequelize/types");
 const { sequelize } = require(".");
 
-module.exports = (sequelize, DataTypes)=>{
+module.exports = (sequelize, DataType)=>{
     const Cliente = sequelize.define('Cliente',{
-        idcliente: DataTypes.int,
-        email: DataTypes.string,
-        nome: DataTypes.string,
-        sobrenome: DataTypes.string,
-        senha: DataTypes.string,
 
-        /* -- campos da tabela do banco de dados -- */ 
+        email: DataType.string,
+        nome: DataType.string,
+        sobrenome: DataType.string,
+        senha: DataType.string,
+
+     
     },{
-        tableName: 'usuario',
+        tableName: 'cliente',
         timestamp: false
     })
         return Cliente;
-}
+}*/

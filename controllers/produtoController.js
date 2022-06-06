@@ -74,9 +74,9 @@ const produtoController = {
         }
 
         if(acesso.email == body.email && acesso.senha == body.senha){
-            next();
+            res.render('painelUsuario');
         }else{
-            res.render('login')
+            res.render('login');
         }
     }
 
