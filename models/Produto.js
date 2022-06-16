@@ -11,7 +11,7 @@ const ProdutoModel = (sequelize, DataType)=>{
         /*campos do banco de dados
     },{
         tableName: 'produto',
-        timestamp: false
+        timestamps: false
     })
 }
 
