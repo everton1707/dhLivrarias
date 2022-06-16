@@ -10,7 +10,7 @@ module.exports = {
     "test": {
       "username": "root",
       "password": null,
-      "database": "database_test",
+      "database": "dhlivraria",
       "host": "127.0.0.1",
       "dialect": "mysql"
     },
@@ -18,7 +18,7 @@ module.exports = {
     "production": {
       "username": "root",
       "password": null,
-      "database": "database_production",
+      "database": "dhlivraria",
       "host": "127.0.0.1",
       "dialect": "mysql"
     }

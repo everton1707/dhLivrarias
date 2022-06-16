@@ -1,4 +1,4 @@
-/*const { DataTypes } = require("sequelize/types");
+const { DataTypes } = require("sequelize/types");
 const { sequelize } = require(".");
 
 module.exports = (sequelize, DataType)=>{
@@ -15,4 +15,4 @@ module.exports = (sequelize, DataType)=>{
         timestamp: false
     })
         return Cliente;
-}*/
+}

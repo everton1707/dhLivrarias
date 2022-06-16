@@ -1,11 +1,11 @@
-/*const { DataTypes } = require("sequelize/types");
+const { DataTypes } = require("sequelize/types");
 const { sequelize } = require(".");
 
-module.exports = (sequelize, DataType)=>{
+module.exports = (sequelize, DataTypes)=>{
     const Categoria = sequelize.define('Categoria',{
         
-        nome: DataType.string,
-        descricao: DataType.string,
+        nome: DataTypes.string,
+        descricao: DataTypes.string,
         
 
         
@@ -14,4 +14,4 @@ module.exports = (sequelize, DataType)=>{
         timestamps: false
     })
         return Categoria;
-}*/
+}

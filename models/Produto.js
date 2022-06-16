@@ -1,5 +1,5 @@
-/*const { DataTypes } = require("sequelize/types");
-const { sequelize } = require(".");
+//const { DataTypes } = require("sequelize/types");
+//const { sequelize } = require(".");
 
 const ProdutoModel = (sequelize, DataType)=>{
     const Produto = sequelize.define('Produto',{
@@ -8,11 +8,11 @@ const ProdutoModel = (sequelize, DataType)=>{
         avaliacao: DataType.FLOAT,
         preco: DataType.FLOAT,
         categoria_idcategoria: DataType.INT
-        /*campos do banco de dados
+        /*campos do banco de dados*/
     },{
         tableName: 'produto',
         timestamps: false
     })
 }
 
-module.exports = ProdutoModel;*/
+module.exports = ProdutoModel;
