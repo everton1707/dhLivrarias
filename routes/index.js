@@ -11,7 +11,11 @@ const validacao = [
 router.get('/', produtoController.index);
 
 router.get('/faleConosco', produtoController.faleConosco);
+
+
 router.get('/usuario',autenticacao, produtoController.usuario);
+
+
 router.get('/logar',produtoController.logar);
 
 router.get('/login'/*,autenticacao*/,produtoController.login);

@@ -74,10 +74,15 @@ const produtoController = {
         }
 
         if(acesso.email == body.email && acesso.senha == body.senha){
-            res.render('painelUsuario');
+            req.session.email = body.email;
+            req.session.nome = acesso.nome;
+
+
+            res.render('painelUsuario', { req.session.email,req.session.nome});
         }else{
             res.render('login');
         }
+         
     }
 
  }
