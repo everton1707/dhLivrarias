@@ -3,10 +3,10 @@
 module.exports = (sequelize, DataType)=>{
     const Cliente = sequelize.define('Cliente',{
 
-        email: DataType.string,
-        nome: DataType.string,
-        sobrenome: DataType.string,
-        senha: DataType.string,
+        email: DataType.STRING,
+        nome: DataType.STRING,
+        sobrenome: DataType.STRING,
+        senha: DataType.STRING,
 
      
     },{

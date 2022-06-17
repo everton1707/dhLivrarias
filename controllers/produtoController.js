@@ -78,7 +78,7 @@ const produtoController = {
             req.session.nome = acesso.nome;
 
 
-            res.render('painelUsuario', { req.session.email,req.session.nome});
+            res.render('painelUsuario');
         }else{
             res.render('login');
         }

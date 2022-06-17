@@ -7,12 +7,13 @@ const ProdutoModel = (sequelize, DataType)=>{
         descricao: DataType.STRING,
         avaliacao: DataType.FLOAT,
         preco: DataType.FLOAT,
-        categoria_idcategoria: DataType.INT
+        categoria_idcategoria: DataType.INTEGER
         /*campos do banco de dados*/
     },{
         tableName: 'produto',
         timestamps: false
     })
+    return Produto;
 }
 
 module.exports = ProdutoModel;

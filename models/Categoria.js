@@ -3,8 +3,8 @@
 module.exports = (sequelize, DataTypes)=>{
     const Categoria = sequelize.define('Categoria',{
         
-        nome: DataTypes.string,
-        descricao: DataTypes.string,
+        nome: DataTypes.STRING,
+        descricao: DataTypes.STRING,
         
 
         
