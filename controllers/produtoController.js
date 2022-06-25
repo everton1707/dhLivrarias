@@ -26,6 +26,9 @@ const produtoController = {
     cadastro:(req, res)=>{
         res.render('cadastroCliente');
     },
+    cadastroEndereco:(req, res)=>{
+        res.render('cadastroEndereco');
+    },
     finalizacao:(req, res)=>{
         res.render('finalizacao');
     }, 

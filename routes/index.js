@@ -20,6 +20,7 @@ router.get('/logar',produtoController.logar);
 
 router.get('/login'/*,autenticacao*/,produtoController.login);
 router.get('/cadastro',produtoController.cadastro);
+router.get('/cadastroEndereco',produtoController.cadastroEndereco);
 router.get('/finalizacao', produtoController.finalizacao);
 router.get('/checkout', produtoController.checkout);
 router.get('/carrinho', produtoController.carrinho);
