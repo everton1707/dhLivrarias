@@ -9,10 +9,13 @@ const adminController = {
             email: req.body.email,
             senha: req.body.senha
         }
+        
+        //
+
         db.Cliente.findOne().then(()=>{
 
-        })
-        if (acesso.email == body.email && acesso.senha == body.senha) {
+        
+        if (acesso.email == body.email && acessoBusa == body.senha) {
             req.session.email = body.email;
             req.session.nome = acesso.nome;
 
@@ -21,11 +24,15 @@ const adminController = {
         } else {
             res.render('login');
         }
+    }).catch()
 
     },
     usuario: (req, res) => {
         res.render('painelUsuario');
     },
+    listarCategorias:(req, res) => {
+        res.render('listarCategorias');
+    }
 }
 
 module.exports = adminController;

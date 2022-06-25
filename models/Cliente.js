@@ -1,6 +1,4 @@
-
-
-module.exports = (sequelize, DataType) => {
+const ClienteModel = (sequelize, DataType) => {
     const Cliente = sequelize.define('Cliente', {
 
         email: DataType.STRING,
@@ -14,3 +12,4 @@ module.exports = (sequelize, DataType) => {
     })
     return Cliente;
 }
+module.exports = ClienteModel;
