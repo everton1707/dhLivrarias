@@ -1,34 +1,47 @@
 <%- include("./partials/header")%>
 
   <div class="container">
-    <div class="login_corpo">
 
+    <div class="login_corpo">
+      <h1> Login</h1>
+
+      <div class="new-user">
+        <span > Não tem uma conta?</span>
+        <a class="signup-link">Registre-se</a>
+      </div>
 
       <form class="formulario" method="get" action="/logar">
-        <div  class="input">
-          
-          <h3 class="login_titulo"> Login</h3>
+        <div class="login">
           <label for="exampleInputEmail1" class="form-label"></label>
           <input type="email" class="form-control" placeholder="E-mail">
-          
+
         </div>
 
-        <div class="input">
+        <div class="login">
           <label for="exampleInputPassword1" class="form-label"></label>
           <input type="password" class="form-control" placeholder="Senha">
         </div>
 
-        <div class="form-check input">
+        <div class="esqueceu_senha">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Lembre de mim</label>
+          <a class="forgot-password-link" href="">Esqueceu a senha ou o email?</a>
         </div>
-        <div class="cadastro-logar">
-        <button type="submit" class="btn">Entrar</button>
-         
+
+        <div class="btn-cadastro">
+          <button type="submit" class="btn btn-primary">Entrar</button>
         </div>
-      </form>
+
     </div>
+
+    <div class="termos">
+      * Ao se registrar, você concorda com os nossos <a href="" target="_blank">Termos de
+        Uso</a>, em receber emails e atualizações da DH Livrarias e confirma que leu nossa <a href=""
+        target="_blank">Política de Privacidade</a>.</div>
+
+    </form>
+  </div>
   </div>
 
-  
+
   <%- include("./partials/footer")%>
