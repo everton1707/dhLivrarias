@@ -9,12 +9,11 @@ const adminController = {
             email: req.body.email,
             senha: req.body.senha
         }
-        
-        //
 
-        db.Cliente.findOne().then(()=>{
 
-        
+        db.Cliente.findOne().then(()=>{ // fazer busca do usuario digitado no banco
+
+        //verificacao de login //precisa criptografar senha
         if (acesso.email == body.email && acessoBusa == body.senha) {
             req.session.email = body.email;
             req.session.nome = acesso.nome;
