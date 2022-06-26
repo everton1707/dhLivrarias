@@ -1,71 +1,54 @@
 <%- include("./partials/header") %>
 
-      <section class="container">
-        
+    <div class="container">
 
-        <h3 class="cadastro-titulo"> Cadastre-se</h3>
-      
-        <form class="cadastro-corpo">
-          <div class="row">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+        <h2>Crie sua conta</h2>
+
+        <form action="/cadastroEndereco" method="GET">
+
+            <div class="cadastro">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" name="nome" id="nome" />
+                <div class="invalid-feedback"></div>
             </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+
+            <div class="cadastro">
+                <label for="sobrenome" class="form-label">Sobrenome</label>
+                <input type="text" class="form-control" name="sobrenome" id="sobrenome" />
+                <div class="invalid-feedback"></div>
             </div>
-          </div>
-          
-          <form class="row g-3">
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4">
+
+            <div class="cadastro">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="text" class="form-control" name="email" id="email" />
+                <div class="invalid-feedback"></div>
             </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword4">
+
+            <div class="cadastro">
+                <label for="email" class="form-label">Confirme seu e-mail</label>
+                <input type="text" class="form-control" name="confirmeEmail" id="confirmeEmail" />
+                <div class="invalid-feedback"></div>
             </div>
-            <div class="col-12">
-              <label for="inputAddress" class="form-label">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+
+            <div class="cadastro">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" name="senha" id="senha" />
+                <div class="invalid-feedback"></div>
             </div>
-            <div class="col-12">
-              <label for="inputAddress2" class="form-label">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+
+            <div class="cadastro">
+                <label for="confirmeSenha" class="form-label">Confirme sua senha</label>
+                <input type="password" class="form-control" name="confirmeSenha" id="confirmeSenha" />
+                <div class="invalid-feedback"></div>
             </div>
-            <div class="col-md-6">
-              <label for="inputCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="inputCity">
+
+            <div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
             </div>
-            <div class="col-md-4">
-              <label for="inputState" class="form-label">State</label>
-              <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <label for="inputZip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
-            </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
-            </div>
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
-          </form>
-          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-            <button type="button" class="btn btn-danger">Left</button>
-            <button type="button" class="btn btn-warning">Middle</button>
-            <button type="button" class="btn btn-success">Right</button>
-          </div>
+
         </form>
 
-    
-    </section>
-      <%- include("./partials/footer") %>
+    </div>
+
+
+    <%- include("./partials/footer") %>

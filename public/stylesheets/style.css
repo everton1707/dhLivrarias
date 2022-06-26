@@ -71,14 +71,17 @@ a{
 .price { 
   font-size: 25px;
 }
+
 .historico-card{
   display: flex;
   justify-content: space-between;
 }
+
 .card .list-group {
   list-style: none;
   bottom: 0;
 }
+
 .card .list-group li{
   margin-top: 5px;
 }
@@ -294,167 +297,20 @@ button:hover{
   color: #E8505D;
 }
 
+/* cadastroCliente*/
 
-/*Cadastro Novo*/
-
-.container-cadastro{
+.col-6{
   padding: 70px 0;
   border: 2px solid rgb(20, 20, 20);
 	border-radius: 10px;
   max-width: 650px;
 }
 
-.container-cadastro{
-   margin: 20px auto;
-
-}
-
-.cadastro-checkbox{
-  padding: 0 10px;
-  margin: 10px
-
-}
-
-.container-cadastro .cadastro-titulo{
-  text-align: center;
-  font-size: 48px;
-
-}
- 
-.container-cadastro .cadastro-corpo{
-  width: 90%;
-  margin-bottom: 15px;
+.col-6{
   max-width: 580px;
   margin: 0 auto;
-  align-items: center;
 }
 
-.container-cadastro .cadastro-corpo .cadastro-dados .form-control{
-  width: 100%;
-  margin: 0 10px;
-  background: #C4C4C4;
-  border: 0px solid #000000;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding: 15px 30px;
-}
-
-.container-cadastro .cadastro-corpo .cadastro-dados .form-control .option{
-  width: 100%;
-  margin: 0 10px;
-  background: #C4C4C4;
-  border: 0px solid #000000;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding: 15px 30px;
-}
-
-.cadastro-logar {
-  display: flex;
-  align-items: center;
-}
-
-.cadastro-logar button{
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  border-radius: 8px;
-  padding: 10px 30px;
-  max-width: 280px;
-
-}
-
-.cadastro-logar button:hover{
-  background-color: #fff;
-  color: #E8505D;
-}
-
-
-
-/*ALINE login */
-caso  imagem não funcione colocamos uma cor 
-
-.login{
-	background-image: url("../imagem/livros-sobre-investimentos.jpg");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-	width: 100%; 
-}
-
-.container .login_titulo{
-  text-align: center;
-  font-size: 48px;
-}
-
-.container .login_corpo .formulario{
-  padding: 70px 0;
-  border: 2px solid rgb(20, 20, 20);
-	border-radius: 10px;
-  max-width: 650px;
-}
-
-.container .login_corpo .formulario .input {
-  padding-top: 10px;
-  width: 80%;
-  margin: auto; 
-}
-
-.container .login_corpo .input .form-control{
-  width: 100%;
-  margin: 0 10px;
-  background: #C4C4C4;
-  border: 0px solid #000000;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding: 15px 30px;
-}
-
-.container .login_corpo .formulario .form-control{
-  margin: 0px;
-
-}
-
-.container .login_corpo{
-	overflow: hidden;
-	background-color:white;
-	width: 50%;
-	height: 90%;
-	margin:50px auto ;
-	text-align: left;
-	border-radius: 10px;
-
-}
-
-.container .login_email, .login_senha{
-  margin: 0 10px;
-  border: 0px solid;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding: 15px 30px;
-
-}
-
-.login_botao  input[type=submit], input[type=button]{
-  margin-bottom: 10px;
-  display: inline-block;
-
-}
-
-
-@media (max-width: 680px) {
-	.form { 
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	width: 80%;
-	height: auto;
-	margin-top: 0  ;
-	}
-	input, label{ 
-	margin: 5px;
-	}   
-}
 
 /* Matheus checkout*/
 

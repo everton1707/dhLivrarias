@@ -20,7 +20,14 @@ const produtoController = {
     cadastro: (req, res) => {
         res.render('cadastroCliente');
     },
+<<<<<<< HEAD
     finalizacao: (req, res) => {
+=======
+    cadastroEndereco:(req, res)=>{
+        res.render('cadastroEndereco');
+    },
+    finalizacao:(req, res)=>{
+>>>>>>> e58d02b2a2622e127c5b114a08cc3d1d5c0a0522
         res.render('finalizacao');
     },
     checkout: (req, res) => {
