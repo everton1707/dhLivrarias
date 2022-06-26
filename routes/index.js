@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const produtoController = require('../controllers/produtoController');
+const adminController = require('../controllers/adminController');
 const autenticacao = require('../middlewares/autenticacao');
 const { body } = require('express-validator');
 const validacao = [
@@ -13,10 +14,10 @@ router.get('/', produtoController.index);
 router.get('/faleConosco', produtoController.faleConosco);
 
 
-router.get('/usuario',autenticacao, produtoController.usuario);
+router.get('/usuario',autenticacao, adminController.usuario);
 
 
-router.get('/logar',produtoController.logar);
+router.get('/logar',adminController.logar);
 
 router.get('/login'/*,autenticacao*/,produtoController.login);
 router.get('/cadastro',produtoController.cadastro);
