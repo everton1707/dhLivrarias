@@ -6,12 +6,17 @@ const ProdutoModel = (sequelize, DataTypes) => {
         descricao: DataTypes.STRING,
         avaliacao: DataTypes.FLOAT,
         preco: DataTypes.FLOAT,
-        categoria_id: DataTypes.INTEGER
+
         /*campos do banco de dados*/
     }, {
         tableName: 'produto',
         timestamps: false
-    })
+    });
+
+
+    Produto.associate = (models)=>{
+        Produto.belongsTo(models.Categoria, {foreignKey: "cateoria_id"})
+    }
     return Produto;
 
 }

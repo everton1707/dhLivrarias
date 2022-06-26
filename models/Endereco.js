@@ -6,13 +6,15 @@ const EnderecoModel = (sequelize, DataTypes) => {
         municipio: DataTypes.STRING,
         logradouro: DataTypes.STRING,
         numero: DataTypes.STRING,
-        preco: DataTypes.FLOAT,
-        cliente_id: DataTypes.INTEGER
-        
+        preco: DataTypes.FLOAT,      
     }, {
         tableName: 'endereco',
         timestamps: false
     })
+
+    Endereco.associate = (models)=>{
+        Endereco.belongsTo(models.Cliente, {foreignKey: "cliente_id"})
+    }
     return Endereco;
 
 }

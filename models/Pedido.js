@@ -1,15 +1,28 @@
 const PedidoModel = (sequelize, DataTypes) => {
     const Pedido = sequelize.define('Pedido', {
-        //data: DataTypes.DATEONLY,
-        //dataEntrega: DataType.DATEONLY,
+        //data: DataTypes.DATE,
+        //dataEntrega: DataType.DATE,
         valor: DataTypes.FLOAT,
         avaliacao: DataTypes.FLOAT,
-        cliente_id: DataTypes.INTEGER
+
         /*campos do banco de dados*/
     }, {
         tableName: 'pedido',
-        timestamps: false
+        timestamps: true
     })
+
+    Pedido.associate = (models)=>{
+        Pedido.belongsTo(models.Cliente, {foreignKey: "cliente_id"})
+
+        Pedido.belongsToMany(models.Produto, {
+            through: "pedidos_has_produto",
+            foreignKey: "pedido_id",
+            otherKey: "produto_id"
+        })
+    }
+
+
+
     return Pedido;
 
 }

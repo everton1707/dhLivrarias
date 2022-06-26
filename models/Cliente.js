@@ -10,6 +10,9 @@ const ClienteModel = (sequelize, DataType) => {
         tableName: 'cliente',
         timestamp: false
     })
+   
+
+
     return Cliente;
 }
 module.exports = ClienteModel;
