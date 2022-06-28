@@ -3,7 +3,7 @@ const { validationResult } = require("express-validator");
 const sequelize = db.sequelize;
 
 
-const adminController = {
+const AdminController = {
     logar: (req, res, next) => {
         const body = {
             email: req.body.email,
@@ -53,4 +53,4 @@ const adminController = {
 
 }
 
-module.exports = adminController;
+module.exports = AdminController;
