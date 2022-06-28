@@ -1,3 +1,5 @@
 - sequelize migration:create --name NOME_MIGRATION /*cria migrate
 
 -sequelize db:migrate /* roda o "up" do migrate
+
+-sequelize db:migrate:undo /* roda o "down" do migrate

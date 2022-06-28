@@ -4,7 +4,7 @@ const ClienteModel = (sequelize, DataType) => {
         email: DataType.STRING,
         nome: DataType.STRING,
         sobrenome: DataType.STRING,
-        senha: DataType.STRING,
+        senha: DataType.STRING(60),//exemplo
 
     }, {
         tableName: 'cliente',
