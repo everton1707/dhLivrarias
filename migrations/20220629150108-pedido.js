@@ -8,13 +8,17 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-     await queryInterface.createTable("endereco", {
-      pedido_id: {type: Sequelize.INTEGER.UNSIGNED, references: { model: 'pedido', key: 'id'}},
-      produto_id: {type: Sequelize.INTEGER.UNSIGNED, references: { model: 'produto', key: 'id'}},
-      quantidade: Sequelize.INTEGER,
+
+     await queryInterface.createTable("pedido", {
+      id: { type: Sequelize.INTEGER.UNSIGNED, primaryKey: true, autoIncrement: true },
+      data: Sequelize.DATEONLY,
+      dataEntrega: Sequelize.DATEONLY,
       valor: Sequelize.FLOAT,
+      avaliacao: Sequelize.FLOAT,
+      cliente_id: {type: Sequelize.INTEGER.UNSIGNED, references: { model: 'cliente', key: 'id'}}//referenciando chave estrangeira
      
     });
+    
   },
 
   async down (queryInterface, Sequelize) {
@@ -24,5 +28,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
+     await queryInterface.dropTable('pedido');
   }
 };

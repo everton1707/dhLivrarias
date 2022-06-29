@@ -17,9 +17,6 @@ const produtoController = {
         //let prato = listaPratos.find(prato => prato.id == req.params.id);
         res.render('login');
     },
-    cadastro: (req, res) => {
-        res.render('cadastroCliente');
-    },
     finalizacao: (req, res) => {
         res.render('finalizacao');
     },

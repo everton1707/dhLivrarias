@@ -19,8 +19,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(session({
-  secret: "14536acasd",
-  store: sequelizeSessionStore
+  secret: "14536acasd",//  store: sequelizeSessionStore
 }))
 
 app.use(logger('dev'));

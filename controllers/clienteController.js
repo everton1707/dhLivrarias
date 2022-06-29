@@ -1,20 +1,22 @@
 const db = require("../models");
 const { validationResult } = require("express-validator");
 const sequelize = db.sequelize;
+const bcrypt = require("bcryptjs");
 
-
-const AdminController = {
-    logar: (req, res, next) => {
+const clienteController = {
+    logar: async (req, res, next) => {
         const body = {
             email: req.body.email,
             senha: req.body.senha
         }
+        // fazer busca do usuario digitado no banco
+        const usuarioEncontrado = await db.Usuario.findOne({ where: { email: email }});
 
-
-        db.Cliente.findOne().then(() => { // fazer busca do usuario digitado no banco
-
+        if(usuarioEncontrado == null){
+            return res.render("/login", { email });
+        }
             //verificacao de login //precisa criptografar senha
-            if (acesso.email == body.email && acessoBusa == body.senha) {
+            if (acesso.email == body.email && acesso == body.senha) {
                 req.session.email = body.email;
                 req.session.nome = acesso.nome;
 
@@ -23,7 +25,7 @@ const AdminController = {
             } else {
                 res.render('login');
             }
-        }).catch()
+
 
     },
     usuario: (req, res) => {
@@ -31,10 +33,9 @@ const AdminController = {
     },
     listarCategorias: (req, res) => {
         res.render('listarCategorias');
+    },  
     /*
-        login: function(req, res){
-        res.render("login");
-    },
+
     acaoLogin: async function(req, res){
         const { email, senha } = req.body;
         const usuarioEncontrado = await db.Usuario.findOne({ where: { email: email }});
@@ -43,14 +44,30 @@ const AdminController = {
             return res.render("/login", { email });
         }
     },
+    */
     logout: function(req, res){
         req.session.destroy();
         res.redirect("/");
-    }
-    */
+    },
+    cadastro: (req, res) => {
+        res.render('cadastroCliente');
+    },
+    acaoCadastro:(req, res) =>{
+        console.log(req.body)
+        const { nome, sobrenome, email, senha }= req.body;
+        db.Cliente.create({ //--- igual a um create no mysql
+            email,
+            nome,
+            sobrenome,
+            senha: bcrypt.hashSync(senha),
+            foto_perfil: req.file.filename
+        })
+
+
+
     }
 
 
 }
 
-module.exports = AdminController;
+module.exports = clienteController;

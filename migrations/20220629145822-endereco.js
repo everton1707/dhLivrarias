@@ -16,6 +16,8 @@ module.exports = {
       municipio: Sequelize.STRING(45),
       logradouro: Sequelize.STRING(60),
       numero: Sequelize.STRING(5),
+      createdAt: Sequelize.DATE, 
+      updatedAt: Sequelize.DATE, 
       cliente_id: {type: Sequelize.INTEGER.UNSIGNED, references: { model: 'cliente', key: 'id'}}//referenciando chave estrangeira
     });
 

@@ -14,9 +14,10 @@ module.exports = {
       descricao: Sequelize.TEXT,
       avaliacao: Sequelize.FLOAT,
       preco: Sequelize.FLOAT,
-      categoria_id: {type: Sequelize.INTEGER.UNSIGNED, references: { model: 'categoria', key: 'id'}}
+      categoria_id: {type: Sequelize.INTEGER.UNSIGNED, references: { model: 'categoria', key: 'id'}},
+      createdAt: Sequelize.DATE, 
+      updatedAt: Sequelize.DATE, 
       //fotoDoProtuto: Sequelize.STRING(100),//implementar front END e banco
-    
     });
 
   },
