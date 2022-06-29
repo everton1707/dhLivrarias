@@ -1,0 +1,14 @@
+
+    <% if(typeof errors != 'undefined') { %> 
+            <div class="alert alert-danger">
+                <ul>
+                    <% for(var i = 0; i < errors.length; i++) { %> 
+                        <li><%= errors[i].msg %> </li>
+                    <% } %> 
+                </ul>
+            </div>
+    <% } %> 
+
+
+
+    value="<%= (typeof nome != 'undefined'?nome:'')nome %>"

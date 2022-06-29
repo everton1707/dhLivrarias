@@ -13,7 +13,7 @@ module.exports = {
       email: Sequelize.STRING(75),
       nome: Sequelize.STRING(30),
       sobrenome: Sequelize.STRING(20),
-      senha: Sequelize.STRING(50),
+      senha: Sequelize.STRING(60),
       foto_perfil: Sequelize.STRING(100),//implementar front END
       createdAt: Sequelize.DATE, 
       updatedAt: Sequelize.DATE, 

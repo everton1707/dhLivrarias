@@ -12,16 +12,9 @@ const produtoController = {
     faleConosco: (req, res) => {
         res.render('faleConosco');
     },
-    
-    login: (req, res) => {
-        //let prato = listaPratos.find(prato => prato.id == req.params.id);
-        res.render('login');
-    },
+
     finalizacao: (req, res) => {
         res.render('finalizacao');
-    },
-    cadastroEndereco:(req, res)=>{
-        res.render('cadastroEndereco');
     },
     checkout: (req, res) => {
         res.render('checkout');

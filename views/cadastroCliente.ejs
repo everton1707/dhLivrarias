@@ -3,14 +3,26 @@
     <div class="container">
 
         <h2>Crie sua conta</h2>
-
-        <form action="/usuario/cadastro" method="POST" enctype="multipart/form-data">
-
-            <div class="cadastro">
-                <label for="foto_perfil" class="form-label">Imagem de Perfil</label>
-                <input type="file" class="form-control" name="foto_perfil" id="foto_perfil" />
-                <div class="invalid-feedback"></div>
+        <% if(typeof errors != 'undefined') { %> 
+            <div class="alert alert-danger">
+                <ul>
+                    <% for(var i = 0; i < errors.length; i++) { %> 
+                        <li><%= errors[i].msg %> </li>
+                    <% } %> 
+                </ul>
             </div>
+        <% } %> 
+
+            <!-- trazer erros para o formulario em cada campo -->
+        <form action="/usuario/cadastro" method="POST" > <!--enctype="multipart/form-data"-->
+          
+
+                <div class="cadastro">
+                    <label for="foto_perfil" class="form-label">Imagem de Perfil</label>
+                    <input type="file" class="form-control" name="foto_perfil" id="foto_perfil" />
+                    <div class="invalid-feedback"></div>
+                </div>
+          
 
             <div class="cadastro">
                 <label for="nome" class="form-label">Nome</label>
@@ -26,13 +38,13 @@
 
             <div class="cadastro">
                 <label for="email" class="form-label">E-mail</label>
-                <input type="text" class="form-control" name="email" id="email" />
+                <input type="email" class="form-control" name="email" id="email" />
                 <div class="invalid-feedback"></div>
             </div>
 
             <div class="cadastro">
-                <label for="email" class="form-label">Confirme seu e-mail</label>
-                <input type="text" class="form-control" name="confirmeEmail" id="confirmeEmail" />
+                <label for="confirmeEmail" class="form-label">Confirme seu e-mail</label>
+                <input type="email" class="form-control" name="confirmeEmail" id="confirmeEmail" />
                 <div class="invalid-feedback"></div>
             </div>
 
