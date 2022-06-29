@@ -1,5 +1,5 @@
 const autenticacao = (req, res, next) => {
-    if(!req.session.email){
+    if(!req.session.loginUsuario){
         res.redirect("/usuario/login");
     }else{
         next();

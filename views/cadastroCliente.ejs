@@ -2,70 +2,79 @@
 
     <div class="container">
 
-        <h2>Crie sua conta</h2>
-        <% if(typeof errors != 'undefined') { %> 
-            <div class="alert alert-danger">
-                <ul>
-                    <% for(var i = 0; i < errors.length; i++) { %> 
-                        <li><%= errors[i].msg %> </li>
-                    <% } %> 
-                </ul>
+        <div class="cadastro_cliente">
+            <h2>Crie sua conta</h2>
+
+            <div class="already-user">
+                <span class="ng-scope">Já tem uma conta?</span>
+                <a class="login-link" href="/login">Faça seu login</a>
             </div>
-        <% } %> 
 
-            <!-- trazer erros para o formulario em cada campo -->
-        <form action="/usuario/cadastro" method="POST" > <!--enctype="multipart/form-data"-->
-          
-
-                <div class="cadastro">
-                    <label for="foto_perfil" class="form-label">Imagem de Perfil</label>
-                    <input type="file" class="form-control" name="foto_perfil" id="foto_perfil" />
-                    <div class="invalid-feedback"></div>
+            <% if(typeof errors !='undefined' ) { %>
+                <div class="alert alert-danger">
+                    <ul>
+                        <% for(var i=0; i < errors.length; i++) { %>
+                            <li>
+                                <%= errors[i].msg %>
+                            </li>
+                            <% } %>
+                    </ul>
                 </div>
-          
+                <% } %>
 
-            <div class="cadastro">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" name="nome" id="nome" />
-                <div class="invalid-feedback"></div>
-            </div>
+                    <form action="/usuario/cadastro" method="POST" >
+                        
+                        <div class="cadastro">
+                            <label for="foto_perfil" class="form-label">Imagem de Perfil</label>
+                            <input type="file" class="form-control" name="foto_perfil" id="foto_perfil" />
+                            <div class="invalid-feedback"></div>
+                        </div>  
 
-            <div class="cadastro">
-                <label for="sobrenome" class="form-label">Sobrenome</label>
-                <input type="text" class="form-control" name="sobrenome" id="sobrenome" />
-                <div class="invalid-feedback"></div>
-            </div>
+                        <div class="cadastro">
+                            <label for="nome" class="form-label"></label>
+                            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" />
+                            <div class="invalid-feedback"></div>
+                        </div>
 
-            <div class="cadastro">
-                <label for="email" class="form-label">E-mail</label>
-                <input type="email" class="form-control" name="email" id="email" />
-                <div class="invalid-feedback"></div>
-            </div>
+                        <div class="cadastro">
+                            <label for="sobrenome" class="form-label"></label>
+                            <input type="text" class="form-control" name="sobrenome" id="sobrenome"
+                                placeholder="Sobrenome" />
+                            <div class="invalid-feedback"></div>
+                        </div>
 
-            <div class="cadastro">
-                <label for="confirmeEmail" class="form-label">Confirme seu e-mail</label>
-                <input type="email" class="form-control" name="confirmeEmail" id="confirmeEmail" />
-                <div class="invalid-feedback"></div>
-            </div>
+                        <div class="cadastro">
+                            <label for="email" class="form-label"></label>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="E-mail" />
+                            <div class="invalid-feedback"></div>
+                        </div>
 
-            <div class="cadastro">
-                <label for="senha" class="form-label">Senha</label>
-                <input type="password" class="form-control" name="senha" id="senha" />
-                <div class="invalid-feedback"></div>
-            </div>
+                        <div class="cadastro">
+                            <label for="confirmeEmail" class="form-label"></label>
+                            <input type="text" class="form-control" name="confirmeEmail" id="confirmeEmail"
+                                placeholder="Confirme seu e-mail" />
+                            <div class="invalid-feedback"></div>
+                        </div>
 
-            <div class="cadastro">
-                <label for="confirmeSenha" class="form-label">Confirme sua senha</label>
-                <input type="password" class="form-control" name="confirmeSenha" id="confirmeSenha" />
-                <div class="invalid-feedback"></div>
-            </div>
+                        <div class="cadastro">
+                            <label for="senha" class="form-label"></label>
+                            <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" />
+                            <div class="invalid-feedback"></div>
+                        </div>
 
-            <div>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </div>
+                        <div class="cadastro">
+                            <label for="confirmeSenha" class="form-label"></label>
+                            <input type="password" class="form-control" name="confirmeSenha" id="confirmeSenha"
+                                placeholder="Confirme sua senha" />
+                            <div class="invalid-feedback"></div>
+                        </div>
 
-        </form>
+                        <div class="btn_cliente">
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        </div>
 
+                    </form>
+        </div>
     </div>
 
 

@@ -1,34 +1,55 @@
 <%- include("./partials/header")%>
 
   <div class="container">
-    <div class="login_corpo">
 
+    <div class="login_corpo">
+      <h1> Login</h1>
+
+      <div class="new-user">
+        <span> Não tem uma conta?</span>
+        <a class="signup-link" href="/cadastro">Registre-se</a>
+      </div>
 
       <form class="formulario" action="/usuario/login" method="POST">
         <div  class="input">
-          
-          <h3 class="login_titulo"> Login</h3>
-          <label for="exampleInputEmail1" class="form-label"></label>
-          <input type="email" class="form-control" placeholder="E-mail" id="email" name="email">
-          
-        </div>
-
-        <div class="input">
-          <label for="senha" class="form-label"></label>
-          <input type="password" class="form-control" placeholder="Senha" id="senha" name="senha">
-        </div>
-
-        <div class="form-check input">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Lembre de mim</label>
-        </div>
-        <div class="cadastro-logar">
-        <button type="submit" class="btn">Entrar</button>
          
+
+
+     
+        <div class="login">
+          <label for="email" class="login_label"></label>
+          <input type="email" class="login_input" placeholder="E-mail" id="email" name="email">
+
         </div>
+
+        <div class="login">
+          <label for="senha" class="login_label"></label>
+          <input type="password" class="login_input" placeholder="Senha"  id="senha" name="senha">
+        </div>
+
+        <div class="esqueceu_senha">
+          
+          <label class="login_lembrar" for="exampleCheck1"> <input type="checkbox" class="login_check" id="exampleCheck1">Lembre de mim</label>
+          <a class="login_senha" href="">Esqueceu a senha ou o email?</a>
+        </div>
+        
       </form>
+
+      <div class="btn-cadastro">
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </div>
+
     </div>
+
+  </div>
+    <div class="termos">
+      * Ao se registrar, você concorda com os nossos <a href="" target="_blank">Termos de
+        Uso</a>, em receber emails e atualizações da DH Livrarias e confirma que leu nossa <a href=""
+        target="_blank">Política de Privacidade</a>.
+    </div>
+
+
   </div>
 
-  
+
   <%- include("./partials/footer")%>
