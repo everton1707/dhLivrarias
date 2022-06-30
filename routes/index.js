@@ -26,6 +26,7 @@ router.get('/checkout', produtoController.checkout);
 router.get('/carrinho', produtoController.carrinho);
 router.get('/produto', produtoController.produto);
 router.get('/criarCategoria', produtoController.criarCategoria);
+router.get('/cadastroProduto',produtoController.cadastroProduto);
 router.post('/salvarCategoria',validacao, produtoController.salvarCategoria);
 
 

@@ -1,0 +1,69 @@
+<%- include("./partials/header") %>
+
+<div class="container">
+
+    <div class="cadastro_cliente">
+        <h2>Castrar Produto</h2>
+
+        <form action="" method="GET">
+
+            <div class="cadastro"> <!-- alterar para titulo -->
+                <label for="nome" class="form-label"></label>
+                <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" />
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="cadastro">
+                <label for="autor" class="form-label"></label>
+                <input type="text" class="form-control" name="autor" id="autor" placeholder="Autor" />
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="cadastro">
+                <br>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Categoria</option>
+                    <option value="1">Ação</option>
+                    <option value="2">Comédia</option>
+                    <option value="3">Mangás</option>
+                    <option value="4">Drama</option>
+                    <option value="5">Horror</option>
+                  </select>
+            </div>
+
+            <div class="cadastro">
+                <label for="descricao" class="form-label"></label>
+                <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição" />
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="cadastro">
+                <label for="avaliacao" class="form-label"></label>
+                <input type="number" class="form-control" name="avaliacao" id="avaliacao" placeholder="Avaliação" />
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="cadastro">
+                <label for="preco" class="form-label"></label>
+                <input type="" class="form-control" name="preco" id="preco" placeholder="Preço" />
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="cadastro">
+                <label for="imagem" class="form-label"></label>
+                <input type="file" class="form-control" name="imagem" id="imagem" placeholder="Imagem" />
+                <div class="invalid-feedback"></div>
+            </div>
+
+
+            <div class="cadastrar">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+<%- include("./partials/footer") %>

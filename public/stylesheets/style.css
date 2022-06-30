@@ -319,7 +319,6 @@ button:hover{
 }
 
 .cadastro input{
-  margin: 0 10px;
   background: #C4C4C4;
   border: 0px solid #000000;
   box-sizing: border-box;
@@ -327,23 +326,17 @@ button:hover{
   padding: 15px 30px;
 }
 
-.btn_cliente{
-  color: #fff;
-  cursor: pointer;
-  transition: color, background-color, width 0 5s; 
-}
-
-.btn_cliente{
+.cadastro .form-select{
+  background: #C4C4C4;
+  border: 0px solid #000000;
   box-sizing: border-box;
   border-radius: 8px;
-  padding: 10px 30px;
-  max-width: 0;
-  margin: 0 auto;
+  padding: 15px 30px;
 }
 
-.btn_clienteo:hover{
-  background-color: #fff;
-  color: #E8505D;
+.cadastrar{
+  text-align: center;
+  margin-top: 20px;
 }
 
 
@@ -451,6 +444,13 @@ h2{
   padding: 15px 30px;
 }
 
+.cadastro-produto{
+  color:  rgba(61, 54, 54, 0.7);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 /* Matheus checkout*/
 

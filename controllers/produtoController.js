@@ -44,6 +44,9 @@ const produtoController = {
     criarCategoria:(req, res)=>{
         res.render('criarCategoria');
     },
+    cadastroProduto:(req, res)=>{
+        res.render('cadastroProduto');
+    },
     salvarCategoria:function (req, res){
         const errors = validationResult(req);
         /*db.categoria.create({
