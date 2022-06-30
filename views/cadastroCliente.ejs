@@ -7,7 +7,7 @@
 
             <div class="already-user">
                 <span class="ng-scope">Já tem uma conta?</span>
-                <a class="login-link" href="/login">Faça seu login</a>
+                <a class="login-link" href="/usuario/login">Faça seu login</a>
             </div>
 
             <% if(typeof errors !='undefined' ) { %>
@@ -32,20 +32,20 @@
 
                         <div class="cadastro">
                             <label for="nome" class="form-label"></label>
-                            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" />
+                            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" value="<%= nome %>"/>
                             <div class="invalid-feedback"></div>
                         </div>
 
                         <div class="cadastro">
                             <label for="sobrenome" class="form-label"></label>
                             <input type="text" class="form-control" name="sobrenome" id="sobrenome"
-                                placeholder="Sobrenome" />
+                                placeholder="Sobrenome" value="<%= sobrenome %>"/>
                             <div class="invalid-feedback"></div>
                         </div>
 
                         <div class="cadastro">
                             <label for="email" class="form-label"></label>
-                            <input type="text" class="form-control" name="email" id="email" placeholder="E-mail" />
+                            <input type="text" class="form-control" name="email" id="email" placeholder="E-mail" value="<%= email %>"/>
                             <div class="invalid-feedback"></div>
                         </div>
 

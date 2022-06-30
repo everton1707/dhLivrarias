@@ -1,6 +1,5 @@
 const db = require("../models");
 const { validationResult } = require("express-validator");
-const sequelize = db.sequelize;
 const bcrypt = require("bcryptjs");
 
 const clienteController = {
@@ -9,12 +8,11 @@ const clienteController = {
     },
 
     logar: async (req, res) => {
-      
         const body = {
             email: req.body.email,
             senha: req.body.senha
         }
-        console.log(body)
+
         // fazer busca do usuario digitado no banco
         const usuarioEncontrado = await db.Cliente.findOne({ where: { email: body.email } });
         console.log(usuarioEncontrado);
@@ -79,13 +77,13 @@ const clienteController = {
         }
 
 
-
+        console.log(req.file.filename)
         db.Cliente.create({ //--- igual a um create no mysql
             email,
             nome,
             sobrenome,
             senha: bcrypt.hashSync(senha),
-            //foto_perfil: req.file.filename
+            foto_perfil: req.file.filename
         })
 
 

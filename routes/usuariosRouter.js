@@ -17,4 +17,5 @@ router.post('/login',clienteController.logar);
 
 
 router.get('/cadastroEndereco',clienteController.cadastroEndereco);
+
 module.exports = router;
