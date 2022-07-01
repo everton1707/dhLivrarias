@@ -43,17 +43,6 @@ const clienteController = {
     listarCategorias: (req, res) => {
         res.render('listarCategorias');
     },
-    /*
-
-    acaoLogin: async function(req, res){
-        const { email, senha } = req.body;
-        const usuarioEncontrado = await db.Usuario.findOne({ where: { email: email }});
-        
-        if(usuarioEncontrado == null){
-            return res.render("/login", { email });
-        }
-    },
-    */
     logout: function (req, res) {
         req.session.destroy();
         res.redirect("home");
