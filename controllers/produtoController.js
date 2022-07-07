@@ -25,7 +25,21 @@ const produtoController = {
     produto: (req, res) => {
         res.render('produto');
     },
- 
+    cadastrar:(req, res)=> {
+
+    },
+    editar:(req, res)=>{
+
+    },
+    deletar:(req,res)=>{
+
+    },
+    exibir: (req,res)=>{
+
+    },
+    listar: (req,res)=>{
+
+    },
     
 
 }

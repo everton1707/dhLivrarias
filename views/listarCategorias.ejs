@@ -1,27 +1,24 @@
 <%- include("./partials/header") %>
+    <div class="container ">
+
+        <h1>LISTA DE CATEGORIAS</h1>
+        <ul>
+            <% for( let i=0; i < categorias.length; i++ ) { %>
+                <li>
+                    <a href="/categoria/detalhes/<%= categorias[i].id %>">
+                        <%= categorias[i].nome %>
+                    </a>
+                    <!-- 
+                        implementar pagina de detalhes -->
+                </li>
+                <% } %>
+
+        </ul>
 
 
-
-<% for()%>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 
 
 
 
-
-<%- include("./partials/footer") %>
+    <%- include("./partials/footer") %>

@@ -54,7 +54,6 @@ const clienteController = {
 
         const { nome, sobrenome, email, senha } = req.body;
         const errors = validationResult(req); //importa os erros da validação feita no middleware
-        console.log(errors);
         if (!errors.isEmpty()) {
 
             return res.render('cadastroCliente', {
@@ -66,14 +65,14 @@ const clienteController = {
         }
 
 
-        console.log(req.file.filename)
+        console.log(req.file.filename);//teste nome da foto
         db.Cliente.create({ //--- igual a um create no mysql
             email,
             nome,
             sobrenome,
             senha: bcrypt.hashSync(senha),
             foto_perfil: req.file.filename
-        })
+        }) 
 
 
         res.render("home");

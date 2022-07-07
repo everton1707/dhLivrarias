@@ -1,64 +1,67 @@
 <%- include("./partials/header")%>
-<body>
-  <div class="container painel">
-    <div class="menuUsuario">
-      <ul class="nav flex-column">
-        <li class="nav-item ">
-          <a href=""><img src="/images/user.jpg" alt=""></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><b>Minha Conta</b></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><b>Minhas Compras</b></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><b>Minhas Vendas</b></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"><b>Configurações</b></a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="historico" style="margin-left: 20px;">
-      <h2>Suas Compras</h2>
-      <div >
-        <ul class="list-group">
-                <% for (let i = 0; i<5; i++){ %> 
-                  <li>
-                    
-                  <div class="card mb-3 historico-card" >
-                    <div class="col historico-card"style="margin:20px;">
-                      <div class="col-md-4">
-                        <img src="/images/Livro2.png" class="img-fluid rounded-start" alt="...">
-                      </div>
-                      <div>
+
+  <body>
+    <div class="container painel">
+      <div class="menuUsuario">
+        <ul class="nav flex-column">
+          <li class="nav-item ">
+            <a href=""><img src="/images/user.jpg" alt=""></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><b>Minha Conta</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><b>Minhas Compras</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><b>Minhas Vendas</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><b>Configurações</b></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="historico" style="margin-left: 20px;">
+        <h2>Suas Compras</h2>
+        <div>
+          <ul class="list-group">
+            <% for (let i=0; i<5; i++){ %>
+              <li>
+
+                <div class="card mb-3 historico-card">
+                  <div class="col historico-card" style="margin:20px;">
+                    <div class="col-md-4">
+                      <img src="/images/Livro2.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div>
                       <ul class="list-group">
-            <li>
-              <h5 class="card-title">Harry Potter e Pedra Filosofal 3ª Edição</h5>
-            </li>
-            <li>
-              <p class="card-text">K.K. Rowling</p>
-            </li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus laboriosam itaque quibusdam, ab omnis, ipsam odio quasi fugit commodi recusandae quo saepe optio veniam tempore reiciendis tenetur et. Assumenda, vitae.</li>
-            <li>
-              <p class="card-text">Valor Unitário</p>
-              <h5 class="card-text price"><b>R$ 42,90</b></a>
-            </li>
-            <li><a href="/user/produto" class="btn">Compre novamente</a></li>
-          </ul>
-        </div>
+                        <li>
+                          <h5 class="card-title">Harry Potter e Pedra Filosofal 3ª Edição</h5>
+                        </li>
+                        <li>
+                          <p class="card-text">K.K. Rowling</p>
+                        </li>
+                        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus laboriosam itaque
+                          quibusdam, ab omnis, ipsam odio quasi fugit commodi recusandae quo saepe optio veniam tempore
+                          reiciendis tenetur et. Assumenda, vitae.</li>
+                        <li>
+                          <p class="card-text">Valor Unitário</p>
+                          <h5 class="card-text price"><b>R$ 42,90</b></a>
+                        </li>
+                        <li><a href="/user/produto" class="btn">Compre novamente</a></li>
+                      </ul>
                     </div>
                   </div>
-                </li>
-                <% } %> 
-              </ul>
-                
-                
-              </div>
+                </div>
+              </li>
+              <% } %>
+          </ul>
+
+
         </div>
-
-
       </div>
-<%- include("./partials/footer")%>
+
+
+    </div>
+    <%- include("./partials/footer")%>
