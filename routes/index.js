@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const produtoController = require('../controllers/produtoController.js');
-
+const MainController = require('../controllers/MainController');
 
 
 
@@ -28,7 +28,7 @@ router.get('/checkout', produtoController.checkout);
 router.get('/carrinho', produtoController.carrinho);
 router.get('/produto', produtoController.produto);
 
-
+router.get('/endereco', MainController.index); // cep teste
 
 
 module.exports = router;
