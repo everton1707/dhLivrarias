@@ -2,14 +2,27 @@
     <div class="container ">
 
         <h1>LISTA DE CATEGORIAS</h1>
-        <ul>
+
+
+
+
+
+
+        
+           
+          
+        <ul class="list-group">
             <% for( let i=0; i < categorias.length; i++ ) { %>
-                <li>
-                    <a href="/categoria/detalhes/<%= categorias[i].id %>">
-                        <%= categorias[i].nome %>
-                    </a>
-                    <!-- 
-                        implementar pagina de detalhes -->
+                <li class="list-group-item">
+                    <div>
+                        <a href="/categoria/editar/<%= categorias[i].id %>"><%= categorias[i].nome %></a>
+                    </div>
+                    <div>
+                        <a href="/categoria/ditar/<%= categorias[i].id %>" class="btn">Editar</a>
+                    </div>
+                    <div>
+                        <a href="/categoria/deletar/<%= categorias[i].id %>" class="btn">Deletar</a>
+                    </div>
                 </li>
                 <% } %>
 
