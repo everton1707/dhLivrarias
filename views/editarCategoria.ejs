@@ -4,23 +4,24 @@
 
     
         <div class="login_corpo">
-        <form action="/categoria/salvar" class="formulario" method="POST">
+        <form action="/categoria/editar/<%= Categoria.id %>" class="formulario" method="POST">
             <div  class="input">
           
                 <label for="exampleInputEmail1" class="form-label">insira o nome da categoria: </label>
-                <input type="text" class="form-control contato__input" name="nome" >
+                <input type="text" class="form-control contato__input" name="nome" value="<%= Categoria.nome %>" required>
                 
               </div>
       
               <div class="input">
                 <label for="exampleInputPassword1" class="form-label">descrição</label>
-                <input type="text" class="form-control contato__input" name = "descricao">
+                <input type="text" class="form-control contato__input" name = "descricao" value="<%= Categoria.descricao %>" required >
               </div>
 
-              <button type="submit" class="btn">cadastrar</button>
-        
-
-        </form>
+              <button type="submit" class="btn"> Atualizar </button>
+              
+              
+            </form>
+            
     </div>
 
 

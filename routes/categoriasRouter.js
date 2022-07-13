@@ -10,8 +10,11 @@ router.get('/', categoriaController.listar);
 //criar rota para editar categoria a apartir da listagem
 
 
-router.get('/criar', categoriaController.criarCategoria);
-router.post('/salvar', categoriaController.salvarCategoria);
+router.get('/criar', categoriaController.criar);
+router.post('/salvar', categoriaController.salvar);
+router.get('/editar/:id', categoriaController.editar);
+router.post('/editar/:id', categoriaController.atualizar);
+router.get('/deletar/:id', categoriaController.deletar);
 
 
 module.exports = router;

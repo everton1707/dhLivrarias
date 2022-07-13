@@ -5,9 +5,15 @@
         <ul>
             <% for( let i=0; i < categorias.length; i++ ) { %>
                 <li>
-                    <a href="/categoria/detalhes/<%= categorias[i].id %>">
-                        <%= categorias[i].nome %>
-                    </a>
+
+                    <div>
+
+                        <a href="/categoria/editar/<%= categorias[i].id %>">
+                            <%= categorias[i].nome %>
+                        </a>
+                    </div>
+                    
+                   
                     <!-- 
                         implementar pagina de detalhes -->
                 </li>

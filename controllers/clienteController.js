@@ -38,7 +38,7 @@ const clienteController = {
 
     },
     usuario: (req, res) => {
-        res.render('painelUsuario');
+        res.render('painelUsuario', session );
     },
     listarCategorias: (req, res) => {
         res.render('listarCategorias');

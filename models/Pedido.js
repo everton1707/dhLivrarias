@@ -17,7 +17,8 @@ const PedidoModel = (sequelize, DataTypes) => {
         Pedido.belongsToMany(models.Produto, {
             through: "pedidos_has_produto",
             foreignKey: "pedido_id",
-            otherKey: "produto_id"
+            otherKey: "produto_id",
+            //quantidade: DataTypes.Integer
         })
     }
 
