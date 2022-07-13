@@ -56,22 +56,15 @@ const categoriaController = {
         res.redirect("/categoria");
     },
     deletar: async (req,res) =>{
-        const idCategoria = req.params;
+        const idCategoria = req.params.id;
 
-        console.log(idCategoria)
-        if (!errors.isEmpty()) {
-            console.log(errors);
-            return res.render('criarCategoria', { errors });
-        }
         
         await db.Categoria.destroy({ 
             where: {
-              id: parseInt(idCategoria.id)
+              id: parseInt(idCategoria)
             }
           });
         res.redirect("/categoria");
-
-
     }    
 }
 
