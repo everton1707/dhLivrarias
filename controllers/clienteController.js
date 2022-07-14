@@ -20,11 +20,11 @@ const clienteController = {
             return res.render('usuario/login', { email });
         }
         //verificacao de login 
-        
+
         const resultadoSenha = bcrypt.compareSync(body.senha, usuarioEncontrado.senha);
-         if(!resultadoSenha){
+        if (!resultadoSenha) {
             return req.render('login', { email });
-         }
+        }
         req.session.idUsuario = usuarioEncontrado.id;
         req.session.nome = usuarioEncontrado.nome;
         req.session.sobrenome = usuarioEncontrado.sobrenome;
@@ -32,20 +32,32 @@ const clienteController = {
         req.session.foto_perfil = usuarioEncontrado.foto_perfil;
 
 
-        res.render('painelUsuario');
-        
+        res.render('painelUsuario', req.session);
+
 
 
     },
     usuario: (req, res) => {
-        res.render('painelUsuario', session );
+        res.render('painelUsuario', req.session);
     },
     listarCategorias: (req, res) => {
         res.render('listarCategorias');
     },
     logout: function (req, res) {
-        req.session.destroy();
-        res.redirect("home");
+
+        req.session.user = null
+        req.session.save(function (err) {
+            if (err) next(err)
+
+            // regenerate the session, which is good practice to help
+            // guard against forms of session fixation
+            req.session.regenerate(function (err) {
+                if (err) next(err)
+                res.redirect('/')
+            })
+        })
+        /*req.session.destroy();
+        res.redirect("/");*/
     },
     cadastro: (req, res) => {
         res.render('cadastroCliente');
@@ -72,7 +84,7 @@ const clienteController = {
             sobrenome,
             senha: bcrypt.hashSync(senha),
             foto_perfil: req.file.filename
-        }) 
+        })
 
 
         res.render("home");

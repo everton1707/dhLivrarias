@@ -1,6 +1,6 @@
 const db = require("../models");
 const { validationResult } = require("express-validator");
-const id = require("faker-br/lib/locales/id_ID");
+
 
 const categoriaController = {
 
@@ -30,10 +30,10 @@ const categoriaController = {
         });
     },
     editar: async (req, res) =>{
-        const idCategoria = req.params;
+        const idCategoria = req.params.id;
         console.log(idCategoria);
-        const categoria = await db.Categoria.findByPk(parseInt(idCategoria.id));
-        res.render('editarCategoria', { Categoria:categoria })
+        const categoria = await db.Categoria.findByPk(parseInt(idCategoria));
+        res.render('editarCategoria', { Categoria:categoria });
     },
     atualizar: async function (req, res) {
         const idCategoria = req.params;

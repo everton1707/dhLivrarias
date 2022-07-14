@@ -1,0 +1,9 @@
+<div class="input">
+          <label for="exampleInputPassword1" class="form-label">preco</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected disabled >Selecione a Categoria</option>
+            <% for (let i=1; i <= categorias.length ; i++){ %>
+              <option value="<%= categorias[i].id %>"><%= categorias[i].nome %></option>
+            <% } %> 
+          </select>
+        </div>

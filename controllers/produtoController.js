@@ -1,34 +1,44 @@
 const db = require("../models");
 const { validationResult } = require("express-validator");
-const sequelize = db.sequelize;
-
-
 
 
 const produtoController = {
-    index: (req, res) => {
-        res.render('home');
-    },
-    faleConosco: (req, res) => {
-        res.render('faleConosco');
-    },
-
-    finalizacao: (req, res) => {
-        res.render('finalizacao');
-    },
-    checkout: (req, res) => {
-        res.render('checkout');
-    },
+    
     carrinho: (req, res) => {
         res.render('carrinho');
     },
     produto: (req, res) => {
         res.render('produto');
     },
-    cadastrar:(req, res)=> {
+    criar: (req, res)=> {
+        db.Categoria.findAll().then(categorias => {
+            res.render('cadastroProduto', { categorias });
+        });
+    },
+    salvar: async (req, res) => {
+        //const { nome, descricao, avaliacao, preco, categoria_id } = req.body;
+        const produto = req.body;
+        const errors = validationResult(req);
 
+        if (!errors.isEmpty()) { // ainda nao está validando
+            console.log(errors);
+            return res.render('cadastroProduto', { errors });
+        }
+
+        await db.Produto.create({
+            nome: produto.nome,
+            descricao: produto.descricao,
+            avaliacao: produto.avaliacao,
+            preco: produto.preco,
+            categoria_id: parseInt(produto.categoria_id),
+        })
+
+        res.send(produto);
     },
     editar:(req, res)=>{
+
+    },
+    atualizar: (req, res)=>{
 
     },
     deletar:(req,res)=>{
@@ -38,7 +48,10 @@ const produtoController = {
 
     },
     listar: (req,res)=>{
-
+        db.Produto.findAll().then(produtos => {
+            res.render('listarProdutos', { produtos })
+        });
+        //res.render("listarProdutos");
     },
     
 

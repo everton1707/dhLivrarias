@@ -15,6 +15,7 @@ router.post('/cadastro',upload.single("foto_perfil"),validacaoCadastro ,clienteC
 router.get('/login',clienteController.login);
 router.post('/login',clienteController.logar);
 
+router.get('/logout',clienteController.logout);
 
 router.get('/cadastroEndereco',clienteController.cadastroEndereco);
 

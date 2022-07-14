@@ -1,0 +1,43 @@
+<%- include("./partials/header") %>
+
+  <div class="container">
+
+      <h1>Cadastro de Produtos "Teste"</h1>
+    
+      <form action="/produto/salvar" class="formulario" method="POST">
+        <div class="input">
+          <label for="exampleInputEmail1" class="form-label">insira o nome do produto: </label>
+          <input type="text" class="form-control contato__input" name="nome">
+        </div>
+
+        <div class="input">
+          <label for="exampleInputPassword1" class="form-label">descrição</label>
+          <input type="text" class="form-control contato__input" name="descricao">
+        </div>
+        <div class="input">
+          <label for="exampleInputPassword1" class="form-label">Avaliacao "teste"</label>
+          <input type="number" class="form-control contato__input" name="avaliacao">
+        </div>
+        
+        <div class="input">
+          <label for="exampleInputPassword1" class="form-label">preco</label>
+          <input type="number" class="form-control contato__input" name="preco">
+        </div>
+
+        <label for="exampleInputPassword1" class="form-label">Categorias</label>
+        <select class="form-select" aria-label="Default select example" name="categoria_id">
+          <option selected disabled>Selecione a Categoria</option>
+          <% var options = []; %> 
+          <% for (let i=0; i < categorias.length ; i++){ %>
+            <option value='<%= categorias[i].id %>'><%= categorias[i].nome %></option>
+          <% } %> 
+        </select>
+
+        <button type="submit" class="btn"> Cadastrar </button>
+      </form>
+
+    
+  </div>
+
+
+<%- include("./partials/footer") %>

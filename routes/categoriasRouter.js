@@ -11,9 +11,11 @@ router.get('/', categoriaController.listar);
 
 
 router.get('/criar', categoriaController.criar);
-router.post('/salvar', categoriaController.salvar);
+router.post('/salvar', categoriaController.salvar);//fazer validação e implementar fotos
+
 router.get('/editar/:id', categoriaController.editar);
 router.post('/editar/:id', categoriaController.atualizar);
+
 router.get('/deletar/:id', categoriaController.deletar);
 
 

@@ -1,7 +1,7 @@
 const db =require('../models');
 
 const pedidoController = {
-    cadastrar: (req, res) => {
+    adicionar: (req, res) => {
         res.render('cadastroEndereco');
     },
     editar: (req,res) => {
