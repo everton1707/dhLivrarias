@@ -25,20 +25,20 @@ const produtoController = {
     produto: (req, res) => {
         res.render('produto');
     },
-    cadastrar:(req, res)=> {
-
+    cadastrar:(req, res) => {
+        res.render('');
     },
-    editar:(req, res)=>{
-
+    editar:(req, res) =>{
+        res.render('produto');
     },
-    deletar:(req,res)=>{
-
+    deletar:(req,res) =>{
+        res.render('');
     },
-    exibir: (req,res)=>{
-
+    exibir: (req,res) =>{
+        res.render('');
     },
-    listar: (req,res)=>{
-
+    listar: (req,res) =>{
+        res.render('');
     },
     
 
