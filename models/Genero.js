@@ -1,14 +1,14 @@
 
 
 module.exports = (sequelize, DataTypes) => {
-    const Categoria = sequelize.define('Categoria', {
+    const Genero = sequelize.define('Genero', {
 
         nome: DataTypes.STRING,
         descricao: DataTypes.STRING,
-
+        fotoGenero: DataTypes.STRING
     }, {
-        tableName: 'categoria',
+        tableName: 'genero',
         timestamps: false
     })
-    return Categoria;
+    return Genero;
 }

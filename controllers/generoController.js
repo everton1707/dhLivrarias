@@ -2,10 +2,10 @@ const db = require("../models");
 const { validationResult } = require("express-validator");
 
 
-const categoriaController = {
+const generoController = {
 
     criar: async(req, res) => {
-        res.render('criarCategoria',);
+        res.render('criarGenero',);
     },
     salvar: async function (req, res) {
         const { nome, descricao } = req.body;
@@ -14,58 +14,58 @@ const categoriaController = {
 
         if (!errors.isEmpty()) {
             console.log(errors);
-            return res.render('criarCategoria', { errors });
+            return res.render('criarGenero', { errors });
         }
 
-        await db.Categoria.create({
+        await db.Genero.create({
             nome,
             descricao
         })
 
-        res.redirect("/categoria");
+        res.redirect("/genero");
     },
     listar: (req, res) => {
-        db.Categoria.findAll().then(categorias => {
-            res.render('listarCategorias', { categorias })
+        db.Genero.findAll().then(generos => {
+            res.render('listarGeneros', { generos })
         });
     },
     editar: async (req, res) =>{
-        const idCategoria = req.params.id;
-        console.log(idCategoria);
-        const categoria = await db.Categoria.findByPk(parseInt(idCategoria));
-        res.render('editarCategoria', { Categoria:categoria });
+        const idGenero = req.params.id;
+        console.log(idGenero);
+        const genero = await db.Genero.findByPk(parseInt(idGenero));
+        res.render('editarGenero', { Genero: genero });
     },
     atualizar: async function (req, res) {
-        const idCategoria = req.params;
+        const idGenero = req.params;
         const errors = validationResult(req);
         const { nome, descricao } = req.body;
 
         if (!errors.isEmpty()) {
             console.log(errors);
-            return res.render('criarCategoria', { errors });
+            return res.render('criarGenero', { errors });
         }
         
-        await db.Categoria.update({ 
+        await db.Genero.update({ 
             nome: nome,
             descricao: descricao
         }, {
             where: {
-              id: parseInt(idCategoria.id)
+              id: parseInt(idGenero.id)
             }
           });
-        res.redirect("/categoria");
+        res.redirect("/genero");
     },
     deletar: async (req,res) =>{
-        const idCategoria = req.params.id;
+        const idGenero = req.params.id;
 
         
-        await db.Categoria.destroy({ 
+        await db.Genero.destroy({ 
             where: {
-              id: parseInt(idCategoria)
+              id: parseInt(idGenero)
             }
           });
-        res.redirect("/categoria");
+        res.redirect("/genero");
     }    
 }
 
-module.exports = categoriaController;
+module.exports = generoController;

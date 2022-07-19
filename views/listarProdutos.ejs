@@ -5,34 +5,7 @@
             <h1>Lista de livros </h1>
         </div>
         <ul class="list-group">
-            <% for (let i=0; i<produtos.length; i++){ %>
-                <li>
-
-                    <div class="card mb-3 historico-card">
-                        <div class="col historico-card" style="margin:20px;">
-                            <div class="col-md-4">
-                                <img src="/images/Livro2.png" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div>
-                                <ul class="list-group">
-                                    <li>
-                                        <h5 class="card-title"><%= produtos[i].nome %></h5>
-                                    </li>
-                                    <li>
-                                        <p class="card-text">K.K. Rowling</p><!-- colocar no banco de dados o camo autor -->
-                                    </li>
-                                    <li><%= produtos[i].descricao %></li>
-                                    <li>
-                                        <p class="card-text">Valor Unitário</p>
-                                        <h5 class="card-text price"><b>R$ <%= produtos[i].preco %> </b></a>
-                                    </li>
-                                    <li><a href="/produto/<%= produto[i].id %> " class="btn">Compre novamente</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <% } %>
+            
         </ul>
     </div>
-<%- include("./partials/header")%>
+<%- include("./partials/footer")%>

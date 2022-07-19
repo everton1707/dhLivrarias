@@ -1,0 +1,29 @@
+<%- include("./partials/header") %>
+    <div class="container ">
+
+        <h1>LISTA DE Generos</h1>
+
+        <ul class="list-group">
+            <% for( let i=0; i < generos.length; i++ ) { %>
+                <li class="list-group-item">
+                    <div>
+                        <a href="/genero/editar/<%= generos[i].id %>"><%= generos[i].nome %></a>
+                    </div>
+                    <div>
+                        <a href="/genero/editar/<%= generos[i].id %>" class="btn">Editar</a>
+                    </div>
+                    <div>
+                        <a href="/genero/deletar/<%= generos[i].id %>" class="btn">Deletar</a>
+                    </div>
+                </li>
+                <% } %>
+
+        </ul>
+
+        <a href="/genero/criar" class="btn">Criar</a>
+    </div>
+
+
+
+
+    <%- include("./partials/footer") %>

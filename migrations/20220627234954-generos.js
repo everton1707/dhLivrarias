@@ -9,12 +9,12 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
 
-     await queryInterface.createTable("categoria", {
+     await queryInterface.createTable("genero", {
       id: { type: Sequelize.INTEGER.UNSIGNED, primaryKey: true, autoIncrement: true },
       nome: Sequelize.STRING(30),
       descricao: Sequelize.STRING(50),
 
-      fotoCategoria: Sequelize.STRING(100),//implementar front END
+      foto_genero: Sequelize.STRING(100),//implementar front END
       createdAt: Sequelize.DATE, 
       updatedAt: Sequelize.DATE, 
     });
@@ -27,6 +27,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-     await queryInterface.dropTable('categoria');
+     await queryInterface.dropTable('genero');
   }
 };

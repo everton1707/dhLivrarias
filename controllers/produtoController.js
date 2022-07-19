@@ -11,13 +11,14 @@ const produtoController = {
         res.render('produto');
     },
     criar: (req, res)=> {
-        db.Categoria.findAll().then(categorias => {
-            res.render('cadastroProduto', { categorias });
+        db.Genero.findAll().then(generos => {
+            res.render('cadastroProduto', { generos });
         });
     },
     salvar: async (req, res) => {
-        //const { nome, descricao, avaliacao, preco, categoria_id } = req.body;
-        const produto = req.body;
+        const { nome, descricao, avaliacao, preco, genero_id } = req.body;
+        
+        
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) { // ainda nao está validando
@@ -30,10 +31,11 @@ const produtoController = {
             descricao: produto.descricao,
             avaliacao: produto.avaliacao,
             preco: produto.preco,
-            categoria_id: parseInt(produto.categoria_id),
+            genero_id: parseInt(produto.genero_id),
+            //foto_perfil: req.file.fileName
         })
 
-        res.send(produto);
+        res.send("produto salvo!");
     },
     editar:(req, res)=>{
 
@@ -48,10 +50,10 @@ const produtoController = {
 
     },
     listar: (req,res)=>{
-        db.Produto.findAll().then(produtos => {
+        /*db.Produto.findAll().then(produtos => {
             res.render('listarProdutos', { produtos })
-        });
-        //res.render("listarProdutos");
+        });*/
+        res.render("listarProdutos");
     },
     
 

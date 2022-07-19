@@ -38,7 +38,12 @@ const clienteController = {
 
     },
     usuario: (req, res) => {
-        res.render('painelUsuario', req.session);
+        const usuarioLogado = req.session;
+
+        console.log(usuarioLogado);
+
+
+        res.render('painelUsuario', {usuarioLogado});
     },
     listarCategorias: (req, res) => {
         res.render('listarCategorias');
@@ -77,17 +82,17 @@ const clienteController = {
         }
 
 
-        console.log(req.file.filename);//teste nome da foto
-        db.Cliente.create({ //--- igual a um create no mysql
+        console.log(req.file);//teste nome da foto
+        await db.Cliente.create({ //--- igual a um create no mysql
             email,
             nome,
             sobrenome,
             senha: bcrypt.hashSync(senha),
             foto_perfil: req.file.filename
         })
+        
 
-
-        res.render("home");
+        res.redirect('/usuario/login');
     },
     cadastroEndereco: (req, res) => {
         res.render('cadastroEndereco');
