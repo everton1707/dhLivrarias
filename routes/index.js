@@ -28,7 +28,7 @@ router.get('/checkout', produtoController.checkout);
 router.get('/carrinho', produtoController.carrinho);
 router.get('/produto', produtoController.produto);
 
-router.get('/endereco', MainController.index); // cep teste
+router.get('/cadastroEndereco', MainController.index); // cep teste
 
 
 module.exports = router;

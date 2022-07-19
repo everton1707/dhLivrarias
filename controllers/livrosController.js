@@ -74,12 +74,11 @@ const listaProdutos = [
 ];
 
 
-
-
-
-
-
-
-
-
-
+const livrosController = { 
+    listar: (req, res) => {
+        res.render("home",{
+            livros: listaLivros,
+            promocao: true
+        })
+    }
+}

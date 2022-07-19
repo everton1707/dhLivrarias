@@ -10,15 +10,15 @@ const MainController = {
 
         if(cepConsulta.length === 8 || cepConsulta.length === 9){
             axios.get(`https://brasilapi.com.br/api/cep/v1/${cepConsulta}`).then((resposta) => {
-                res.render("endereco", {
+                res.render("cadastroEndereco", {
                     detalhesCep: resposta.data,
                     cepConsulta: cepConsulta
                 });
             }).catch(() => {
-                res.render("endereco"); 
+                res.render("cadastroEndereco"); 
             });
         }else{
-            res.render('endereco');
+            res.render('cadastroEndereco');
         }
             
     }
