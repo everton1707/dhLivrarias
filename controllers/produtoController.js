@@ -1,24 +1,25 @@
 const db = require("../models");
 const { validationResult } = require("express-validator");
+const id = require("faker-br/lib/locales/id_ID");
 
 
 const produtoController = {
-    
+
     carrinho: (req, res) => {
         res.render('carrinho');
     },
     produto: (req, res) => {
         res.render('produto');
     },
-    criar: (req, res)=> {
+    criar: (req, res) => {
         db.Genero.findAll().then(generos => {
             res.render('cadastroProduto', { generos });
         });
     },
     salvar: async (req, res) => {
-        const { nome, descricao, avaliacao, preco, genero_id } = req.body;
-        
-        
+
+        const produto = req.body;
+        console.log(produto);
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) { // ainda nao está validando
@@ -29,33 +30,41 @@ const produtoController = {
         await db.Produto.create({
             nome: produto.nome,
             descricao: produto.descricao,
-            avaliacao: produto.avaliacao,
-            preco: produto.preco,
+            avaliacao: parseFloat(produto.avaliacao),
+            preco: parseFloat(produto.preco),
             genero_id: parseInt(produto.genero_id),
-            //foto_perfil: req.file.fileName
-        })
+            foto_livro: req.file.filename
+        }/*, {
+            include: ["genero"]
+            relação muitos para muitos
+        }*/ )
 
-        res.send("produto salvo!");
+        res.redirect("/produto/lista");
     },
-    editar:(req, res)=>{
-
-    },
-    atualizar: (req, res)=>{
-
-    },
-    deletar:(req,res)=>{
+    editar: (req, res) => {
 
     },
-    exibir: (req,res)=>{
+    atualizar: (req, res) => {
 
     },
-    listar: (req,res)=>{
-        /*db.Produto.findAll().then(produtos => {
-            res.render('listarProdutos', { produtos })
-        });*/
-        res.render("listarProdutos");
+    deletar: (req, res) => {
+
     },
+    exibir: async (req, res) => {
+        const idLivro = req.params.id;
+        console.log(idLivro);
+        const livro = await db.Produto.findByPk(parseInt(idLivro),{ include: ["genero"]})
+
+        res.render('produto',{ livro });
+    },
+    listar: (req, res) => {
+        db.Produto.findAll({ include: ["genero"]}).then(livros => {
+            res.render('listarProdutos', { livros })
+        });
     
+        //res.render("listarProdutos");
+    },
+
 
 }
 

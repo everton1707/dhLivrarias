@@ -19,7 +19,8 @@ const generoController = {
 
         await db.Genero.create({
             nome,
-            descricao
+            descricao,
+            foto_genero: req.file.filename
         })
 
         res.redirect("/genero");

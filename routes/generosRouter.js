@@ -11,7 +11,7 @@ router.get('/', generoController.listar);
 
 
 router.get('/criar', generoController.criar);
-router.post('/salvar', generoController.salvar);//fazer validação e implementar fotos
+router.post('/salvar', upload.single("foto_genero"), generoController.salvar);//fazer validação e implementar fotos
 
 router.get('/editar/:id', generoController.editar);
 router.post('/editar/:id', generoController.atualizar);

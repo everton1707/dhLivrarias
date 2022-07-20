@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
 
         nome: DataTypes.STRING,
         descricao: DataTypes.STRING,
-        fotoGenero: DataTypes.STRING
+        foto_genero: DataTypes.STRING
     }, {
         tableName: 'genero',
         timestamps: false

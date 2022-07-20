@@ -17,13 +17,13 @@ const clienteController = {
         const usuarioEncontrado = await db.Cliente.findOne({ where: { email: body.email } });
         console.log(usuarioEncontrado);
         if (usuarioEncontrado == null) {
-            return res.render('usuario/login', { email });
+            return res.render('usuario/login');
         }
         //verificacao de login 
 
         const resultadoSenha = bcrypt.compareSync(body.senha, usuarioEncontrado.senha);
         if (!resultadoSenha) {
-            return req.render('login', { email });
+            return req.render('login');
         }
         req.session.idUsuario = usuarioEncontrado.id;
         req.session.nome = usuarioEncontrado.nome;
@@ -31,8 +31,8 @@ const clienteController = {
         req.session.email = usuarioEncontrado.email;
         req.session.foto_perfil = usuarioEncontrado.foto_perfil;
 
-
-        res.render('painelUsuario', req.session);
+        const usuarioLogado = req.session;
+        res.render('painelUsuario', { usuarioLogado });
 
 
 
@@ -43,7 +43,7 @@ const clienteController = {
         console.log(usuarioLogado);
 
 
-        res.render('painelUsuario', {usuarioLogado});
+        res.render('painelUsuario', { usuarioLogado });
     },
     listarCategorias: (req, res) => {
         res.render('listarCategorias');

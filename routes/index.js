@@ -26,7 +26,6 @@ router.get('/', indexController.index);
 
 router.get('/faleConosco', indexController.faleConosco);
 
-
 router.get('/finalizacao', indexController.finalizacao);
 router.get('/checkout', indexController.checkout);
 //router.get('/carrinho', indexController.carrinho);

@@ -7,8 +7,8 @@
       <form action="/produto/salvar" class="formulario" method="POST" enctype="multipart/form-data">
         
         <div class="cadastro">
-          <label for="foto_perfil" class="form-label">Imagem de Perfil</label>
-          <input type="file" class="form-control" name="foto_perfil" id="foto_perfil" />
+          <label for="foto_livro" class="form-label">Imagem de Perfil</label>
+          <input type="file" class="form-control" name="foto_livro" id="foto_livro" />
           <div class="invalid-feedback"></div>
         </div>  
 
@@ -32,8 +32,8 @@
         </div>
 
         <label for="exampleInputPassword1" class="form-label">Generos</label>
-        <select class="form-select" aria-label="Default select example" name="categoria_id">
-          <option selected disabled>Selecione a Categoria</option>
+        <select class="form-select" aria-label="Default select example" name="genero_id">
+          <option selected disabled>Selecione o Genero</option>
           <% var options = []; %> 
           <% for (let i=0; i < generos.length ; i++){ %>
             <option value='<%= generos[i].id %>'><%= generos[i].nome %></option>

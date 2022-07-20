@@ -6,8 +6,9 @@ const upload = multer({ dest:"public/uploads/fotos_produtos"});
 
 router.get('/lista', produtoController.listar);
 
+
 router.get('/criar', produtoController.criar);
-router.post('/salvar',upload.single("foto_produto"), produtoController.salvar);
+router.post('/salvar',upload.single("foto_livro"), produtoController.salvar);
 
 router.get('/editar/:id', produtoController.editar);
 router.post('/editar/:id', produtoController.atualizar);

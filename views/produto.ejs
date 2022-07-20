@@ -3,13 +3,13 @@
     <main>
         <section class="products">
             <div class="product-img">
-                <img src="/images/the-lord-of-the-rings.png" alt="">
+                <img src="/uploads/fotos_produtos/<%= livro.foto_livro %>" alt="">
             </div>
             <div class="product-discription">
                 <div class="availability">
                     Disponível
                 </div> 
-                <h2>The Lord Of the rings</h2>
+                <h2><%= livro.nome %></h2>
                 <div class="author-review">
                     <div class="author">
                     <a href="">Autor: <b>J.R.R Tolkien</b></a> 
@@ -48,18 +48,18 @@
                         <span>R$ 59,90</span>
                     </div>
                     <div class="new-price">
-                        <span>R$ 44,90</span>
+                        <span>R$ <%= livro.preco %></span>
                     </div>
                     <p>Em até 2x no cartão</p>
                 </div>
-                <p class="resume-descri">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae soluta quod, in nihil ab itaque cupiditate nemo expedita repudiandae, at ad, ipsum voluptatibus eveniet asperiores id voluptatem? Molestiae, aliquid amet.</p>
+                <p class="resume-descri"><%= livro.descricao %></p>
                 <hr>
                 <div class="compra-carrinho">
                     <button class="comprar">Comprar Agora</button>
                     <button class="carrinho-btn">Adicionar ao carrinho</button>
                 </div>
                 <div class="category">
-                    <p>Categorias <b>Fantasia, horror e ficção científica</b></p>
+                    <p>Genero <b><%= livro.genero.nome %></b></p>
                 </div>
                 <div class="share-social-media">
                     <ul>
