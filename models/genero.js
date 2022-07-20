@@ -1,15 +1,14 @@
-// const { DataTypes } = require("sequelize/types");
-
-// const generoModel = (sequelize, DataTypes) => {
-//     const genero = sequelize.define('genero', {
-        
-//         descricao: DataTypes.STRING,
-
-//     },{
-//         tableName: 'genero',
-//         timesTamp: false
-//     })
-// }
 
 
-// module.exports = generoModel;
+module.exports = (sequelize, DataTypes) => {
+    const Genero = sequelize.define('Genero', {
+
+        nome: DataTypes.STRING,
+        descricao: DataTypes.STRING,
+        foto_genero: DataTypes.STRING
+    }, {
+        tableName: 'genero',
+        timestamps: false
+    })
+    return Genero;
+}

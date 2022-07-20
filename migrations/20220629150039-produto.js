@@ -12,12 +12,14 @@ module.exports = {
       id: { type: Sequelize.INTEGER.UNSIGNED, primaryKey: true, autoIncrement: true},
       nome: Sequelize.STRING(30),
       descricao: Sequelize.TEXT,
+      autor: Sequelize.TEXT,
+      editora: Sequelize.TEXT,
       avaliacao: Sequelize.FLOAT,
       preco: Sequelize.FLOAT,
-      categoria_id: {type: Sequelize.INTEGER.UNSIGNED, references: { model: 'categoria', key: 'id'}},
+      genero_id: {type: Sequelize.INTEGER.UNSIGNED, references: { model: 'genero', key: 'id'}},
       createdAt: Sequelize.DATE, 
       updatedAt: Sequelize.DATE, 
-      //fotoDoProtuto: Sequelize.STRING(100),//implementar front END e banco
+      foto_livro: Sequelize.STRING(100),
     });
 
   },
@@ -29,6 +31,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-     await queryInterface.dropTable('protuto');
+     await queryInterface.dropTable('produto');
   }
 };

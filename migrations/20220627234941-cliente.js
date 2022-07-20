@@ -10,7 +10,7 @@ module.exports = {
      */
      await queryInterface.createTable("cliente", {
       id: { type: Sequelize.INTEGER.UNSIGNED, primaryKey: true, autoIncrement: true },
-      email: Sequelize.STRING(75),
+      email: {type: Sequelize.STRING(75), indicesType: 'UNIQUE'},
       nome: Sequelize.STRING(30),
       sobrenome: Sequelize.STRING(20),
       senha: Sequelize.STRING(60),

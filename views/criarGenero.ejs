@@ -1,0 +1,32 @@
+<%- include("./partials/header") %>
+
+
+
+  <div class="login_corpo">
+    <form action="/genero/salvar" class="formulario" method="POST" enctype="multipart/form-data">
+      <div class="cadastro">
+        <label for="foto_genero" class="form-label">Imagem de Perfil</label>
+        <input type="file" class="form-control" name="foto_genero" id="foto_genero" />
+        <div class="invalid-feedback"></div>
+      </div>
+
+      <div class="input">
+
+        <label for="exampleInputEmail1" class="form-label">insira o nome da categoria: </label>
+        <input type="text" class="form-control contato__input" name="nome">
+
+      </div>
+
+      <div class="input">
+        <label for="exampleInputPassword1" class="form-label">descrição</label>
+        <input type="text" class="form-control contato__input" name="descricao">
+      </div>
+
+      <button type="submit" class="btn">cadastrar</button>
+
+
+    </form>
+  </div>
+
+
+  <%- include("./partials/footer") %>

@@ -1,0 +1,40 @@
+<%- include("./partials/header")%>
+
+    <div class="container">
+        <div>
+            <h1>Lista de livros </h1>
+        </div>
+        <ul class="list-group">
+            <% for( let i=0; i < livros.length; i++ ) { %>
+                <li>
+
+                    <div class="card mb-3 historico-card">
+                      <div class="col historico-card" style="margin:20px;">
+                        <div class="col-md-4">
+                          <img src="/uploads/fotos_produtos/<%= livros[i].foto_livro %>" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div>
+                          <ul class="list-group">
+                            <li>
+                                <a href="/produto/editar/<%= livros[i].id %>"><h5 class="card-title"><%= livros[i].nome %></h5></a>
+                            </li>
+                            <li>
+                              <p class="card-text">K.K. Rowling</p><!-- colocar no banco -->
+                            </li>
+                            <li><%= livros[i].descricao %></li>
+                            <li>Gênero</li>
+                            <li><%= livros[i].genero.nome %></li>
+                            <li>
+                              <p class="card-text">Valor Unitário</p>
+                              <h5 class="card-text price"><b>R$ <%= livros[i].preco %></b></a>
+                            </li>
+                            <li><a href="/produto/<%= livros[i].id %>" class="btn">Compre novamente</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                <% } %>
+        </ul>
+    </div>
+<%- include("./partials/footer")%>

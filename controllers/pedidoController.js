@@ -2,13 +2,13 @@
 // const db =require('../models');
 // const { carrinho } = require('./produtoController');
 
-// const pedidoController = {
-//     cadastrar: (req, res) => {
-//         res.render('cadastroEndereco');
-//     },
+const pedidoController = {
+    adicionar: (req, res) => {
+        res.render('cadastroEndereco');
+    },
 //     editar: (req,res) => {
 
-//     },
+// //     },
 //     cancelar: (req,res) => {
 
 //     },
@@ -23,10 +23,10 @@
 //     },
 
 
-// }
+ }
 
 // carrinho.findOne({ user: req.user._id })
 
 
 
-// module.exports = pedidoController;
+module.exports = pedidoController;

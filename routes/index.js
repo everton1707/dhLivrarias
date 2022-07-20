@@ -1,34 +1,35 @@
 var express = require('express');
 var router = express.Router();
-const produtoController = require('../controllers/produtoController.js');
-const MainController = require('../controllers/MainController');
+
+const indexController = require('../controllers/indexController.js');
+const autenticacao = require('../middlewares/autenticacao');
 
 
 
 var usuariosRouter = require("./usuariosRouter.js");
-var categoriasRouter = require("./categoriasRouter.js");
+var generosRouter = require("./generosRouter.js");
+var produtoRouter = require("./produtoRouter.js");
+var adminRouter = require("./admin/adminRouter.js");
 
 
 
 
 router.use("/usuario",usuariosRouter);
-router.use("/categoria",categoriasRouter);
+router.use("/genero",generosRouter);
+router.use('/produto', produtoRouter);
+router.use('/admin',/*autenticacao, comentado para testes futuros */ adminRouter);
 
 
 
 
 
-router.get('/', produtoController.index);
+router.get('/', indexController.index);
 
-router.get('/faleConosco', produtoController.faleConosco);
+router.get('/faleConosco', indexController.faleConosco);
 
-
-router.get('/finalizacao', produtoController.finalizacao);
-router.get('/checkout', produtoController.checkout);
-router.get('/carrinho', produtoController.carrinho);
-router.get('/produto', produtoController.produto);
-
-router.get('/cadastroEndereco', MainController.index); // cep teste
+router.get('/finalizacao', indexController.finalizacao);
+router.get('/checkout', indexController.checkout);
+//router.get('/carrinho', indexController.carrinho);
 
 
 module.exports = router;

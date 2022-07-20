@@ -1,0 +1,50 @@
+<%- include("./partials/header") %>
+
+  <div class="container">
+
+      <h1>Cadastro de Produtos "Teste"</h1>
+    
+      <form action="/produto/salvar" class="formulario" method="POST" enctype="multipart/form-data">
+        
+        <div class="cadastro">
+          <label for="foto_livro" class="form-label">Imagem de Perfil</label>
+          <input type="file" class="form-control" name="foto_livro" id="foto_livro" />
+          <div class="invalid-feedback"></div>
+        </div>  
+
+        <div class="input">
+          <label for="exampleInputEmail1" class="form-label">insira o nome do produto: </label>
+          <input type="text" class="form-control contato__input" name="nome">
+        </div>
+
+        <div class="input">
+          <label for="exampleInputPassword1" class="form-label">descrição</label>
+          <input type="text" class="form-control contato__input" name="descricao">
+        </div>
+        <div class="input">
+          <label for="exampleInputPassword1" class="form-label">Avaliacao "teste"</label>
+          <input type="number" class="form-control contato__input" name="avaliacao">
+        </div>
+        
+        <div class="input">
+          <label for="exampleInputPassword1" class="form-label">preco</label>
+          <input type="number" class="form-control contato__input" name="preco">
+        </div>
+
+        <label for="exampleInputPassword1" class="form-label">Generos</label>
+        <select class="form-select" aria-label="Default select example" name="genero_id">
+          <option selected disabled>Selecione o Genero</option>
+          <% var options = []; %> 
+          <% for (let i=0; i < generos.length ; i++){ %>
+            <option value='<%= generos[i].id %>'><%= generos[i].nome %></option>
+          <% } %> 
+        </select>
+
+        <button type="submit" class="btn"> Cadastrar </button>
+      </form>
+
+    
+  </div>
+
+
+<%- include("./partials/footer") %>

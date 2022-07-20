@@ -5,25 +5,28 @@
       <div class="menuUsuario">
         <ul class="nav flex-column">
           <li class="nav-item ">
-            <a href=""><img src="/images/user.jpg" alt=""></a>
+            <a href=""><img src="/uploads/fotos_perfil/<%= usuarioLogado.foto_perfil %>" alt=""></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><b><%= usuarioLogado.nome %> <%= usuarioLogado.sobrenome %></b></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><b>Minha Conta</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><b>Alterar Dados</b></a>
+            <a class="nav-link" href="#"><b>Configurações</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"><b>Configurações</b></a>
+            <a class="nav-link" href="/usuario/logout"><b>Logout</b></a>
           </li>
         </ul>
       </div>
 
       <div class="historico" style="margin-left: 20px;">
-        <h2>Suas Compras</h2>
+        <h2>Compras de <%= usuarioLogado.nome %> </h2>
         <div>
           <ul class="list-group">
-            <% for (let i=0; i<5; i++){ %>
+            <% for (let i=0; i<2; i++){ %>
               <li>
 
                 <div class="card mb-3 historico-card">

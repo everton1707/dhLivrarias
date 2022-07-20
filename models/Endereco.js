@@ -13,7 +13,7 @@ const EnderecoModel = (sequelize, DataTypes) => {
     })
 
     Endereco.associate = (models)=>{
-        Endereco.belongsTo(models.Cliente, {foreignKey: "id"})
+        Endereco.belongsTo(models.Cliente, {as: 'cliente', foreignKey: "cliente_id"})
     }
     return Endereco;
 

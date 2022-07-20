@@ -11,11 +11,12 @@ router.get('/',autenticacao, clienteController.usuario);
 router.get('/logout', autenticacao, clienteController.logout); // logout
 
 router.get('/cadastro',clienteController.cadastro);
-router.post('/cadastro',upload.single("foto_perfil"),validacaoCadastro ,clienteController.acaoCadastro);
+router.post('/cadastro', upload.single("foto_perfil"), validacaoCadastro ,clienteController.acaoCadastro);
 
 router.get('/login',clienteController.login);
 router.post('/login',clienteController.logar);
 
+router.get('/logout',clienteController.logout);
 
 router.get('/cadastroEndereco',clienteController.cadastroEndereco);
 

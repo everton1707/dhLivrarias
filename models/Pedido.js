@@ -12,13 +12,14 @@ const PedidoModel = (sequelize, DataTypes) => {
     })
 
     Pedido.associate = (models)=>{
-        Pedido.belongsTo(models.Cliente, {foreignKey: "cliente_id"})
+        Pedido.belongsTo(models.Cliente, {as: "cliente", foreignKey: "cliente_id"})
 
         Pedido.belongsToMany(models.Produto, {
+            as: 'produto',
             through: "pedidos_has_produto",
             foreignKey: "pedido_id",
             otherKey: "produto_id",
-            //quantidade: DataTypes.Integer
+            //quantidade: DataTypes.INTEGER
         })
     }
 

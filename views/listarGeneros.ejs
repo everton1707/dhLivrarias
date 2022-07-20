@@ -1,0 +1,51 @@
+<%- include("./partials/header") %>
+    <div class="container ">
+
+        <h1>Lista de Generos</h1>
+
+        <ul class="list-group">
+            <% for( let i=0; i < generos.length; i++ ) { %>
+
+
+                <li>
+
+                    <div class="card mb-3 historico-card">
+                        <div class="col historico-card" style="margin:20px;">
+                            <div class="col-md-4">
+                                <img src="/uploads/fotos_generos/<%= generos[i].foto_genero %>" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div>
+                                <ul class="list-group">
+                                    <li>
+                                        <a href="/genero/editar/<%= generos[i].id %>">
+                                            <h5 class="card-title">
+                                                <%= generos[i].nome %>
+                                            </h5>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/genero/editar/<%= generos[i].id %>" class="btn">Editar</a>
+                                    </li>
+                                    <li>
+                                        <%= generos[i].descricao %>
+                                    </li>
+                                    <li>
+                                        <a href="/genero/deletar/<%= generos[i].id %>" class="btn">Deletar</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <% } %>
+
+        </ul>
+
+        <a href="/genero/criar" class="btn">Criar</a>
+    </div>
+
+
+
+
+    <%- include("./partials/footer") %>
