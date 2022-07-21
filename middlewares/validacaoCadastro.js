@@ -7,14 +7,14 @@ const validacaoCadastro = checkSchema({
     confirmeEmail: { custom: { 
         options: (value ,{ req, location, path }) =>{
             if(req.body.email != value){//value é  do campo confirmar email
-                throw new Error ("As emails não conferem!!");
+                throw new Error ("Os emails não conferem!!");
             }
             return true;
         }
  
     }, errorMessage: "O campo confirmação de email é obrigatório" },
 
-    senha: { isLength: { options: { min: 8 } }, errorMessage: "O senha é obrigatório" },
+    senha: { isLength: { options: { min: 8 } }, errorMessage: "A senha é obrigatório" },
     confirmeSenha: { custom: {
         options: (value, { req, location, path }) => {
             if(req.body.senha != value){//value é  do campo confirmar senha

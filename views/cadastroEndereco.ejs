@@ -5,14 +5,32 @@
         <div class="entrega-corpo">
 
             <h2>Insira o endereço de entrega</h2>
+            
+            <!-- <h1>API de consulta de Cep: </h1>
+            <form action="cadastroEndereco" method="GET">
+                <label>Digite o cep para consulta </label>
+                <input type="text" name="cepConsulta">
+                <button type="submit">Consultar</button>
+            </form>
+        
+    
+                <% if(typeof detalhesCep !== "undefined"){ %> 
+                    <div>
+                        <h2>Detalhes do cep: <%= detalhesCep.cep %></h2>
+                        <p>Rua: <%= detalhesCep.street %></p>
+                        <p>Bairro: <%= detalhesCep.neighborhood %></p>
+                        <p><%= detalhesCep.city %> - <%= detalhesCep.state %></p>
+                    </div>
+              
+                <% } %>  -->
 
-            <form action="/" method="GET">
+            <form action="/cadastroEndereco" method="GET">
 
                 <div class="casdastro_entrega">
-
+                   
                     <div class="entrega_dados">
                         <label for="cep" class="entrega_label"></label>
-                        <input type="text" class="entrega_input" name="cep" id="cep" placeholder="CEP" />
+                        <input type="text" class="entrega_input" name="cep" id="cep" placeholder="CEP"  />
                     </div>
 
 
@@ -55,4 +73,5 @@
         </div>
 
     </div>
+
     <%- include("./partials/footer") %>

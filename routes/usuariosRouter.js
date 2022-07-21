@@ -8,6 +8,7 @@ const multer = require('multer');
 const upload = multer({ dest:"public/uploads/fotos_perfil"});
 
 router.get('/',autenticacao, clienteController.usuario);
+router.get('/logout', autenticacao, clienteController.logout); // logout
 
 router.get('/cadastro',clienteController.cadastro);
 router.post('/cadastro', upload.single("foto_perfil"), validacaoCadastro ,clienteController.acaoCadastro);
