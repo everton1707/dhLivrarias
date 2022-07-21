@@ -15,6 +15,9 @@ const indexController = {
     checkout: (req, res) => {
         res.render('checkout');
     },
-}
+    carrinhoTeste: (req, res) => {
+        res.render('carrinhoTeste');
+    },
+}   
 
 module.exports = indexController;

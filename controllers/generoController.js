@@ -10,7 +10,7 @@ const generoController = {
     salvar: async function (req, res) {
         const { nome, descricao } = req.body;
         const errors = validationResult(req);
-
+        console.log(req.body);
 
         if (!errors.isEmpty()) {
             console.log(errors);

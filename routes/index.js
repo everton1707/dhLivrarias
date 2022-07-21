@@ -30,6 +30,6 @@ router.get('/faleConosco', indexController.faleConosco);
 router.get('/finalizacao', indexController.finalizacao);
 router.get('/checkout', indexController.checkout);
 //router.get('/carrinho', indexController.carrinho);
-
+router.get('/carrinho', indexController.carrinhoTeste);
 
 module.exports = router;
