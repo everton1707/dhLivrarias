@@ -5,7 +5,7 @@ const { validationResult } = require("express-validator");
 const generoController = {
 
     criar: async(req, res) => {
-        res.render('criarGenero',);
+        res.render('criarGenero',{});
     },
     salvar: async function (req, res) {
         const { nome, descricao } = req.body;
