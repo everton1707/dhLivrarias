@@ -11,7 +11,7 @@
                     <div class="card mb-3 historico-card">
                       <div class="col historico-card" style="margin:20px;">
                         <div class="col-md-4">
-                          <img src="/uploads/fotos_produtos/<%= livros[i].foto_livro %>" class="img-fluid rounded-start" alt="...">
+                          <img src='/uploads/fotos_produtos/<%= livros[i].foto_livro %>' class="img-fluid rounded-start" alt="...">
                         </div>
                         <div>
                           <ul class="list-group">
@@ -28,7 +28,7 @@
                               <p class="card-text">Valor Unitário</p>
                               <h5 class="card-text price"><b>R$ <%= livros[i].preco %></b></a>
                             </li>
-                            <li><a href="/produto/<%= livros[i].id %>" class="btn">Compre novamente</a></li>
+                            <li><a href="/produto/<%= livros[i].id %>" class="btn">Adicionar ao carrinho</a></li>
                           </ul>
                         </div>
                       </div>
