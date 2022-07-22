@@ -1,13 +1,14 @@
 const db = require("../models");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
+const fs = require("fs");
 
 const clienteController = {
     login: (req, res) => {
         res.render('login');
     },
 
-    logar: async (req, res) => {
+    acaoLogin: async (req, res) => {
         const body = {
             email: req.body.email,
             senha: req.body.senha
@@ -45,9 +46,6 @@ const clienteController = {
 
         res.render('painelUsuario', { usuarioLogado });
     },
-    listarCategorias: (req, res) => {
-        res.render('listarCategorias');
-    },
     logout: function (req, res) {
 
         req.session.user = null
@@ -61,13 +59,16 @@ const clienteController = {
                 res.redirect('/')
             })
         })
-        /*req.session.destroy();
-        res.redirect("/");*/
     },
-    cadastro: (req, res) => {
-        res.render('cadastroCliente');
+    cadastrar: (req, res) => {
+        const Cliente ={}
+        res.render('cadastroCliente',{
+            Cliente,
+            titulo: 'Cadastrar',
+            actionUrl: "/usuario/cadastrar/"
+     });
     },
-    acaoCadastro: async (req, res) => {
+    acaoCadastrar: async (req, res) => {
 
         const { nome, sobrenome, email, senha } = req.body;
         const errors = validationResult(req); //importa os erros da validação feita no middleware
@@ -82,7 +83,7 @@ const clienteController = {
         }
 
 
-        console.log(req.file);//teste nome da foto
+       
         await db.Cliente.create({ //--- igual a um create no mysql
             email,
             nome,
@@ -97,7 +98,58 @@ const clienteController = {
     cadastroEndereco: (req, res) => {
         res.render('cadastroEndereco');
     },
+    editar: async (req, res) =>{
+        const idCliente = req.session.idUsuario;
+        const cliente = await db.Cliente.findByPk(idCliente);
+        res.render('cadastroCliente', { 
+            Cliente: cliente,
+            titulo: 'Editar',
+            actionUrl: "/usuario/editar/"
+         });
+    },
+    atualizar: async (req, res) => {
+        const { nome, sobrenome, email, senha } = req.body;
+        const errors = validationResult(req);
+        const idCliente = req.session.idUsuario;
 
+        if (!errors.isEmpty()) {
+            console.log(errors);
+            fs.unlinkSync('public/uploads/fotos_perfil/' + req.file.filename);
+            return res.render('criarCliente', { errors });
+        }
+        const usuarioEncontrado = await db.Cliente.findByPk(idCliente);
+        fs.unlinkSync('public/uploads/fotos_perfil/' + usuarioEncontrado.foto_perfil);
+        await db.Cliente.update({ 
+            nome: nome,
+            sobrenome: sobrenome,
+            email: email,
+            senha: bcrypt.hashSync(senha),
+            foto_perfil: req.file.filename
+        }, {
+            where: {
+              id: idCliente
+            }
+          });
+          req.session.idUsuario = usuarioEncontrado.id;
+          req.session.nome = nome;
+          req.session.sobrenome = sobrenome;
+          req.session.email = email;
+          req.session.foto_perfil = req.file.filename;
+        res.redirect("/usuario");
+    },
+    deletar: async (req,res) =>{
+        const idCliente = req.session.idUsuario;
+
+        const usuarioEncontrado = await db.Cliente.findByPk(idCliente);
+        fs.unlinkSync('public/uploads/fotos_perfil/' + usuarioEncontrado.foto_perfil);
+        //await db.Produto.destroy({ where: { genero_id: idCliente }})  //fazer com enderecos
+        await db.Cliente.destroy({ 
+            where: {
+              id: idCliente
+            }
+          });
+        res.redirect("/");
+    } 
 
 
 }

@@ -10,13 +10,18 @@ const upload = multer({ dest:"public/uploads/fotos_perfil"});
 router.get('/',autenticacao, clienteController.usuario);
 router.get('/logout', autenticacao, clienteController.logout); // logout
 
-router.get('/cadastro',clienteController.cadastro);
-router.post('/cadastro', upload.single("foto_perfil"), validacaoCadastro ,clienteController.acaoCadastro);
+router.get('/cadastrar',clienteController.cadastrar);
+router.post('/cadastrar', upload.single("foto_perfil"), validacaoCadastro ,clienteController.acaoCadastrar);
+
+router.get('/editar',clienteController.editar);
+router.post('/editar', upload.single("foto_perfil"), validacaoCadastro ,clienteController.atualizar);
 
 router.get('/login',clienteController.login);
-router.post('/login',clienteController.logar);
+router.post('/login',clienteController.acaoLogin);
 
 router.get('/logout',clienteController.logout);
+
+router.get('/deletar',clienteController.deletar);
 
 router.get('/cadastroEndereco',clienteController.cadastroEndereco);
 
