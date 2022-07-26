@@ -37,8 +37,7 @@ const generoController = {
     },
     editar: async (req, res) =>{
         const idGenero = req.params.id;
-        console.log(idGenero);
-        const genero = await db.Genero.findByPk(parseInt(idGenero));
+        const genero = await db.Genero.findByPk(idGenero);
         res.render('criarGenero', { 
             Genero: genero,
             titulo: 'Editar',
@@ -71,7 +70,13 @@ const generoController = {
     deletar: async (req,res) =>{
         const idGenero = req.params.id;
 
+        const produtosDeletados = await db.Produto.findAll ({ where: { genero_id: idGenero }})//apagar imagens tambem !!!!
         await db.Produto.destroy({ where: { genero_id: idGenero }})//apagar imagens tambem !!!!
+
+        for(var i = 0 ; i<produtosDeletados.length;i++){
+            fs.unlinkSync('public/uploads/fotos_produtos/' + produtosDeletados[i].foto_livro);
+        }
+
         const generoEncontrado = await db.Genero.findByPk(idGenero);
         fs.unlinkSync('public/uploads/fotos_generos/' + generoEncontrado.foto_genero);
         await db.Genero.destroy({ 

@@ -9,17 +9,17 @@
                 <li>
 
                     <div class="card mb-3 historico-card">
-                      <div class="col historico-card" style="margin:20px;">
+                      <div class="col historico-card">
                         <div class="col-md-4">
                           <img src="/uploads/fotos_produtos/<%= livros[i].foto_livro %>" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div>
+                        <div style=" width: 400px;">
                           <ul class="list-group">
                             <li>
                                 <a href="/produto/editar/<%= livros[i].id %>"><h5 class="card-title"><%= livros[i].nome %></h5></a>
                             </li>
                             <li>
-                              <p class="card-text">K.K. Rowling</p><!-- colocar no banco -->
+                              <p class="card-text"><%= livros[i].autor %></p><!-- colocar no banco -->
                             </li>
                             <li><%= livros[i].descricao %></li>
                             <li>Gênero</li>
@@ -28,7 +28,10 @@
                               <p class="card-text">Valor Unitário</p>
                               <h5 class="card-text price"><b>R$ <%= livros[i].preco %></b></a>
                             </li>
-                            <li><a href="/produto/<%= livros[i].id %>" class="btn">Compre novamente</a></li>
+                              <a href="/produto/editar/<%= livros[i].id %>" class="btn"> Editar </a>
+                              <a href="/produto/deletar/<%= livros[i].id %>" class="btn"> Deletar </a>
+                              <a href="/produto/<%= livros[i].id %>" class="btn">Comprar</a>
+                          
                           </ul>
                         </div>
                       </div>
@@ -36,5 +39,6 @@
                   </li>
                 <% } %>
         </ul>
+        <a href="/produto/criar" class="btn">Criar</a>
     </div>
 <%- include("./partials/footer")%>

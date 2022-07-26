@@ -14,13 +14,15 @@ const clienteController = {
             senha: req.body.senha
         }
 
-        // fazer busca do usuario digitado no banco
+        // busca do usuario digitado no banco
+
         const usuarioEncontrado = await db.Cliente.findOne({ where: { email: body.email } });
         console.log(usuarioEncontrado);
         if (usuarioEncontrado == null) {
             return res.render('usuario/login');
         }
-        //verificacao de login 
+
+        // verificacao de login 
 
         const resultadoSenha = bcrypt.compareSync(body.senha, usuarioEncontrado.senha);
         if (!resultadoSenha) {
@@ -34,9 +36,6 @@ const clienteController = {
 
         const usuarioLogado = req.session;
         res.render('painelUsuario', { usuarioLogado });
-
-
-
     },
     usuario: (req, res) => {
         const usuarioLogado = req.session;
@@ -61,12 +60,12 @@ const clienteController = {
         })
     },
     cadastrar: (req, res) => {
-        const Cliente ={}
-        res.render('cadastroCliente',{
+        const Cliente = {}
+        res.render('cadastroCliente', {
             Cliente,
             titulo: 'Cadastrar',
             actionUrl: "/usuario/cadastrar/"
-     });
+        });
     },
     acaoCadastrar: async (req, res) => {
 
@@ -83,7 +82,7 @@ const clienteController = {
         }
 
 
-       
+
         await db.Cliente.create({ //--- igual a um create no mysql
             email,
             nome,
@@ -91,21 +90,21 @@ const clienteController = {
             senha: bcrypt.hashSync(senha),
             foto_perfil: req.file.filename
         })
-        
+
 
         res.redirect('/usuario/login');
     },
     cadastroEndereco: (req, res) => {
         res.render('cadastroEndereco');
     },
-    editar: async (req, res) =>{
+    editar: async (req, res) => {
         const idCliente = req.session.idUsuario;
         const cliente = await db.Cliente.findByPk(idCliente);
-        res.render('cadastroCliente', { 
+        res.render('cadastroCliente', {
             Cliente: cliente,
             titulo: 'Editar',
             actionUrl: "/usuario/editar/"
-         });
+        });
     },
     atualizar: async (req, res) => {
         const { nome, sobrenome, email, senha } = req.body;
@@ -119,7 +118,7 @@ const clienteController = {
         }
         const usuarioEncontrado = await db.Cliente.findByPk(idCliente);
         fs.unlinkSync('public/uploads/fotos_perfil/' + usuarioEncontrado.foto_perfil);
-        await db.Cliente.update({ 
+        await db.Cliente.update({
             nome: nome,
             sobrenome: sobrenome,
             email: email,
@@ -127,33 +126,30 @@ const clienteController = {
             foto_perfil: req.file.filename
         }, {
             where: {
-              id: idCliente
+                id: idCliente
             }
-          });
-          req.session.idUsuario = usuarioEncontrado.id;
-          req.session.nome = nome;
-          req.session.sobrenome = sobrenome;
-          req.session.email = email;
-          req.session.foto_perfil = req.file.filename;
+        });
+        req.session.idUsuario = usuarioEncontrado.id;
+        req.session.nome = nome;
+        req.session.sobrenome = sobrenome;
+        req.session.email = email;
+        req.session.foto_perfil = req.file.filename;
         res.redirect("/usuario");
     },
-    deletar: async (req,res) =>{
+    deletar: async (req, res) => {
         const idCliente = req.session.idUsuario;
 
         const usuarioEncontrado = await db.Cliente.findByPk(idCliente);
         fs.unlinkSync('public/uploads/fotos_perfil/' + usuarioEncontrado.foto_perfil);
         //await db.Produto.destroy({ where: { genero_id: idCliente }})  //fazer com enderecos
-        await db.Cliente.destroy({ 
+        await db.Cliente.destroy({
             where: {
-              id: idCliente
+                id: idCliente
             }
-          });
+        });
         res.redirect("/");
-    } 
-
+    }
 
 }
 
 module.exports = clienteController;
-
-

@@ -1,31 +1,29 @@
-// const { canTreatArrayAsAnd } = require('sequelize/types/utils');
-// const db =require('../models');
-// const { carrinho } = require('./produtoController');
+//const { canTreatArrayAsAnd } = require('sequelize/types/utils');
+const db =require('../models');
+//const { carrinho } = require('./produtoController');
 
 const pedidoController = {
     adicionar: (req, res) => {
         res.render('cadastroEndereco');
     },
-//     editar: (req,res) => {
+    editar: (req,res) => {
 
-// //     },
-//     cancelar: (req,res) => {
+    },
+     cancelar: (req,res) => {
 
-//     },
-//     listar: (req,res) => {
+    },
+    listar: (req,res) => {
 
-//     },
-//     deletar: (req, res) => {
-        
-//     },
-//     pagar: (req, res) => {
+    },
+    deletar: (req, res) => {
 
-//     },
+    },
+    pagar: (req, res) => {
 
-
+    },
  }
 
-// carrinho.findOne({ user: req.user._id })
+// carrinho.findOne({ user: req.user._id });
 
 
 
