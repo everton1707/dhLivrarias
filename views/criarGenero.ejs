@@ -3,7 +3,7 @@
 
 
   <div class="login_corpo">
-    <form action="/genero/salvar" class="formulario" method="POST" enctype="multipart/form-data">
+    <form action="<%= actionUrl %>" class="formulario" method="POST" enctype="multipart/form-data">
       <div class="cadastro">
         <label for="foto_genero" class="form-label">Imagem de Perfil</label>
         <input type="file" class="form-control" name="foto_genero" id="foto_genero" />
@@ -12,15 +12,19 @@
 
       <div class="input">
 
-        <label for="exampleInputEmail1" class="form-label">Insira o nome da categoria: </label>
-        <input type="text" class="form-control contato__input" name="nome">
+        <label for="exampleInputEmail1" class="form-label">insira o nome da categoria: </label>
+        <input type="text" class="form-control contato__input" name="nome" value="<%= Genero.nome %>" required>
 
       </div>
 
       <div class="input">
-        <label for="exampleInputPassword1" class="form-label">Descrição</label>
-        <input type="text" class="form-control contato__input" name="descricao">
+        <label for="exampleInputPassword1" class="form-label">descrição</label>
+        <input type="text" class="form-control contato__input" name="descricao" value="<%= Genero.descricao %>" required>
       </div>
+
+      <button type="submit" class="btn"><%= titulo %></button><!-- colocar no titulo da pagina -->
+
+
     </form>
     
       <div class="class">

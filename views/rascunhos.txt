@@ -11,7 +11,8 @@
 
 
 
-
+<%= {typeof produto.genero_id ==  generos[i].id }?'selected':''%>
 
 
         <%= {typeof conteudo != 'undefined'}?conteudo:''%>
+        

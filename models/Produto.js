@@ -4,6 +4,8 @@ const ProdutoModel = (sequelize, DataTypes) => {
     const Produto = sequelize.define('Produto', {
         nome: DataTypes.STRING,
         descricao: DataTypes.STRING,
+        autor: DataTypes.STRING,
+        editora: DataTypes.STRING,
         avaliacao: DataTypes.FLOAT,
         preco: DataTypes.FLOAT,
         foto_livro: DataTypes.STRING,
