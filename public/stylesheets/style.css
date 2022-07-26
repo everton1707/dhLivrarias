@@ -35,7 +35,7 @@ body{
   box-shadow: 1px 5px 10px 1px rgb(0 0 0 / 20%);
 }
 
-.list-group{
+/* .list-group{
   border-radius: 20px;
   border: none;
   box-shadow: 1px 5px 10px 1px rgb(0 0 0 / 20%);
@@ -44,7 +44,7 @@ body{
   margin: 20px auto;
   padding: 20px;
   text-align: center;
-}
+} */
 
 .form-check .form-check-input{
   padding: 5px;
