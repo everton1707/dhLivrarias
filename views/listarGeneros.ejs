@@ -24,10 +24,10 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/genero/editar/<%= generos[i].id %>" class="btn">Editar</a>
+                                        <%= generos[i].descricao %>
                                     </li>
                                     <li>
-                                        <%= generos[i].descricao %>
+                                        <a href="/genero/editar/<%= generos[i].id %>" class="btn">Editar</a>
                                     </li>
                                     <li>
                                         <a href="/genero/deletar/<%= generos[i].id %>" class="btn">Deletar</a>

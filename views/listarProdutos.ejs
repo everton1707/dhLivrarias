@@ -4,9 +4,9 @@
         <div>
             <h1>Lista de livros </h1>
         </div>
-        <ul class="list-group">
+        
             <% for( let i=0; i < livros.length; i++ ) { %>
-                <li>
+              
 
                     <div class="card mb-3 historico-card">
                       <div class="col historico-card">
@@ -19,11 +19,10 @@
                                 <a href="/produto/editar/<%= livros[i].id %>"><h5 class="card-title"><%= livros[i].nome %></h5></a>
                             </li>
                             <li>
-                              <p class="card-text"><%= livros[i].autor %></p><!-- colocar no banco -->
+                              <p class="card-text"> <b> Autor: </b> <%= livros[i].autor %></p><!-- colocar no banco -->
                             </li>
-                            <li><%= livros[i].descricao %></li>
-                            <li>Gênero</li>
-                            <li><%= livros[i].genero.nome %></li>
+                            <li><p class="card-text" ><b> Descrição: </b> <%= livros[i].descricao %></p></li>
+                            <li> <p class="card-text" ><b> Gênero: </b> <%= livros[i].genero.nome %></p></li>
                             <li>
                               <p class="card-text">Valor Unitário</p>
                               <h5 class="card-text price"><b>R$ <%= livros[i].preco %></b></a>
@@ -38,7 +37,7 @@
                     </div>
                   </li>
                 <% } %>
-        </ul>
+      
         <a href="/produto/criar" class="btn">Criar</a>
     </div>
 <%- include("./partials/footer")%>
