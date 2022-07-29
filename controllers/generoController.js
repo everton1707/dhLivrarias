@@ -15,7 +15,7 @@ const generoController = {
     salvar: async function (req, res) {
         const { nome, descricao } = req.body;
         const errors = validationResult(req);
-        console.log(req.body);
+
 
         if (!errors.isEmpty()) {
             console.log(errors);
@@ -70,11 +70,12 @@ const generoController = {
     deletar: async (req,res) =>{
         const idGenero = req.params.id;
 
-        const produtosDeletados = await db.Produto.findAll ({ where: { genero_id: idGenero }})//apagar imagens tambem !!!!
-        await db.Produto.destroy({ where: { genero_id: idGenero }})//apagar imagens tambem !!!!
+        const produtosRelacionados = await db.Produto.findAll ({ where: { genero_id: idGenero }})
+        
 
-        for(var i = 0 ; i<produtosDeletados.length;i++){
-            fs.unlinkSync('public/uploads/fotos_produtos/' + produtosDeletados[i].foto_livro);
+        if(produtosRelacionados.length > 0){
+            res.send("Existem produtos relacionados a esse gênero");
+            return;
         }
 
         const generoEncontrado = await db.Genero.findByPk(idGenero);

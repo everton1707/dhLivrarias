@@ -9,11 +9,11 @@ const autenticacao = require('../middlewares/autenticacao');
 var clientesRouter = require("./clientesRouter.js");
 var generosRouter = require("./generosRouter.js");
 var produtoRouter = require("./produtoRouter.js");
+var carrinhoRouter = require("./carrinhoRouter.js");
 var adminRouter = require("./admin/adminRouter.js");
 
 
-
-
+router.use("/carrinho",carrinhoRouter);
 router.use("/usuario",clientesRouter);
 router.use("/genero",generosRouter);
 router.use('/produto', produtoRouter);
@@ -29,7 +29,7 @@ router.get('/faleConosco', indexController.faleConosco);
 
 router.get('/finalizacao', indexController.finalizacao);
 router.get('/checkout', indexController.checkout);
-//router.get('/carrinho', indexController.carrinho);
-router.get('/carrinho', indexController.carrinhoTeste);
+
+
 
 module.exports = router;

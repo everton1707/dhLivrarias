@@ -12,7 +12,7 @@
                 <h2><%= livro.nome %></h2>
                 <div class="author-review">
                     <div class="author">
-                    <a href="">Autor: <b>J.R.R Tolkien</b></a> 
+                    <a href="">Autor: <b><%= livro.autor %></b></a> 
                     </div>  
                     <div class="star-reviews">
                         <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@
                 <hr>
                 <div class="compra-carrinho">
                     <button class="comprar">Comprar Agora</button>
-                    <button class="carrinho-btn">Adicionar ao carrinho</button>
+                    <a class="carrinho-btn btn" href="/carrinho/adicionar/<%= livro.id %>">Adicionar ao carrinho</a>
                 </div>
                 <div class="category">
                     <p>Genero <b><%= livro.genero.nome %></b></p>

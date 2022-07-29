@@ -44,7 +44,7 @@ const produtoController = {
             foto_livro: req.file.filename
         }/*, {
             include: ["genero"]
-            relação muitos para muitos
+             
         }*/ )
 
         res.redirect("/produto");

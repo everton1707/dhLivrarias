@@ -78,10 +78,8 @@ const clienteController = {
             });//obs voltando para mesma pagina e passando como segundo parametro um objeto contando um array com os erros
         }
 
-
-
         await db.Cliente.create({ //--- igual a um create no mysql
-            email,
+            email, 
             nome,
             sobrenome,
             senha: bcrypt.hashSync(senha),
