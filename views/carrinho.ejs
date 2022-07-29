@@ -27,12 +27,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <% var subTotal = 0 %> 
 
-                  <% var frete = 10 %> 
+
+                
 
                   <% for(var i = 0 ; i < pedido.produtos.length ; i++) { %> 
-                    <% subTotal = subTotal + pedido.produtos[i].preco %> 
+                   
                   <tr>
                     <th scope="row" class="border-0">
                       <div class="p-2">
@@ -78,13 +78,13 @@
             <div class="p-4">
               <p class="font-italic mb-4">Os custos de envio e adicionais são calculados com base nos valores inseridos.</p>
               <ul class="list-unstyled mb-4">
-                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Subtotal do pedido </strong><strong>R$ <%= subTotal %></strong></li>
-                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Taxa de envio</strong><strong>R$ <%= frete %></strong></li>
-                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Desconto</strong><strong>$0.00</strong></li>
+                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Subtotal do pedido </strong><strong>R$ <%= pedido.valor %></strong></li>
+                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Taxa de envio</strong><strong>R$ 0.00</strong></li>
+                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Desconto</strong><strong>R$ 0.00</strong></li>
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                  <h5 class="font-weight-bold">$ <%= frete + subTotal %></h5>
+                  <h5 class="font-weight-bold">$ <%=  pedido.valor %></h5>
                 </li>
-              </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Ir para pagamento</a>
+              </ul><a href="/carrinho/checkout/<%= pedido.id %>" class="btn btn-dark rounded-pill py-2 btn-block">Ir para pagamento</a>
             </div>
           </div>
         </div>

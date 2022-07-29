@@ -26,83 +26,35 @@
     </div>
 
     <h3 class="subtitle">Livros Mais Vendidos da Semana</h3>
-
     <section class="card-group">
+      <% var contador = 0 %> 
+
+
+
+      <% for( contador; contador<4; contador++ ) { %>
       <div class="card col-md-2">
-        <img src="/images/Livro1.png" class="card-img-top" alt="...">
+        <img src="/uploads/fotos_produtos/<%= produtos[contador].foto_livro %>" class="card-img-top" alt="...">
         <div class="card-body">
           <ul class="list-group list-group-flush">
             <li>
-              <h5 class="card-title">Comunicação não violenta - Nova edição Técnicas para aprimorar</h5>
+              <h5 class="card-title"><%= produtos[contador].nome %></h5>
             </li>
             <li>
-              <p class="card-text">Marshall B. Rosenberg</p>
+              <p class="card-text"><%= produtos[contador].autor %></p>
             </li>
             <li>
-              <h5 class="card-text price"><b>R$ 75,90</b></h5>
+              <h5 class="card-text price"><b>R$ <%= produtos[contador].preco %></b></h5>
             </li>
-            <li><a href="/produto" class="btn">Ver mais...</a></li>
+            <li><a href="/produto/<%= produtos[contador].id %>" class="btn">Ver mais detalhes...</a></li>
           </ul>
         </div>
       </div>
+      <% } %>
       
-      <div class="card col-md-2">
-        <img src="/images/Livro2.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <ul class="list-group list-group-flush ">
-            <li>
-              <h5 class="card-title">Harry Potter e Pedra Filosofal 3ª Edição</h5>
-            </li>
-            <li>
-              <p class="card-text">K.K. Rowling</p>
-            </li>
-            <li>
-              <h5 class="card-text price"><b>R$ 42,90</b></a>
-            </li>
-            <li><a href="/produto" class="btn">Ver mais...</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card col-md-2">
-        <img src="/images/Livro3.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <ul class="list-group list-group-flush">
-            <li>
-              <h5 class="card-title">Clean Code - A handbook of Agile Software Cratsmanshi</h5>
-            </li>
-            <li>
-              <p class="card-text">Robert C. Martin</p>
-            </li>
-            <li>
-              <h5 class="card-text price"><b>R$ 210,90</b></h5>
-            </li>
-            <li><a href="/produto" class="btn">Ver mais...</a></li>
-          </ul>
-
-        </div>
-      </div>
-
-
+      
+      
+      
     
-      <div class="card col-md-2">
-        <img src="/images/Livro5.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          
-          <ul class="list-group list-group-flush ">
-            <li>
-              <h5 class="card-title">Introdução à programação neurolinguística</h5>
-            </li>
-            <li>
-              <p class="card-text">Joseph O'Conor</p>
-            </li>
-            <li>
-              <h5 class="card-text price"><b>R$ 60,90</b></h5>
-            </li>
-            <li><a href="/produto" class="btn">Ver mais...</a></li>
-          </ul>
-        </div>
-      </div>
       
 
       
@@ -110,107 +62,38 @@
 
     <h3 class="subtitle">Encontre seu universo favorito</h3>
     <section class="card-group">
+      <% for( i = 0; i<6 ; i++ ) { %>
       <div class="card card-img categories">
-        <img src="/images/universo/harry-potter 1.png" class="card-img-top" alt="...">  
+        <a href="" target="_blanc"><img src="/uploads/fotos_generos/<%= generos[i].foto_genero %>" class="card-img-top" alt="..."> </a> 
       </div>
-      <div class="card card-img categories">
-        <a href="" target="_blanc"><img src="/images/universo/Game-of-thores 1.png" class="card-img-top" alt="..."> </a> 
-      </div>
-      <div class=" card card-img categories">
-        <a href="" target="_blanc"><img src="/images/universo/star-wars 1.png" class="card-img-top" alt="...">  </a>
-      </div>
-      <div class="card card-img categories">
-        <a href="" target="_blanc"><img src="/images/universo/princesa-disney 1.png" class="card-img-top" alt="...">  </a>
-      </div>
-      <div class="card card-img categories">
-        <a href="" target="_blanc"><img src="/images/universo/universo-geek 1.png" class="card-img-top" alt="..."></a>
-      </div>
-      <div class="card card-img categories">
-        <a href="" target="_blanc"><img src="/images/universo/kids 1.png" class="card-img-top" alt="..."></a>  
-      </div>
+      
+      <% } %>
 
 
       
     </section>
-
+    
     <h3 class="subtitle">Ofertas do dia</h3>
     <section class="card-group">
-      <div class="card col-md-2">
-        <img src="/images/Livro1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <ul class="list-group list-group-flush">
-            <li>
-              <h5 class="card-title">Comunicação não violenta - Nova edição Técnicas para aprimorar</h5>
-            </li>
-            <li>
-              <p class="card-text">Marshall B. Rosenberg</p>
-            </li>
-            <li>
-              <h5 class="card-text price"><b>R$ 75,90</b></h5>
-            </li>
-            <li><a href="/produto" class="btn">Ver mais...</a></li>
-          </ul>
+      <% for( contador; contador<8; contador++ ) { %>
+        <div class="card col-md-2">
+          <img src="/uploads/fotos_produtos/<%= produtos[contador].foto_livro %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li>
+                <h5 class="card-title"><%= produtos[contador].nome %></h5>
+              </li>
+              <li>
+                <p class="card-text"><%= produtos[contador].autor %></p>
+              </li>
+              <li>
+                <h5 class="card-text price"><b>R$ <%= produtos[contador].preco %></b></h5>
+              </li>
+              <li><a href="/produto/<%= produtos[contador].id %>" class="btn">Ver mais detalhes...</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      
-      <div class="card col-md-2">
-        <img src="/images/Livro2.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <ul class="list-group list-group-flush ">
-            <li>
-              <h5 class="card-title">Harry Potter e Pedra Filosofal 3ª Edição</h5>
-            </li>
-            <li>
-              <p class="card-text">K.K. Rowling</p>
-            </li>
-            <li>
-              <h5 class="card-text price"><b>R$ 42,90</b></a>
-            </li>
-            <li><a href="/produto" class="btn">Ver mais...</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card col-md-2">
-        <img src="/images/Livro3.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <ul class="list-group list-group-flush">
-            <li>
-              <h5 class="card-title">Clean Code - A handbook of Agile Software Cratsmanshi</h5>
-            </li>
-            <li>
-              <p class="card-text">Robert C. Martin</p>
-            </li>
-            <li>
-              <h5 class="card-text price"><b>R$ 210,90</b></h5>
-            </li>
-            <li><a href="/produto" class="btn">Ver mais...</a></li>
-          </ul>
-
-        </div>
-      </div>
-
-      <div class="card col-md-2">
-        <img src="/images/Livro5.png" class="card-img-top" alt="...">
-        <div class="card-body">
-
-          <ul class="list-group list-group-flush ">
-            <li>
-              <h5 class="card-title">Introdução à programação neurolinguística</h5>
-            </li>
-            <li>
-              <p class="card-text">Joseph O'Conor</p>
-            </li>
-            <li>
-              <h5 class="card-text price"><b>R$ 60,90</b></h5>
-            </li>
-            <li><a href="/produto" class="btn">Ver mais...</a></li>
-          </ul>
-        </div>
-      </div>
-      
-
-
+        <% } %>
     </section>
     
     

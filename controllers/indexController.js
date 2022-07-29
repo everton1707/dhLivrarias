@@ -2,8 +2,14 @@ const db = require("../models");
 const { validationResult } = require("express-validator");
 
 const indexController = {
-    index: (req, res) => {
-        res.render('home');
+    index: async (req, res) => {
+        const produtos = await db.Produto.findAll();
+        const generos = await db.Genero.findAll();
+       
+        //res.send(generos)
+        res.render('home',{ 
+            produtos: produtos, 
+            generos: generos });
     },
     faleConosco: (req, res) => {
         res.render('faleConosco');
@@ -12,9 +18,7 @@ const indexController = {
     finalizacao: (req, res) => {
         res.render('finalizacao');
     },
-    checkout: (req, res) => {
-        res.render('checkout');
-    }
+   
 }   
 
 module.exports = indexController;
