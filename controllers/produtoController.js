@@ -5,12 +5,6 @@ const fs = require("fs");
 
 const produtoController = {
 
-    carrinho: (req, res) => {
-        res.render('carrinho');
-    },
-    produto: (req, res) => {
-        res.render('produto');
-    },
     criar: async (req, res) => {
         const generos = await db.Genero.findAll()
         const produto = {}
