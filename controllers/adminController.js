@@ -3,7 +3,7 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const fs = require("fs");
 
-const clienteController = {
+const adminController = {
     login: (req, res) => {
         res.render('login');
     },
@@ -155,4 +155,4 @@ const clienteController = {
 
 }
 
-module.exports = clienteController;
+module.exports = adminController;
