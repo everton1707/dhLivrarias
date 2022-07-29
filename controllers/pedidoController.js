@@ -102,7 +102,7 @@ const pedidoController = {
         res.redirect('/carrinho');
     },
     finalizar: (req, res) => {
-
+        
     },
     cancelar: (req, res) => {
 
