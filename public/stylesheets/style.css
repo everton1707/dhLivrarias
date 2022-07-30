@@ -35,6 +35,18 @@ body{
   box-shadow: 1px 5px 10px 1px rgb(0 0 0 / 20%);
 }
 
+/*painel usuario*/
+.historico-carde{ 
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+/*carrinho novo css*/
+.row-carrinho{
+  padding-top: 20px;
+}
+
 /* .list-group{
   border-radius: 20px;
   border: none;
@@ -70,13 +82,13 @@ a{
 }
 
 .subtitle{
-  margin-top: 15px;
+  margin-top: 50px;
 }
 
 /* Everton HOME - CARD CSS */
 
 .carousel-inner img {
-  padding:  10px;
+  padding: 10px;
   height: 350px;
   border-radius: 10px;
 }
@@ -85,9 +97,9 @@ a{
   margin-right: 10px;
 }
 
-.card img{
+/*.card img{
   max-height: 300px;
-}
+}*/
 
 .card-group {
   border: none;
@@ -110,7 +122,9 @@ a{
 .historico-card{
   display: flex;
   justify-content: space-between;
+  max-width: 80%;
 }
+
 
 .card .list-group {
   list-style: none;
@@ -131,6 +145,7 @@ a{
 .menuUsuario{
   display: flex;
   width: 180px;
+  padding-top: 80px;
 }
 
 .historico{
@@ -164,6 +179,9 @@ a{
   list-style: none;
 }
 
+.list-groupe{
+  list-style: none;
+}
 /*header*/
 
 .cabecalho{
@@ -446,6 +464,7 @@ button:hover{
 h2{
   text-align: center;
 }
+
 
 
 .btn_endereco{
@@ -1306,6 +1325,7 @@ button:focus {
 
 .products-carrinho .product-img img {
   width: 100px;
+  
 }
 
 .pagina-carrinho {
@@ -1588,10 +1608,9 @@ button:focus {
 /*/DIRLAN PRODUTO/*/
 
 
-
 .products{
   display: flex;
-  justify-content: center;  
+  justify-content:center;  
   margin: auto;
 }
 
@@ -1600,7 +1619,7 @@ button:focus {
   border: 1px solid rgba(128, 128, 128, 0.323);
   border-radius: 27px;
   height: 500px;
-  width: auto; 
+  width: 300px; 
 }
 
 .product-discription{
@@ -1626,6 +1645,10 @@ button:focus {
   font-size: 48px;
 }
 
+.nome-livro h2{
+  text-align: left;
+
+}
 .price{
   display: flex;
   flex-direction: column;
@@ -1657,7 +1680,6 @@ button:focus {
 }
 
 .author-review{
-  display: flex;
   gap: 200px;
   margin-bottom: 10px;
 }
@@ -1733,12 +1755,15 @@ button:focus {
 }
 
 .category{
-  font-size:10px;
+  font-size:14px;
   color: #656565;
 }
 
 .desciption-reviws{
-  margin-top: 80px;
+  padding-top: 80px;
+  margin: auto;
+
+  
 }
 
 .produtc-information ul{
