@@ -16,34 +16,34 @@ const adminController = {
 
         // busca do usuario digitado no banco
 
-        const usuarioEncontrado = await db.Cliente.findOne({ where: { email: body.email } });
-        console.log(usuarioEncontrado);
-        if (usuarioEncontrado == null) {
-            return res.render('usuario/login');
+        const adminEncontrado = await db.Cliente.findOne({ where: { email: body.email } });
+        console.log(adminEncontrado);
+        if (adminEncontrado == null) {
+            return res.render('usuario/login'); // ver rota 
         }
 
         // verificacao de login 
 
-        const resultadoSenha = bcrypt.compareSync(body.senha, usuarioEncontrado.senha);
+        const resultadoSenha = bcrypt.compareSync(body.senha, adminEncontrado.senha);
         if (!resultadoSenha) {
             return req.render('login');
         }
-        req.session.idUsuario = usuarioEncontrado.id;
-        req.session.nome = usuarioEncontrado.nome;
-        req.session.sobrenome = usuarioEncontrado.sobrenome;
-        req.session.email = usuarioEncontrado.email;
-        req.session.foto_perfil = usuarioEncontrado.foto_perfil;
+        req.session.idUsuario = adminEncontrado.id;
+        req.session.nome = adminEncontrado.nome;
+        req.session.sobrenome = adminEncontrado.sobrenome;
+        req.session.email = adminEncontrado.email;
+        req.session.foto_perfil = adminEncontrado.foto_perfil;
 
-        const usuarioLogado = req.session;
-        res.render('painelUsuario', { usuarioLogado });
+        const adminLogado = req.session;
+        res.render('painelUsuario', { adminLogado });
     },
-    usuario: (req, res) => {
-        const usuarioLogado = req.session;
+    admin: (req, res) => {
+        const adminLogado = req.session;
 
-        console.log(usuarioLogado);
+        console.log(adminLogado);
 
 
-        res.render('painelUsuario', { usuarioLogado });
+        res.render('painelUsuario', { adminLogado });
     },
     logout: function (req, res) {
 
@@ -58,7 +58,7 @@ const adminController = {
     },
     cadastrar: (req, res) => {
         const Cliente = {}
-        res.render('cadastroCliente', {
+        res.render('cadastroAdmin', {
             Cliente,
             titulo: 'Cadastrar',
             actionUrl: "/usuario/cadastrar/"
@@ -70,7 +70,7 @@ const adminController = {
         const errors = validationResult(req); //importa os erros da validação feita no middleware
         if (!errors.isEmpty()) {
 
-            return res.render('cadastroCliente', {
+            return res.render('cadastroAdmin', {
                 email,
                 nome,
                 sobrenome,
@@ -78,7 +78,7 @@ const adminController = {
             });//obs voltando para mesma pagina e passando como segundo parametro um objeto contando um array com os erros
         }
 
-        await db.Cliente.create({ //--- igual a um create no mysql
+        await db.Admin.create({ //--- igual a um create no mysql
             email, 
             nome,
             sobrenome,
@@ -93,9 +93,9 @@ const adminController = {
         res.render('cadastroEndereco');
     },
     editar: async (req, res) => {
-        const idCliente = req.session.idUsuario;
-        const cliente = await db.Cliente.findByPk(idCliente);
-        res.render('cadastroCliente', {
+        const idCliente = req.session.idAdmin;
+        const cliente = await db.Admin.findByPk(idAdmin);
+        res.render('cadastroAdmin', {
             Cliente: cliente,
             titulo: 'Editar',
             actionUrl: "/usuario/editar/"
@@ -104,14 +104,14 @@ const adminController = {
     atualizar: async (req, res) => {
         const { nome, sobrenome, email, senha } = req.body;
         const errors = validationResult(req);
-        const idCliente = req.session.idUsuario;
+        const idAdmin = req.session.idUsuario;
 
         if (!errors.isEmpty()) {
             console.log(errors);
             fs.unlinkSync('public/uploads/fotos_perfil/' + req.file.filename);
-            return res.render('criarCliente', { errors });
+            return res.render('criarAdmin', { errors });
         }
-        const usuarioEncontrado = await db.Cliente.findByPk(idCliente);
+        const adminEncontrado = await db.Cliente.findByPk(idCliente);
         fs.unlinkSync('public/uploads/fotos_perfil/' + usuarioEncontrado.foto_perfil);
         await db.Cliente.update({
             nome: nome,
@@ -124,7 +124,7 @@ const adminController = {
                 id: idCliente
             }
         });
-        req.session.idUsuario = usuarioEncontrado.id;
+        req.session.idAdmin = adminEncontrado.id;
         req.session.nome = nome;
         req.session.sobrenome = sobrenome;
         req.session.email = email;
@@ -132,10 +132,10 @@ const adminController = {
         res.redirect("/usuario");
     },
     deletar: async (req, res) => {
-        const idCliente = req.session.idUsuario;
+        const idCliente = req.session.idAdmin;
 
-        const usuarioEncontrado = await db.Cliente.findByPk(idCliente);
-        fs.unlinkSync('public/uploads/fotos_perfil/' + usuarioEncontrado.foto_perfil);
+        const adminEncontrado = await db.Cliente.findByPk(idCliente);
+        fs.unlinkSync('public/uploads/fotos_perfil/' + adminEncontrado.foto_perfil);
         //await db.Produto.destroy({ where: { genero_id: idCliente }})  //fazer com enderecos
         await db.Cliente.destroy({
             where: {
