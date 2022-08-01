@@ -1,31 +1,37 @@
 var express = require('express');
 var router = express.Router();
-
-
-const adminController = require("../controllers/adminController");
-const validacaoCadastro = require('../middlewares/validacaoCadastro');
-const autenticacao = require('../middlewares/autenticacao');
-
 const multer = require('multer');
 const upload = multer({ dest:"public/uploads/fotos_perfil"});
 
-router.get('/',autenticacao, adminController.admin);
-router.get('/logout', autenticacao, adminController.logout); // logout
+const adminController = require("../controllers/adminController");
+const produtoController = require('../controllers/produtoController.js');
 
-router.get('/cadastrar',adminController.cadastrar);
-router.post('/cadastrar', upload.single("foto_perfil"), validacaoCadastro ,adminController.acaoCadastrar);
 
-router.get('/editar',adminController.editar);
-router.post('/editar', upload.single("foto_perfil"), validacaoCadastro ,adminController.atualizar);
+const autenticacaoAdmin = require('../middlewares/autenticacaoAdmin');
 
-router.get('/login',adminController.login);
-router.post('/login',adminController.acaoLogin);
 
-router.get('/logout',adminController.logout);
 
-router.get('/deletar',adminController.deletar);
+var generosRouter = require("./generosRouter.js");
 
-router.get('/cadastroEndereco',adminController.cadastroEndereco);
+
+
+
+
+router.get('/produto/criar',autenticacaoAdmin, produtoController.criar);
+router.post('/produto/salvar',autenticacaoAdmin,upload.single("foto_livro"), produtoController.salvar);
+
+router.get('/produto/editar/:id',autenticacaoAdmin, produtoController.editar);
+router.post('/produto/editar/:id',autenticacaoAdmin,upload.single("foto_livro"), produtoController.atualizar);
+
+router.get('/produto/deletar/:id',autenticacaoAdmin, produtoController.deletar);
+
+
+
+
+
+
+
+
 
 module.exports = router;
 

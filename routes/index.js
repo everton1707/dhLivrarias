@@ -6,18 +6,19 @@ const autenticacao = require('../middlewares/autenticacao');
 
 
 
+
 var clientesRouter = require("./clientesRouter.js");
-var generosRouter = require("./generosRouter.js");
+//var generosRouter = require("./generosRouter.js");     ***admin
 var produtoRouter = require("./produtoRouter.js");
 var carrinhoRouter = require("./carrinhoRouter.js");
 var adminRouter = require("./adminRouter.js");
 
 
-router.use("/carrinho",carrinhoRouter);
+router.use("/carrinho",autenticacao,carrinhoRouter);
 router.use("/usuario",clientesRouter);
-router.use("/genero",generosRouter);
+
 router.use('/produto', produtoRouter);
-router.use('/admin',/*autenticacao, comentado para testes futuros */ adminRouter);
+router.use('/admin',  adminRouter);
 
 
 

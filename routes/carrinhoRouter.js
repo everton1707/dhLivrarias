@@ -9,7 +9,7 @@ const pedidoController = require('../controllers/pedidoController.js')
 router.get('/', pedidoController.exibir);
 
 
-router.get('/adicionar/:id', pedidoController.adicionar);
+router.post('/adicionar/:id', pedidoController.adicionar);
 router.get('/remover/:id', pedidoController.removerItem);
 router.get('/checkout/:id', pedidoController.pagamento);
 router.get('/finalizar/:id', pedidoController.finalizar);

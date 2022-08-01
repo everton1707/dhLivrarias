@@ -36,11 +36,11 @@
 
       <% for( contador; contador<4; contador++ ) { %>
       <div class="card col-md-2">
-        <img src="/uploads/fotos_produtos/<%= produtos[contador].foto_livro %>" class="card-img-top" alt="..."  height="300px">
+        <a href="/produto/<%= produtos[contador].id %>"><img src="/uploads/fotos_produtos/<%= produtos[contador].foto_livro %>" class="card-img-top" alt="..."  height="300px"></a>
         <div class="card-body">
           <ul class="list-group list-group-flush">
             <li>
-              <h5 class="card-title"><%= produtos[contador].nome %></h5>
+              <h5 class="card-title"><%= produtos[contador].nome %></a></h5>
             </li>
             <li>
               <p class="card-text"><%= produtos[contador].autor %></p>
@@ -79,7 +79,7 @@
     <section class="card-group">
       <% for( contador; contador<8; contador++ ) { %>
         <div class="card col-md-2">
-          <img src="/uploads/fotos_produtos/<%= produtos[contador].foto_livro %>" class="card-img-top" alt="..." height="300px">
+          <a href="/produto/<%= produtos[contador].id %>"><img src="/uploads/fotos_produtos/<%= produtos[contador].foto_livro %>" class="card-img-top" alt="..."  height="300px"></a>
           <div class="card-body">
             <ul class="list-group list-group-flush">
               <li>

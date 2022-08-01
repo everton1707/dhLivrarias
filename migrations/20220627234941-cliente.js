@@ -11,9 +11,10 @@ module.exports = {
      await queryInterface.createTable("cliente", {
       id: { type: Sequelize.INTEGER.UNSIGNED, primaryKey: true, autoIncrement: true },
       email: {type: Sequelize.STRING(75), indicesType: 'UNIQUE'},
-      nome: Sequelize.STRING(30),
-      sobrenome: Sequelize.STRING(20),
+      nome: Sequelize.STRING(40),
+      sobrenome: Sequelize.STRING(40),
       senha: Sequelize.STRING(60),
+      admin: Sequelize.STRING(3),
       foto_perfil: Sequelize.STRING(100),//implementar front END
       createdAt: Sequelize.DATE, 
       updatedAt: Sequelize.DATE, 

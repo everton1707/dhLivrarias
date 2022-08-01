@@ -49,7 +49,7 @@
                 <hr>
                 <div class="price">
                     <div class="old-price">
-                        <span>R$ 59,90</span>
+                        <span>R$ <%= parseInt(livro.preco * 1.3) %></span>
                     </div>
                     <div class="new-price">
                         <span>R$ <%= livro.preco %></span>
@@ -59,8 +59,11 @@
             
                 <hr>
                 <div class="compra-carrinho">
-                    
-                    <a class="carrinho-btn btn" href="/carrinho/adicionar/<%= livro.id %>">Adicionar ao carrinho</a>
+                    <form action="/carrinho/adicionar/<%= livro.id %>" method="POST">
+                        <label for="exampleInputPassword1" class="form-label">Quantidade</label>
+                        <input type="number" class="" name="quantidade" value="1">
+                        <button type="submit" class="carrinho-btn btn">Compre Agora</button>
+                    </form>
                 </div>
                 
             

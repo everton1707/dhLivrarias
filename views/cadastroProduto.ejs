@@ -43,11 +43,11 @@
         </div>
 
         <label for="exampleInputPassword1" class="form-label">Gêneros</label>
-        <select class="form-select" aria-label="Default select example" name="genero_id">
-          <option selected disabled>Selecione o Gênero</option>
+        <select class="form-select" aria-label="Default select example" name="genero_id" >
+          <option <%=  Produto.genero_id ==  undefined ?'selected':''%> disabled>Selecione o Gênero</option>
           <% var options = []; %> 
           <% for (let i=0; i < generos.length ; i++){ %>
-            <option  value='<%= generos[i].id %>'><%= generos[i].nome %></option>
+            <option <%=  Produto.genero_id ==  generos[i].id ?'selected':''%> value='<%= generos[i].id %>'><%= generos[i].nome %></option>
           <% } %> 
         </select>
 

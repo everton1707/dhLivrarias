@@ -32,6 +32,7 @@ const clienteController = {
         req.session.nome = usuarioEncontrado.nome;
         req.session.sobrenome = usuarioEncontrado.sobrenome;
         req.session.email = usuarioEncontrado.email;
+        req.session.admin = usuarioEncontrado.admin;
         req.session.foto_perfil = usuarioEncontrado.foto_perfil;
 
         const usuarioLogado = req.session;
@@ -66,7 +67,9 @@ const clienteController = {
     },
     acaoCadastrar: async (req, res) => {
 
-        const { nome, sobrenome, email, senha } = req.body;
+        const { nome, sobrenome, email, senha, admin } = req.body;
+
+
         const errors = validationResult(req); //importa os erros da validação feita no middleware
         if (!errors.isEmpty()) {
 
@@ -85,6 +88,7 @@ const clienteController = {
             nome,
             sobrenome,
             senha: bcrypt.hashSync(senha),
+            admin,
             foto_perfil: req.file.filename
         })
 
@@ -104,7 +108,7 @@ const clienteController = {
         });
     },
     atualizar: async (req, res) => {
-        const { nome, sobrenome, email, senha } = req.body;
+        const { nome, sobrenome, email, senha, admin } = req.body;
         const errors = validationResult(req);
         const idCliente = req.session.idUsuario;
 
@@ -120,6 +124,7 @@ const clienteController = {
             sobrenome: sobrenome,
             email: email,
             senha: bcrypt.hashSync(senha),
+            admin: admin,
             foto_perfil: req.file.filename
         }, {
             where: {
@@ -130,6 +135,7 @@ const clienteController = {
         req.session.nome = nome;
         req.session.sobrenome = sobrenome;
         req.session.email = email;
+        req.session.admin = admin;
         req.session.foto_perfil = req.file.filename;
         res.redirect("/usuario");
     },
