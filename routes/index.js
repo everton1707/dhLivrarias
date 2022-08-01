@@ -10,7 +10,7 @@ var clientesRouter = require("./clientesRouter.js");
 var generosRouter = require("./generosRouter.js");
 var produtoRouter = require("./produtoRouter.js");
 var carrinhoRouter = require("./carrinhoRouter.js");
-var adminRouter = require("./admin/adminRouter.js");
+var adminRouter = require("./adminRouter.js");
 
 
 router.use("/carrinho",carrinhoRouter);

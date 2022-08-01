@@ -47,6 +47,17 @@ body{
   padding-top: 20px;
 }
 
+/* carrinho*/
+
+.align-middle{
+  text-align: center;
+}
+
+.text-uppercase{
+  text-align: center;
+}
+
+
 /* .list-group{
   border-radius: 20px;
   border: none;
@@ -83,6 +94,11 @@ a{
 
 .subtitle{
   margin-top: 50px;
+  font-size: 18px;
+  font-weight: 300;
+  text-shadow: 2px 2px rgba(0,0,0,0.2);
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+
 }
 
 /* Everton HOME - CARD CSS */
@@ -95,15 +111,16 @@ a{
 
 .card{
   margin-right: 10px;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 1px 5px 10px 1px rgba(0,0,0,0.2);
 }
-
-/*.card img{
-  max-height: 300px;
-}*/
 
 .card-group {
   border: none;
   margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 .card-body {
@@ -327,7 +344,7 @@ a{
   padding: 15px 30px;
 }
 
-button{
+/*button{
   background-color: #af0000;
   color: #fff;
   cursor: pointer;
@@ -345,7 +362,7 @@ button{
 button:hover{
   background-color: #fff;
   color: #E8505D;
-}
+}*/
 
 /* cadastroCliente*/
 
@@ -791,7 +808,7 @@ textarea{
   background-color: rgba(105, 105, 105, 0.25);
   position: relative;
   width: 100%;
-  border-top: #000 solid 2px;
+  border-top: #000 solid 1px;
 }
 
 
@@ -1208,13 +1225,6 @@ textarea{
   padding-top: 15px;
 }
 
-.card {
-  margin: 40px 0px;
-  padding: 15px 15px;
-  border-radius: 20px;
-  border: none;
-  box-shadow: 1px 5px 10px 1px rgba(0,0,0,0.2);
-}
 
 input, textarea {
   background-color: #F3E5F5;
@@ -1426,11 +1436,6 @@ button:focus {
   flex-direction: column;
   gap: 20px;
   align-items: center;
-}
-
-.subtitle {
-  font-size: 18px;
-  font-weight: 300;
 }
 
 .value-unit-unit {
@@ -1738,8 +1743,8 @@ button:focus {
  .carrinho-btn {
   background-color: #E8505D;
   width: auto;
-  height:40px;
-  border-radius: 27px;
+
+  border-radius: 10px;
   border: none;
   color: white;
   margin: 15px 30px 15px 20px;

@@ -9,7 +9,7 @@ const autenticacao = require('../middlewares/autenticacao');
 const multer = require('multer');
 const upload = multer({ dest:"public/uploads/fotos_perfil"});
 
-router.get('/',autenticacao, adminController.usuario);
+router.get('/',autenticacao, adminController.admin);
 router.get('/logout', autenticacao, adminController.logout); // logout
 
 router.get('/cadastrar',adminController.cadastrar);
