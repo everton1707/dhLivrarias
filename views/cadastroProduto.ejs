@@ -13,38 +13,38 @@
         </div>  
 
         <div class="input">
-          <label for="exampleInputEmail1" class="form-label">insira o nome do produto: </label>
+          <label for="exampleInputEmail1" class="form-label">Insira o nome do produto: </label>
           <input type="text" class="form-control contato__input" name="nome" value="<%= Produto.nome %>">
         </div>
 
         <div class="input">
-          <label for="exampleInputEmail1" class="form-label">insira o Autor: </label>
+          <label for="exampleInputEmail1" class="form-label">Insira o Autor: </label>
           <input type="text" class="form-control contato__input" name="autor" value="<%= Produto.autor %>">
         </div>
 
         <div class="input">
-          <label for="exampleInputEmail1" class="form-label">insira a editora: </label>
+          <label for="exampleInputEmail1" class="form-label">Insira a editora: </label>
           <input type="text" class="form-control contato__input" name="editora" value="<%= Produto.editora %>">
         </div>
 
         <div class="input">
-          <label for="exampleInputPassword1" class="form-label">descrição</label>
+          <label for="exampleInputPassword1" class="form-label">Descrição</label>
           <input type="text" class="form-control contato__input" name="descricao" value="<%= Produto.descricao %>">
         </div>
 
         <div class="input">
-          <label for="exampleInputPassword1" class="form-label">Avaliacao "teste"</label>
+          <label for="exampleInputPassword1" class="form-label">Avaliação "teste"</label>
           <input type="number" class="form-control contato__input" name="avaliacao" value="<%= Produto.avaliacao %>">
         </div>
         
         <div class="input">
-          <label for="exampleInputPassword1" class="form-label">preco</label>
+          <label for="exampleInputPassword1" class="form-label">Preço</label>
           <input type="number" class="form-control contato__input" name="preco" value="<%= Produto.preco %>">
         </div>
 
-        <label for="exampleInputPassword1" class="form-label">Generos</label>
+        <label for="exampleInputPassword1" class="form-label">Gêneros</label>
         <select class="form-select" aria-label="Default select example" name="genero_id">
-          <option selected disabled>Selecione o Genero</option>
+          <option selected disabled>Selecione o Gênero</option>
           <% var options = []; %> 
           <% for (let i=0; i < generos.length ; i++){ %>
             <option  value='<%= generos[i].id %>'><%= generos[i].nome %></option>

@@ -25,7 +25,10 @@
       </button>
     </div>
 
-    <h3 class="subtitle">Livros Mais Vendidos da Semana</h3>
+    <div class="subtitle">
+    <h3>Livros Mais Vendidos da Semana</h3>
+    </div>
+
     <section class="card-group">
       <% var contador = 0 %> 
 
@@ -33,7 +36,7 @@
 
       <% for( contador; contador<4; contador++ ) { %>
       <div class="card col-md-2">
-        <img src="/uploads/fotos_produtos/<%= produtos[contador].foto_livro %>" class="card-img-top" alt="...">
+        <img src="/uploads/fotos_produtos/<%= produtos[contador].foto_livro %>" class="card-img-top" alt="..."  height="300px">
         <div class="card-body">
           <ul class="list-group list-group-flush">
             <li>
@@ -45,22 +48,18 @@
             <li>
               <h5 class="card-text price"><b>R$ <%= produtos[contador].preco %></b></h5>
             </li>
-            <li><a href="/produto/<%= produtos[contador].id %>" class="btn">Ver mais detalhes...</a></li>
+            <li><a href="/produto/<%= produtos[contador].id %>" class="carrinho-btn btn">Ver mais detalhes</a></li>
           </ul>
         </div>
       </div>
       <% } %>
       
-      
-      
-      
-    
-      
-
-      
     </section>
 
-    <h3 class="subtitle">Encontre seu universo favorito</h3>
+    <div class="subtitle">
+      <h3>Encontre seu universo favorito</h3>
+    </div>
+
     <section class="card-group">
       <% for( i = 0; i<6 ; i++ ) { %>
       <div class="card card-img categories">
@@ -73,11 +72,14 @@
       
     </section>
     
-    <h3 class="subtitle">Ofertas do dia</h3>
+    <div class="subtitle">
+      <h3>Ofertas do dia</h3>
+    </div>
+    
     <section class="card-group">
       <% for( contador; contador<8; contador++ ) { %>
         <div class="card col-md-2">
-          <img src="/uploads/fotos_produtos/<%= produtos[contador].foto_livro %>" class="card-img-top" alt="...">
+          <img src="/uploads/fotos_produtos/<%= produtos[contador].foto_livro %>" class="card-img-top" alt="..." height="300px">
           <div class="card-body">
             <ul class="list-group list-group-flush">
               <li>
@@ -89,7 +91,7 @@
               <li>
                 <h5 class="card-text price"><b>R$ <%= produtos[contador].preco %></b></h5>
               </li>
-              <li><a href="/produto/<%= produtos[contador].id %>" class="btn">Ver mais detalhes...</a></li>
+              <li><a href="/produto/<%= produtos[contador].id %>" class="carrinho-btn btn">Ver mais detalhes</a></li>
             </ul>
           </div>
         </div>

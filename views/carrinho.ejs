@@ -38,12 +38,12 @@
                       <div class="p-2">
                         <img src="/uploads/fotos_produtos/<%= pedido.produtos[i].foto_livro %>" alt="" width="70" class="img-fluid rounded shadow-sm">
                         <div class="ml-3 d-inline-block align-middle">
-                          <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"><%= pedido.produtos[i].nome %></a></h5><span class="text-muted font-weight-normal font-italic d-block">Categoria: Ficção</span>
+                          <h5 class="mb-0"> <a href="/produto/<%= pedido.produtos[i].id %>" class="text-dark d-inline-block align-middle"><%= pedido.produtos[i].nome %></a></h5><span class="text-muted font-weight-normal font-italic d-block">Categoria: Ficção</span>
                         </div>
                       </div>
                     </th>
-                    <td class="border-0 align-middle"><strong>$ <%= pedido.produtos[i].preco %></strong></td>
-                    <td class="border-0 align-middle"><strong><%= pedido.produtos[i].quantidade %></strong></td>
+                    <td class="border-0 align-middle"><strong>R$ <%= pedido.produtos[i].preco %></strong></td>
+                    <td class="border-0 align-middle"><strong>1</strong></td>
                     <td class="border-0 align-middle"><a href="/carrinho/remover/<%= pedido.produtos[i].id %>" class="text-dark"><i class="fa fa-trash"></i></a></td>
                   </tr>
                   <% } %> 
@@ -82,7 +82,7 @@
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Taxa de envio</strong><strong>R$ 0.00</strong></li>
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Desconto</strong><strong>R$ 0.00</strong></li>
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                  <h5 class="font-weight-bold">$ <%=  pedido.valor %></h5>
+                  <h5 class="font-weight-bold">R$ <%=  pedido.valor %></h5>
                 </li>
               </ul><a href="/carrinho/checkout/<%= pedido.id %>" class="btn btn-dark rounded-pill py-2 btn-block">Ir para pagamento</a>
             </div>

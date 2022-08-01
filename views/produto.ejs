@@ -6,13 +6,14 @@
                 <img src="/uploads/fotos_produtos/<%= livro.foto_livro %>" alt="">
             </div>
             <div class="product-discription">
-                <div class="availability">
-                    Disponível
-                </div> 
-                <h2><%= livro.nome %></h2>
+               
+                <div class="nome-livro">
+                    <h2><%= livro.nome %></h2>
+                </div>
+                
                 <div class="author-review">
                     <div class="author">
-                    <a href="">Autor: <b><%= livro.autor %></b></a> 
+                        <a href="">Autor: <b><%= livro.autor %></b></a> 
                     </div>  
                     <div class="star-reviews">
                         <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,6 +42,9 @@
                                 fill="#FF9100" />
                         </svg>
                     </div>
+                    <div class="category">
+                        <p>Gênero: <b><%= livro.genero.nome %></b></p>
+                    </div>
                 </div>
                 <hr>
                 <div class="price">
@@ -52,15 +56,13 @@
                     </div>
                     <p>Em até 2x no cartão</p>
                 </div>
-                <p class="resume-descri"><%= livro.descricao %></p>
+            
                 <hr>
                 <div class="compra-carrinho">
-                    <button class="comprar">Comprar Agora</button>
+                    
                     <a class="carrinho-btn btn" href="/carrinho/adicionar/<%= livro.id %>">Adicionar ao carrinho</a>
                 </div>
-                <div class="category">
-                    <p>Genero <b><%= livro.genero.nome %></b></p>
-                </div>
+                
             
                 </div>
             </div>
@@ -70,11 +72,11 @@
             <div class="produtc-information">
                 <ul>
                     <li><a href="" class="descripition2">Descrição</a></li>
-                    <li><a href="">Avaliações</a></li>
+                
                 </ul>
                 <div class="full-discription">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, alias veritatis reprehenderit doloremque, eum, esse consequatur quis nulla in fugit tenetur! Porro, odio. Nihil optio temporibus dolorem nemo autem quis!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deserunt quaerat ab eligendi itaque consequuntur accusantium ex ratione vel explicabo sapiente quam, numquam aliquid a necessitatibus, molestiae beatae eaque asperiores.</p>
+                    <p><%= livro.descricao %></p>
+                   
                 </div>
             </div>
         </section>

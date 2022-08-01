@@ -1,9 +1,12 @@
 <%- include("./partials/header")%>
 
     <div class="container">
-        <div>
+
+        <div class="nome-produto" style="margin-top: 20px;">
             <h1>Lista de livros </h1>
         </div>
+
+        <a href="/produto/criar" class="btn">Criar</a>
         
             <% for( let i=0; i < livros.length; i++ ) { %>
               
@@ -38,6 +41,6 @@
                   </li>
                 <% } %>
       
-        <a href="/produto/criar" class="btn">Criar</a>
+        
     </div>
 <%- include("./partials/footer")%>
