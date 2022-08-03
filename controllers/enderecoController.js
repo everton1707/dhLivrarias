@@ -4,7 +4,8 @@ const db = require("../models");
 //implementar 
 const enderecoController = {
     cadastrar:(req, res) => {
-        res.render('cadastroEndereco');
+        const Admin = req.session.admin;
+        res.render('cadastroEndereco', {Admin});
     },
     editar:(req,res) => {
 

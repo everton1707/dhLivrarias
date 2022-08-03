@@ -1,22 +1,21 @@
 const db = require("../models");
-const { validationResult } = require("express-validator");
-const id = require("faker-br/lib/locales/id_ID");
 const fs = require("fs");
+const { validationResult } = require("express-validator");
 
-const produtoController = {
-    /*
-    criar: async (req, res) => {
+const adminController = {
+    
+    produtoCriar: async (req, res) => {
         const generos = await db.Genero.findAll()
         const produto = {}
         res.render('cadastroProduto', {
             generos: generos,
             Produto: produto,
             titulo: 'Criar',
-            actionUrl: "/produto/salvar"
+            actionUrl: "/admin/produto/salvar"
         });
 
     },
-    salvar: async (req, res) => {
+    produtoSalvar: async (req, res) => {
 
         const produto = req.body;
         console.log(produto);
@@ -40,7 +39,7 @@ const produtoController = {
 
         res.redirect("/produto");
     },
-    editar: async (req, res) => {
+    produtoEditar: async (req, res) => {
         const generos = await db.Genero.findAll();
         const idProduto = req.params.id;
 
@@ -50,10 +49,10 @@ const produtoController = {
             Produto: produto, 
             generos: generos,
             titulo: 'Editar',
-            actionUrl: "/produto/editar/" + idProduto
+            actionUrl: "/admin/produto/editar/" + idProduto
          });
     },
-    atualizar: async (req, res) => {
+    produtoAtualizar: async (req, res) => {
         const idProduto = req.params.id;
         const produto = req.body;
         console.log(produto);
@@ -87,7 +86,7 @@ const produtoController = {
 
        
     },
-    deletar: async (req, res) => {
+    produtoDeletar: async (req, res) => {
         const idProduto = req.params.id;
         const produtoEncontrado = await db.Produto.findByPk(idProduto);
 
@@ -99,26 +98,11 @@ const produtoController = {
             }
           });
         res.redirect('/produto')
-    },*/
-    exibir: async (req, res) => {
-        const idLivro = req.params.id;
-        const Admin = req.session.admin;
-        const livro = await db.Produto.findByPk(idLivro, { include: ["genero"] })
-
-        res.render('produto', { livro, Admin});
     },
-    listar: (req, res) => {
-        const Admin = req.session.admin;
-        db.Produto.findAll({ include: ["genero"] }).then(livros => {
-            res.render('listarProdutos', { livros, Admin })
-        });
 
-        //res.render("listarProdutos");
-    },
+
 
 
 }
 
-
-
-module.exports = produtoController;
+module.exports = adminController;
