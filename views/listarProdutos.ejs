@@ -1,12 +1,13 @@
 <%- include("./partials/header")%>
 
-    <div class="container">
+    <div class="container container_corpo">
 
         <div class="nome-produto" style="margin-top: 20px;">
             <h1>Lista de livros </h1>
         </div>
-
-        <a href="/produto/criar" class="btn">Criar</a>
+        <% if( Admin != undefined ){ %>
+          <a href="/admin/produto/criar" class="btn">Criar</a>
+          <% } %>
         
             <% for( let i=0; i < livros.length; i++ ) { %>
               
@@ -30,8 +31,10 @@
                               <p class="card-text">Valor Unitário</p>
                               <h5 class="card-text price"><b>R$ <%= livros[i].preco %></b></a>
                             </li>
-                              <a href="/produto/editar/<%= livros[i].id %>" class="btn"> Editar </a>
-                              <a href="/produto/deletar/<%= livros[i].id %>" class="btn"> Deletar </a>
+                            <% if( Admin != undefined ){ %>
+                              <a href="/admin/produto/editar/<%= livros[i].id %>" class="btn"> Editar </a>
+                              <a href="/admin/produto/deletar/<%= livros[i].id %>" class="btn"> Deletar </a>
+                              <% } %>
                               <a href="/produto/<%= livros[i].id %>" class="btn">Comprar</a>
                           
                           </ul>

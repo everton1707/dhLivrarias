@@ -1,6 +1,6 @@
 <%- include("./partials/header") %>
 
-    <div class="container">
+    <div class="container container_corpo">
 
         <div class="cadastro_cliente">
             <h2>Crie sua conta</h2>
@@ -68,10 +68,14 @@
                                 placeholder="Confirme sua senha" />
                             <div class="invalid-feedback"></div>
                         </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="admin" value="sim" name="admin">
-                            <label class="form-check-label" for="admin">Usuario Administrador</label>
-                          </div>
+
+
+                        <% if( Admin != undefined ){ %> 
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="admin" value="sim" name="admin">
+                                <label class="form-check-label" for="admin">Usuario Administrador</label>
+                            </div>
+                        <% } %> 
                         <div class="btn_cliente">
                             <button type="submit" class="btn btn-primary"><%= titulo %></button>
                         </div>

@@ -1,8 +1,8 @@
 <%- include("./partials/header") %>
-    <div class="container-generos ">
+    <div class="container-generos container_corpo">
 
         <h1>Lista de Generos</h1>
-
+        <a href="/admin/genero/criar" class="btn">Criar</a>
         <ul class="list-group">
             <% for( let i=0; i < generos.length; i++ ) { %>
 
@@ -17,7 +17,7 @@
                             <div>
                                 <ul class="list-group">
                                     <li>
-                                        <a href="/genero/editar/<%= generos[i].id %>">
+                                        <a href="/admin/genero/editar/<%= generos[i].id %>">
                                             <h5 class="card-title">
                                                 <%= generos[i].nome %>
                                             </h5>
@@ -27,10 +27,10 @@
                                         <%= generos[i].descricao %>
                                     </li>
                                     <li>
-                                        <a href="/genero/editar/<%= generos[i].id %>" class="btn">Editar</a>
+                                        <a href="/admin/genero/editar/<%= generos[i].id %>" class="btn">Editar</a>
                                     </li>
                                     <li>
-                                        <a href="/genero/deletar/<%= generos[i].id %>" class="btn">Deletar</a>
+                                        <a href="/admin/genero/deletar/<%= generos[i].id %>" class="btn">Deletar</a>
                                     </li>
 
                                 </ul>
@@ -42,7 +42,7 @@
 
         </ul>
 
-        <a href="/genero/criar" class="btn">Criar</a>
+       
     </div>
 
 

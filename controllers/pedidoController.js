@@ -4,7 +4,7 @@ const db = require('../models');
 
 const pedidoController = {
     exibir: async (req, res) => {
-
+        const Admin = req.session.admin;
         var pedido = await db.Pedido.findOne({
             where: {
                 cliente_id: req.session.idUsuario,
@@ -99,7 +99,7 @@ const pedidoController = {
             pedido.produtos = [];
         }*/
 
-        res.render("carrinho", { pedido, pedidoHasProduto, produtos });
+        res.render("carrinho", { pedido, pedidoHasProduto, produtos, Admin });
 
     },
     adicionar: async (req, res) => {
@@ -159,9 +159,7 @@ const pedidoController = {
                 cliente_id: req.session.idUsuario,
                 data_entrega: null,
 
-            },
-            include: ["produtos"]
-        })
+            }})
         await db.Pedido_has_produto.destroy({
             where: {
                 pedido_id: pedido.id,
@@ -173,7 +171,7 @@ const pedidoController = {
         res.redirect('/carrinho');
     },
     pagamento: async (req, res) => {
-
+        const Admin = req.session.admin;
         const pedido = await db.Pedido.findOne({
             where: {
                 id: req.params.id
@@ -186,12 +184,12 @@ const pedidoController = {
         }
 
 
-        res.render("checkout", { pedido })
+        res.render("checkout", { pedido, Admin })
 
     },
     finalizar: async (req, res) => {
+        const Admin = req.session.admin;
         const idPedido = req.params.id;
-
         const pedido = await db.Pedido.update({
             data_entrega: new Date()
         }, {
@@ -200,11 +198,11 @@ const pedidoController = {
             }
         })
         console.log(pedido)
-        res.render("finalizacao", { pedido });
+        res.render("finalizacao", { pedido, Admin });
 
 
     },
-    cancelar: (req, res) => {
+    cancelar: (req, res) => {// nao ha necessidade de cancelar no momento
 
     },
 
