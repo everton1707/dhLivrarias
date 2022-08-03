@@ -3,7 +3,7 @@ var router = express.Router();
 const multer = require('multer');
 const upload = multer({ dest:"public/uploads/fotos_perfil"});
 
-const adminController = require("../controllers/adminController");
+//const adminController = require("../controllers/adminController");
 const produtoController = require('../controllers/produtoController.js');
 
 
@@ -12,7 +12,6 @@ const autenticacaoAdmin = require('../middlewares/autenticacaoAdmin');
 
 
 var generosRouter = require("./generosRouter.js");
-
 
 
 
