@@ -2,47 +2,62 @@
 
     <div class="container container_corpo">
 
-        <div class="nome-produto" style="margin-top: 20px;">
+        <div class="subtitle" style="margin-top: 20px;">
             <h1>Lista de livros </h1>
         </div>
         <% if( Admin != undefined ){ %>
           <a href="/admin/produto/criar" class="btn">Criar</a>
           <% } %>
         
-            <% for( let i=0; i < livros.length; i++ ) { %>
-              
 
-                    <div class="card mb-3 historico-card">
-                      <div class="col historico-card">
-                        <div class="col-md-4">
-                          <img src='/uploads/fotos_produtos/<%= livros[i].foto_livro %>' class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div style=" width: 400px;">
-                          <ul class="list-group">
-                            <li>
-                                <a href="/produto/editar/<%= livros[i].id %>"><h5 class="card-title"><%= livros[i].nome %></h5></a>
-                            </li>
-                            <li>
-                              <p class="card-text"> <b> Autor: </b> <%= livros[i].autor %></p><!-- colocar no banco -->
-                            </li>
-                            <li><p class="card-text" ><b> Descrição: </b> <%= livros[i].descricao %></p></li>
-                            <li> <p class="card-text" ><b> Gênero: </b> <%= livros[i].genero.nome %></p></li>
-                            <li>
-                              <p class="card-text">Valor Unitário</p>
-                              <h5 class="card-text price"><b>R$ <%= livros[i].preco %></b></a>
-                            </li>
-                            <% if( Admin != undefined ){ %>
-                              <a href="/admin/produto/editar/<%= livros[i].id %>" class="btn"> Editar </a>
-                              <a href="/admin/produto/deletar/<%= livros[i].id %>" class="btn"> Deletar </a>
-                              <% } %>
-                              <a href="/produto/<%= livros[i].id %>" class="btn">Comprar</a>
-                          
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+
+
+
+          <section class="row row-cols-5">
+            
+      
+      
+      
+            <% for( i = 0; i<livros.length; i++ ) { %>
+            <div class="card col">
+              <a href="/produto/<%= livros[i].id %>"><img src="/uploads/fotos_produtos/<%= livros[i].foto_livro %>" class="card-img-top" alt="..."  height="300px"></a>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li>
+                    <a class="card-title" href="/produto/<%= livros[i].id %>"><h5 ><%= livros[i].nome %></h5></a>
                   </li>
-                <% } %>
+                  <li>
+                    <p class="card-text"><%= livros[i].autor %></p>
+                  </li>
+                  <li>
+                    <h5 class="card-text price"><b>R$ <%= livros[i].preco %></b></h5>
+                  </li>
+                  <% if( Admin != undefined ){ %>
+                    <li><a href="/admin/produto/editar/<%= livros[i].id %>" class="btn"> Editar </a></li>
+                    <li><a href="/admin/produto/deletar/<%= livros[i].id %>" class="btn"> Deletar </a></li>
+                    <% } %>
+                  <li><a href="/produto/<%= livros[i].id %>" class="carrinho-btn btn">Ver mais detalhes</a></li>
+                </ul>
+              </div>
+            </div>
+            <% } %>
+            
+          </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       
         
     </div>

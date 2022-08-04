@@ -80,7 +80,8 @@ const generoController = {
         
 
         if(produtosRelacionados.length > 0){
-            res.send("Existem produtos relacionados a esse gênero");
+            const msgErro = "Existem produtos relacionados a esse gênero";
+            res.render("telaErro", { msgErro, Admin })
             return;
         }
 
