@@ -88,16 +88,28 @@ const adminController = {
     },
     produtoDeletar: async (req, res) => {
         const idProduto = req.params.id;
-        const produtoEncontrado = await db.Produto.findByPk(idProduto);
-
-        fs.unlinkSync('public/uploads/fotos_produtos/' + produtoEncontrado.foto_livro);
-
-        await db.Produto.destroy({ 
-            where: {
-              id: idProduto
+        const produtoEncontrado = await db.Produto.findByPk(idProduto)
+        const Admin = req.session.admin;
+        const pedidos = await db.Pedido_has_produto.findAll({
+            where:{
+                produto_id: idProduto
             }
-          });
-        res.redirect('/produto')
+        })
+        console.log(pedidos)
+        if (pedidos.length > 0){
+            const msgErro = "Há pedidos vinculados a este produto!";
+            res.render("telaErro", { msgErro, Admin });
+        }else{
+
+            fs.unlinkSync('public/uploads/fotos_produtos/' + produtoEncontrado.foto_livro);
+            
+            await db.Produto.destroy({ 
+                where: {
+                    id: idProduto
+                }
+            });
+            res.redirect('/produto')
+        }
     },
 
 

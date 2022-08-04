@@ -23,7 +23,7 @@ const pedidoController = {
                 cliente_id: req.session.idUsuario
             })
         }
-        //console.log(pedido)
+
         const pedidoHasProduto = await db.Pedido_has_produto.findAll({
             where: {
                 pedido_id: pedido.id
@@ -37,10 +37,6 @@ const pedidoController = {
             produtosIds.push(pedidoHasProduto[i].produto_id);
         }
 
-
-
-
-
         const produtos = await db.Produto.findAll({
             where: {
                 id: produtosIds
@@ -48,27 +44,10 @@ const pedidoController = {
         })
         var valorPedido = 0;
         for (i = 0; i < produtos.length; i++) {
-            /* 
-            console.log(produtos[i].preco * pedidoHasProduto[i].quantidade);*/
-            
-        
-
-            for (k = 0; k < pedidoHasProduto.length; k++) {
-
-                console.log("------------------------------------------------")
-                console.log(produtos[i].id)
-                console.log(pedidoHasProduto[k].produto_id)
+            for (k = 0; k < pedidoHasProduto.length; k++) {               
                 if (produtos[i].id == pedidoHasProduto[k].produto_id) {
-                    valorPedido = (produtos[i].preco * pedidoHasProduto[k].quantidade) + valorPedido;
-                    
-
-
-                    
-                    console.log("Valor do Pedido: " + valorPedido)
-                
+                    valorPedido = (produtos[i].preco * pedidoHasProduto[k].quantidade) + valorPedido;                
                 }
-
-
             }
         }
         await db.Pedido.update({
@@ -78,27 +57,7 @@ const pedidoController = {
                 id: pedido.id
             }
         })
-        pedido.valor = valorPedido
-        /* Logica antiga
-        if (pedido.produtos != undefined){
-
-            var valorPedido = 0;
-            for (i = 0; i < pedido.produtos.length; i++) {
-                valorPedido = valorPedido + pedido.produtos[i].preco;
-            }
-            
-            await db.Pedido.update({
-                valor: valorPedido
-            }, {
-                where: {
-                    id: pedido.id
-                }
-            })
-            pedido.valor = valorPedido
-        }else{
-            pedido.produtos = [];
-        }*/
-
+        pedido.valor = valorPedido;
         res.render("carrinho", { pedido, pedidoHasProduto, produtos, Admin });
 
     },
@@ -180,9 +139,14 @@ const pedidoController = {
         })
 
         if (pedido.cliente_id != req.session.idUsuario) {
-            res.send("Acesso negado!! este pedido nao pertence ao usuario logado.", { pedido })
+            const msgErro = "Acesso negado!! este pedido nao pertence ao usuario logado.";
+            res.render("telaErro", { pedido,Admin,msgErro })
         }
-
+        console.log(pedido.data_entrega)
+        if (pedido.data_entrega != null){
+            const msgErro = "Este pedido ja está Finalizado";
+            res.render("telaErro", { msgErro, Admin })
+        }
 
         res.render("checkout", { pedido, Admin })
 

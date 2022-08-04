@@ -99,6 +99,7 @@ a{
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  margin-bottom: 20px;
   font-size: 18px;
   font-weight: 300;
   text-shadow: 2px 2px rgba(0,0,0,0.2);
@@ -119,13 +120,21 @@ a{
 }
 
 .card{
-  margin-right: 10px;
+  min-width: auto;
+  margin: 10px;
   padding: 15px 15px;
   border-radius: 20px;
   border: none;
   box-shadow: 1px 5px 10px 1px rgba(0,0,0,0.2);
 }
 
+.row{
+  justify-content: space-between;
+}
+.row-cols-5>* {
+  flex: 0 0 auto;
+  width: 23%;
+}
 .card-group {
   border: none;
   margin-bottom: 15px;
