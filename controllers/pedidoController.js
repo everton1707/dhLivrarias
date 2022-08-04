@@ -93,6 +93,7 @@ const pedidoController = {
                 pedido_id: pedido.id,
                 produto_id: produto.id,
                 quantidade: parseInt(quantidade),
+                valor: produto.preco
             });
 
         } else {

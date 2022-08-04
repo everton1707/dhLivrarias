@@ -1923,3 +1923,24 @@ button:focus {
 .price-showcase p{
   font-size: 12px;
 }
+
+.tabelaPedidos{
+  width: 100%;
+}
+.list-groupe{
+  min-width: 900px;
+
+}
+.compra{
+  border-radius: 20px;
+  /*border: #5e5e5e solid;*/
+  margin-bottom: 15px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 1px 5px 10px 1px rgb(0 0 0 / 20%);
+}
+
+.compra .subtitle{
+  margin-top: 20px;
+  justify-content: space-between;
+}

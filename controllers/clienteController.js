@@ -2,7 +2,7 @@ const db = require("../models");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const fs = require("fs");
-
+const { Op } = require("sequelize");
 const clienteController = {
     login: (req, res) => {
         const Admin = req.session.admin;
@@ -18,9 +18,9 @@ const clienteController = {
         // busca do usuario digitado no banco
 
         const usuarioEncontrado = await db.Cliente.findOne({ where: { email: body.email } });
-        console.log(usuarioEncontrado);
+        
         if (usuarioEncontrado == null) {
-            return res.render('usuario/login',{Admin});
+            return res.render('login',{Admin});
         }
 
         // verificacao de login 
@@ -34,17 +34,55 @@ const clienteController = {
         req.session.sobrenome = usuarioEncontrado.sobrenome;
         req.session.email = usuarioEncontrado.email;
         req.session.admin = usuarioEncontrado.admin;
-        Admin = req.session.admin;
         req.session.foto_perfil = usuarioEncontrado.foto_perfil;
 
-        const usuarioLogado = req.session;
-        res.render('painelUsuario', { usuarioLogado, Admin });
+        res.redirect('/usuario');
     },
-    usuario: (req, res) => {
+    usuario: async (req, res) => {
         const usuarioLogado = req.session;
         Admin = req.session.admin;
+        var pedidos = [];
+        pedidos = await db.Pedido.findAll({
+            where: {
+                cliente_id: usuarioLogado.idUsuario,
+                data_entrega: {
+                    [Op.not]: null
+                  }
+            }
+        })
+        //console.log(pedidos);
+        const pedidosIds = [];
+        for(i=0; i<pedidos.length;i++){
+            pedidosIds.push(pedidos[i].id);
+        }
+        console.log(pedidosIds)
+        const pedidosHasProduto = await db.Pedido_has_produto.findAll({
+            where:{
+                pedido_id: pedidosIds
+            }
+        })
+        
 
-        res.render('painelUsuario', { usuarioLogado, Admin });
+
+        const produtosIds = [];
+        for(i=0; i<pedidosHasProduto.length;i++){
+            produtosIds.push(pedidosHasProduto[i].produto_id);
+        }
+
+
+        const produtos = await db.Produto.findAll({
+            where:{
+                id: produtosIds
+            }
+        })
+
+        res.render('painelUsuario', { 
+            usuarioLogado, 
+            Admin,
+            pedidos,
+            pedidosHasProduto,
+            produtos
+        });
     },
     logout: function (req, res) {
         req.session.user = null

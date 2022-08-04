@@ -1,7 +1,7 @@
 <%- include("./partials/header")%>
 
   <body>
-    <div class="container container_corpo painel ">
+    <div class="container painel ">
       <div class="menuUsuario">
         <ul class="nav flex-column">
           <li class="nav-item ">
@@ -29,34 +29,46 @@
         <div>
           
           <ul class="list-groupe">
-            <% for (let i=0; i<2; i++){ %>
-              <li>
-
-                <div class="card mb-3 historico-card">
-                  <div class="col historico-card" style="margin:20px;">
-                    <div class="col-md-4">
-                      <img src="/images/Livro2.png" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div>
-                      <ul class="list-groupe">
-                        <li>
-                          <h5 class="card-title">Harry Potter e Pedra Filosofal 3ª Edição</h5>
-                        </li>
-                        <li>
-                          <p class="card-text">K.K. Rowling</p>
-                        </li>
-                        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus laboriosam itaque
-                          quibusdam, ab omnis, ipsam odio quasi fugit commodi recusandae quo saepe optio veniam tempore
-                          reiciendis tenetur et. Assumenda, vitae.</li>
-                        <li>
-                          <p class="card-text">Valor Unitário</p>
-                          <h5 class="card-text price"><b>R$ 42,90</b></a>
-                        </li>
-                        <li><a href="/user/produto" class="btn">Compre novamente</a></li>
-                      </ul>
-                    </div>
-                  </div>
+            <% for (let i=0; i<pedidos.length; i++){ %><!-- quantidade de pedidos -->
+              <li class="compra">
+                <div class="subtitle">
+                  <h2>Pedido nº: <%= pedidos[i].id %>  </h2>
+                  <h5>Valor total do Pedido: <%= pedidos[i].valor %>  </h5>
                 </div>
+                <table class="table table-striped tabelaPedidos">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th><!-- mudar cor para dar destaque -->
+                      <th scope="col">Livro</th>
+                      <th scope="col">Quantidade</th>
+                      <th scope="col">Preço Pago</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% var contagem = 1 ; %> 
+
+                    <% for (let k=0; k<pedidosHasProduto.length; k++){ %><!-- quantidade de produtos no pedido-->
+                    
+                    <% if( pedidos[i].id == pedidosHasProduto[k].pedido_id){ %>
+                      <% for (let z=0; z<produtos.length; z++){ %>
+
+                        <% if( produtos[z].id == pedidosHasProduto[k].produto_id){ %>
+                          <tr>
+                            <th scope="row"><%= contagem %></th><!-- contagem do livro-->
+                            <td><%= produtos[z].nome %></td>
+                            <td><%= pedidosHasProduto[k].quantidade %></td>
+                            <td><%= pedidosHasProduto[k].valor %></td>
+                          </tr>
+                          
+                          
+                          <% contagem++; %> 
+                      <% } %> 
+                      <% } %> 
+                      <% } %> 
+
+                    <% } %>
+                  </tbody>
+                </table>
               </li>
               <% } %>
           </ul>

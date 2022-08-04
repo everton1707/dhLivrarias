@@ -16,3 +16,12 @@
 
         <%= {typeof conteudo != 'undefined'}?conteudo:''%>
         
+
+
+
+<% let quantidade = 0 %>
+                        <% for( k = 0 ; k < pedidoHasProduto.length ; k++) {%>
+                          <% if( produtos[i].id == pedidoHasProduto[k].produto_id ){ %>
+                            <%  quantidade = pedidoHasProduto[k].quantidade %>
+                          <% } %>
+                        <% } %>
