@@ -30,7 +30,7 @@
           
           <ul class="list-groupe">
             <% for (let i=0; i<pedidos.length; i++){ %><!-- quantidade de pedidos -->
-              <li class="compra">
+              <li class="compra table-responsive">
                 <div class="subtitle">
                   <h2>Pedido nº: <%= pedidos[i].id %>  </h2>
                   <h5>Valor total do Pedido: <%= pedidos[i].valor %>  </h5>
@@ -38,10 +38,10 @@
                 <table class="table table-striped tabelaPedidos">
                   <thead>
                     <tr>
-                      <th scope="col">#</th><!-- mudar cor para dar destaque -->
-                      <th scope="col">Livro</th>
-                      <th scope="col">Quantidade</th>
-                      <th scope="col">Preço Pago</th>
+                      <th scope="col" ></th>
+                      <th scope="col" >Livro</th>
+                      <th scope="col" >Quantidade</th>
+                      <th scope="col" >Preço unitário</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -54,10 +54,10 @@
 
                         <% if( produtos[z].id == pedidosHasProduto[k].produto_id){ %>
                           <tr>
-                            <th scope="row"><%= contagem %></th><!-- contagem do livro-->
-                            <td><%= produtos[z].nome %></td>
-                            <td><%= pedidosHasProduto[k].quantidade %></td>
-                            <td><%= pedidosHasProduto[k].valor %></td>
+                            <th scope="row" class="itenTabela"><%= contagem %></th><!-- contagem do livro-->
+                            <td class="itenTabela"><a href="/produto/<%= produtos[z].id %>"><%= produtos[z].nome %></a></td>
+                            <td class="itenTabela"><%= pedidosHasProduto[k].quantidade %></td>
+                            <td class="itenTabela"><%= pedidosHasProduto[k].valor %></td>
                           </tr>
                           
                           
