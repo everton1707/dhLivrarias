@@ -18,7 +18,7 @@ const validacaoCadastro = checkSchema({
     confirmeSenha: { custom: {
         options: (value, { req, location, path }) => {
             if(req.body.senha != value){//value é  do campo confirmar senha
-                throw new Error ("As senhas não conferem!!");
+                throw new Error ();
             }
             return true;
         }

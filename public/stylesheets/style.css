@@ -1027,21 +1027,15 @@ textarea{
     background: #0f0f0ffb;
 }
 .navbar-brand{
-    color:#f8aa02;
+    
     font-weight: bold;
     font-size: 35px!important;
 }
 .nav-link{
     font-weight: bold;
-    color: #f8aa02;
     font-size: 20px;
 }
-.btn-group{
-    color: #f8aa02;
-}
-.navbar-toggler i{
-    color: #f8aa02;
-}
+
 /*========End of Navbar===========*/
 /*==========Hero Section===========*/
 #hero{

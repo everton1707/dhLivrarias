@@ -109,17 +109,18 @@ const clienteController = {
     },
     acaoCadastrar: async (req, res) => {
 
-        const { nome, sobrenome, email, senha, admin } = req.body;
+        const Cliente = req.body;
 
         const Admin = req.session.admin;
         const errors = validationResult(req); //importa os erros da validação feita no middleware
         if (!errors.isEmpty()) {
-            
+            console.log(errors.array())
+            fs.unlinkSync('public/uploads/fotos_perfil/' + req.file.filename);
             return res.render('cadastroCliente', {
-                email,
-                nome,
-                sobrenome,
+                Cliente,
                 Admin,
+                titulo: 'Cadastrar',
+                actionUrl: "/usuario/cadastrar/",
                 errors: errors.array()
             });//obs voltando para mesma pagina e passando como segundo parametro um objeto contando um array com os erros
         }
@@ -127,16 +128,16 @@ const clienteController = {
 
 
         await db.Cliente.create({ //--- igual a um create no mysql
-            email,
-            nome,
-            sobrenome,
-            senha: bcrypt.hashSync(senha),
-            admin,
+            email: Cliente.email,
+            nome: Cliente.nome,
+            sobrenome: Cliente.sobrenome,
+            senha: bcrypt.hashSync(Cliente.senha),
+            admin: Cliente.admin,
             foto_perfil: req.file.filename
         })
 
 
-        res.redirect('/usuario/login');
+        res.render('login',{Admin});
     },
     editar: async (req, res) => {
         const idCliente = req.session.idUsuario;
@@ -150,7 +151,7 @@ const clienteController = {
         });
     },
     atualizar: async (req, res) => {
-        const { nome, sobrenome, email, senha, admin } = req.body;
+        const Cliente = req.body;
         const errors = validationResult(req);
         const idCliente = req.session.idUsuario;
         const Admin = req.session.admin;
@@ -158,16 +159,22 @@ const clienteController = {
         if (!errors.isEmpty()) {
             console.log(errors);
             fs.unlinkSync('public/uploads/fotos_perfil/' + req.file.filename);
-            return res.render('criarCliente', { errors, Admin });
+            return res.render('cadastroCliente', {
+                Cliente,
+                Admin,
+                titulo: 'Cadastrar',
+                actionUrl: "/usuario/cadastrar/",
+                errors: errors.array()
+            });
         }
         const usuarioEncontrado = await db.Cliente.findByPk(idCliente);
         fs.unlinkSync('public/uploads/fotos_perfil/' + usuarioEncontrado.foto_perfil);
-        await db.Cliente.update({
-            nome: nome,
-            sobrenome: sobrenome,
-            email: email,
-            senha: bcrypt.hashSync(senha),
-            admin: admin,
+        await db.Cliente.update({ //--- igual a um create no mysql
+            email: Cliente.email,
+            nome: Cliente.nome,
+            sobrenome: Cliente.sobrenome,
+            senha: bcrypt.hashSync(Cliente.senha),
+            admin: Cliente.admin,
             foto_perfil: req.file.filename
         }, {
             where: {
@@ -175,11 +182,11 @@ const clienteController = {
             }
         });
         req.session.idUsuario = usuarioEncontrado.id;
-        req.session.nome = nome;
-        req.session.sobrenome = sobrenome;
-        req.session.email = email;
+        req.session.nome = Cliente.nome;
+        req.session.sobrenome = Cliente.sobrenome;
+        req.session.email = Cliente.email;
         req.session.foto_perfil = req.file.filename;
-        res.redirect("/usuario", {Admin});
+        res.redirect("/usuario");
     },
     deletar: async (req, res) => {
         const idCliente = req.session.idUsuario;

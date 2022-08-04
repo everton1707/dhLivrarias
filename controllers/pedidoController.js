@@ -143,7 +143,7 @@ const pedidoController = {
             const msgErro = "Acesso negado!! este pedido nao pertence ao usuario logado.";
             res.render("telaErro", { pedido,Admin,msgErro })
         }
-        console.log(pedido.data_entrega)
+
         if (pedido.data_entrega != null){
             const msgErro = "Este pedido ja está Finalizado";
             res.render("telaErro", { msgErro, Admin })
