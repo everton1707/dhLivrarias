@@ -27,8 +27,9 @@ const clienteController = {
 
         const resultadoSenha = bcrypt.compareSync(body.senha, usuarioEncontrado.senha);
         if (!resultadoSenha) {
-            return req.render('login',{Admin});
+            return res.render('login',{Admin});
         }
+
         req.session.idUsuario = usuarioEncontrado.id;
         req.session.nome = usuarioEncontrado.nome;
         req.session.sobrenome = usuarioEncontrado.sobrenome;
