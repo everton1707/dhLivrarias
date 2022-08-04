@@ -1,46 +1,40 @@
 <%- include("./partials/header") %>
-    <div class="container-generos container_corpo">
+    <div class="container">
 
-        <h1>Lista de Generos</h1>
+        <div class="subtitle">
+
+            <h1>Lista de Gêneros</h1>
+        </div>
         <a href="/admin/genero/criar" class="btn">Criar</a>
-        <ul class="list-group">
+        
+        <section class="row row-cols-5">
             <% for( let i=0; i < generos.length; i++ ) { %>
 
-
-                <li>
-
-                    <div class="card mb-3 historico-carde">
-                        <div class="col historico-carde" style="margin:20px;">
-                            <div class="col-md-4">
-                                <img src="/uploads/fotos_generos/<%= generos[i].foto_genero %>" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div>
-                                <ul class="list-group">
-                                    <li>
-                                        <a href="/admin/genero/editar/<%= generos[i].id %>">
-                                            <h5 class="card-title">
-                                                <%= generos[i].nome %>
-                                            </h5>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <%= generos[i].descricao %>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/genero/editar/<%= generos[i].id %>" class="btn">Editar</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/genero/deletar/<%= generos[i].id %>" class="btn">Deletar</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
+                <div class="card col">
+                    <img src="/uploads/fotos_generos/<%= generos[i].foto_genero %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li>
+                          <a class="card-title" href="/admin/genero/editar/<%= generos[i].id %>"><h5 ><%= generos[i].nome %></h5></a>
+                        </li>
+                        <li>
+                          <p class="card-text"> <%= generos[i].descricao %></p>
+                        </li>
+                
+                       
+                          <li><a href="/admin/genero/editar/<%= generos[i].id %>" class="btn"> Editar </a></li>
+                          <li><a href="/admin/genero/deletar/<%= generos[i].id %>" class="btn"> Deletar </a></li>
+                          
+                        
+                      </ul>
                     </div>
-                </li>
-                <% } %>
+                  </div>
 
-        </ul>
+               
+                <% } %>
+            </section>
+
+        
 
        
     </div>
