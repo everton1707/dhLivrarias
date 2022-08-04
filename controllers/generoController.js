@@ -62,7 +62,7 @@ const generoController = {
         }
         const generoEncontrado = await db.Genero.findByPk(idGenero);
 
-        fs.unlinkSync('public/uploads/fotos_generos/' + generoEncontrado.foto_genero);
+       fs.unlinkSync('public/uploads/fotos_generos/' + generoEncontrado.foto_genero);
         await db.Genero.update({ 
             nome: nome,
             descricao: descricao,
