@@ -7,11 +7,13 @@ const adminController = {
     produtoCriar: async (req, res) => {
         const generos = await db.Genero.findAll()
         const produto = {}
+        const Admin = req.session.admin;
         res.render('cadastroProduto', {
             generos: generos,
             Produto: produto,
             titulo: 'Criar',
-            actionUrl: "/admin/produto/salvar"
+            actionUrl: "/admin/produto/salvar",
+            Admin
         });
 
     },
@@ -23,7 +25,8 @@ const adminController = {
 
         if (!errors.isEmpty()) { // ainda nao está validando !!!!!!!!!
             console.log(errors);
-            return res.render('cadastroProduto', { errors });
+            const Admin = req.session.admin;
+            return res.render('cadastroProduto', { errors,Admin });
         }
 
         await db.Produto.create({
@@ -42,25 +45,26 @@ const adminController = {
     produtoEditar: async (req, res) => {
         const generos = await db.Genero.findAll();
         const idProduto = req.params.id;
-
+        const Admin = req.session.admin;
         const produto = await db.Produto.findByPk(idProduto, { include: ["genero"] })
 
         res.render('cadastroProduto', { 
             Produto: produto, 
             generos: generos,
             titulo: 'Editar',
-            actionUrl: "/admin/produto/editar/" + idProduto
+            actionUrl: "/admin/produto/editar/" + idProduto,
+            Admin
          });
     },
     produtoAtualizar: async (req, res) => {
         const idProduto = req.params.id;
         const produto = req.body;
-        console.log(produto);
         const errors = validationResult(req);
-
+        const Admin = req.session.admin;
         if (!errors.isEmpty()) { // ainda nao está validando !!!!!!!!!
             console.log(errors);
-            return res.render('cadastroProduto', { errors });
+
+            return res.render('cadastroProduto', { errors,Admin });
         }
 
         const produtoEncontrado = await db.Produto.findByPk(idProduto);

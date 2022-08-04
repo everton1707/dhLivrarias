@@ -77,7 +77,7 @@ const generoController = {
     deletar: async (req,res) =>{
         const idGenero = req.params.id;
         const produtosRelacionados = await db.Produto.findAll ({ where: { genero_id: idGenero }})
-        
+        const Admin = req.session.admin;
 
         if(produtosRelacionados.length > 0){
             const msgErro = "Existem produtos relacionados a esse gênero";
@@ -86,7 +86,6 @@ const generoController = {
         }
 
         const generoEncontrado = await db.Genero.findByPk(idGenero);
-        console.log(generoEncontrado)
         fs.unlinkSync('public/uploads/fotos_generos/' + generoEncontrado.foto_genero);
         await db.Genero.destroy({ 
             where: {
