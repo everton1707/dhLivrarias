@@ -73,11 +73,5 @@ $ npm start
 
 ## Membros
 
-- [Matheus Severo](https://github.com/MatheusSevero07)
 - [Everton Lima](https://github.com/everton1707) 
-- [Aline Daniel](https://github.com/AlineDaniel) 
 - [Mariana Arcine](https://github.com/MarianaArcine)
-
-## Captura da página inicial
-
-![Alt text](https://github.com/MatheusSevero07/DH_LIVRARIAS/blob/cadastro-cliente/captura%20de%20tela/Home.png)
